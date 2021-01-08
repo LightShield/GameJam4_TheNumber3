@@ -729,8 +729,8 @@ GameObject:
   - component: {fileID: 1070910583}
   - component: {fileID: 1070910587}
   - component: {fileID: 1070910586}
-  - component: {fileID: 1070910585}
   - component: {fileID: 1070910584}
+  - component: {fileID: 1070910585}
   m_Layer: 0
   m_Name: enemy_farsight
   m_TagString: block_state_0
@@ -782,14 +782,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1070910582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962d078b9ec2d5e40a7f91cb5660fcf9, type: 3}
+  m_Script: {fileID: 11500000, guid: a6461a88d952ab44dbdf17c84dd50904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   shootingRange: 1
   bulletSize: 1
   coolDown: 3
-  rb: {fileID: 1070910584}
+  rb: {fileID: 810965319}
   active: 0
   resetLocation: {x: 0, y: 0}
   bp: {fileID: 0}
@@ -1071,8 +1071,8 @@ GameObject:
   - component: {fileID: 1539113456}
   - component: {fileID: 1539113460}
   - component: {fileID: 1539113459}
-  - component: {fileID: 1539113458}
   - component: {fileID: 1539113457}
+  - component: {fileID: 1539113458}
   m_Layer: 0
   m_Name: enemy_speed
   m_TagString: block_state_0
@@ -1124,14 +1124,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1539113455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962d078b9ec2d5e40a7f91cb5660fcf9, type: 3}
+  m_Script: {fileID: 11500000, guid: a8eee7fa13e7db346a6266f61a181e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   shootingRange: 1
   bulletSize: 1
   coolDown: 3
-  rb: {fileID: 1539113457}
+  rb: {fileID: 810965319}
   active: 0
   resetLocation: {x: 0, y: 0}
   bp: {fileID: 0}
@@ -1314,11 +1314,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962d078b9ec2d5e40a7f91cb5660fcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   shootingRange: 1
   bulletSize: 1
   coolDown: 3
-  rb: {fileID: 1715737371}
+  rb: {fileID: 0}
   active: 0
   resetLocation: {x: 0, y: 0}
   bp: {fileID: 0}
