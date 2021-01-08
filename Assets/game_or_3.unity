@@ -746,10 +746,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070910582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.09, y: 5.95, z: 6.85557}
+  m_LocalPosition: {x: -4.09, y: 0, z: 6.85557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1488363402}
+  m_Father: {fileID: 1443749130}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1070910584
@@ -789,6 +789,8 @@ MonoBehaviour:
   shootingRange: 1
   bulletSize: 1
   coolDown: 3
+  power: 1
+  health: 100
   rb: {fileID: 810965319}
   active: 0
   resetLocation: {x: 0, y: 0}
@@ -797,6 +799,8 @@ MonoBehaviour:
   targetLocationVector: {x: 0, y: 0}
   currentCoolDown: 0
   shootingTolerance: 1
+  waitingPool: {fileID: 0}
+  debugTimer: 0
 --- !u!61 &1070910586
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -934,6 +938,39 @@ MonoBehaviour:
   rightEdgeOfView: {x: 0, y: 0}
   maxLocationToSpawn: {x: 0, y: 0}
   timer: 0
+--- !u!1 &1443749129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1443749130}
+  m_Layer: 0
+  m_Name: WaitingPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1443749130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443749129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1715737370}
+  - {fileID: 1539113456}
+  - {fileID: 1070910583}
+  m_Father: {fileID: 1488363402}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1488363401
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,8 +980,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1488363402}
+  - component: {fileID: 1488363403}
   m_Layer: 0
-  m_Name: Enemies
+  m_Name: EnemyPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -958,15 +996,36 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488363401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13107151, y: -0.19914994, z: -6.85557}
+  m_LocalPosition: {x: 0, y: 8, z: -6.85557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1715737370}
-  - {fileID: 1539113456}
-  - {fileID: 1070910583}
+  - {fileID: 1896410417}
+  - {fileID: 1443749130}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488363403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488363401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf80e10ed646d44282172673c40bbdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 15
+  emptyEnemy: {fileID: 1715737369}
+  relativeBulletSpeed: 10
+  enemyTypes:
+  - {fileID: 1539113455}
+  - {fileID: 1070910582}
+  initLocation: {x: 0, y: 0}
+  activePool: {fileID: 0}
+  waitingPool: {fileID: 0}
+  debugTimer: 5
 --- !u!1 &1505339247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,10 +1147,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539113455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 5.95, z: 6.85557}
+  m_LocalPosition: {x: 3, y: 0, z: 6.85557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1488363402}
+  m_Father: {fileID: 1443749130}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1539113457
@@ -1131,6 +1190,8 @@ MonoBehaviour:
   shootingRange: 1
   bulletSize: 1
   coolDown: 3
+  power: 1
+  health: 100
   rb: {fileID: 810965319}
   active: 0
   resetLocation: {x: 0, y: 0}
@@ -1139,6 +1200,8 @@ MonoBehaviour:
   targetLocationVector: {x: 0, y: 0}
   currentCoolDown: 0
   shootingTolerance: 1
+  waitingPool: {fileID: 0}
+  debugTimer: 0
 --- !u!61 &1539113459
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1261,7 +1324,7 @@ GameObject:
   - component: {fileID: 1715737372}
   - component: {fileID: 1715737371}
   m_Layer: 0
-  m_Name: enemy_1
+  m_Name: enemy_empty
   m_TagString: block_state_0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1275,10 +1338,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715737369}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.73, y: 5.9, z: 6.85557}
+  m_LocalPosition: {x: 0, y: 0, z: 6.85557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1488363402}
+  m_Father: {fileID: 1443749130}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1715737371
@@ -1318,6 +1381,8 @@ MonoBehaviour:
   shootingRange: 1
   bulletSize: 1
   coolDown: 3
+  power: 1
+  health: 100
   rb: {fileID: 0}
   active: 0
   resetLocation: {x: 0, y: 0}
@@ -1326,6 +1391,8 @@ MonoBehaviour:
   targetLocationVector: {x: 0, y: 0}
   currentCoolDown: 0
   shootingTolerance: 1
+  waitingPool: {fileID: 0}
+  debugTimer: 0
 --- !u!61 &1715737373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1643,8 +1710,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToLive: 5
   speed: 5
+  damage: 1
   movementDirection: {x: 0, y: 0, z: 0}
   waitingBulletPool: {fileID: 1649393320}
+--- !u!1 &1896410416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896410417}
+  m_Layer: 0
+  m_Name: ActivePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1896410417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896410416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1488363402}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1896718928
 GameObject:
   m_ObjectHideFlags: 0
