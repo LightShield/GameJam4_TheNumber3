@@ -15,7 +15,6 @@ public class BulletBehavior : MonoBehaviour
     void Start()
     {
         waitingBulletPool = GameObject.FindGameObjectWithTag("BulletPool").gameObject.transform.Find("WaitingPool");
-        movementDirection = new Vector2(-1, -1);
     }
 
     // Update is called once per frame

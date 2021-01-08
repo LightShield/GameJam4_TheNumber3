@@ -8,14 +8,16 @@ public class EnemyBehavior : ParentBehavior
     [Header("Enemy Data")]
     public float shootingTolerance = 1f;
 
-    void Start()
+    protected override void Start()
     {
         base.Start();
+        Debug.Log("before find");
         target = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("after find");
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         base.Update();
         
@@ -26,12 +28,12 @@ public class EnemyBehavior : ParentBehavior
         if(distanceFromTarget() < shootingRange + shootingTolerance)
         {
             shoot();
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.red;
 
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
     }
 

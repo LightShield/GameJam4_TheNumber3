@@ -10,8 +10,7 @@ public class ParentBehavior : MonoBehaviour
     public float shootingRange = 1f;
     public float bulletSize = 1f;
     public float coolDown = 3f;
-    
-
+        
     [Header("General Settings")]
     public Rigidbody2D rb;
     public bool active = false;
@@ -23,7 +22,7 @@ public class ParentBehavior : MonoBehaviour
     public Vector2 targetLocationVector;
     public float currentCoolDown = 0f;
 
-    protected void Start()
+    protected virtual void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         bp = GameObject.FindGameObjectWithTag("BulletPool").GetComponent<BulletPollBehavior>();
@@ -31,7 +30,7 @@ public class ParentBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    protected void Update()
+    protected virtual void Update()
     {
        if(currentCoolDown > 0)
         {

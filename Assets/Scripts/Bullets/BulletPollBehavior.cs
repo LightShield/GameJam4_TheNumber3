@@ -58,6 +58,7 @@ public class BulletPollBehavior : MonoBehaviour
         bullet.timeToLive = shooter.shootingRange;
         bullet.movementDirection = shooter.getUpdatedTargetLocationVector().normalized;
         bullet.transform.position = shooter.transform.position;
+        bullet.transform.parent = activePool.transform;
         bullet.enabled = true;
     }
 
