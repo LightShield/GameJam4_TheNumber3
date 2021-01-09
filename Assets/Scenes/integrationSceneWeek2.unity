@@ -1409,6 +1409,10 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 646305714}
   - {fileID: 307544816}
+  - {fileID: 786746621}
+  - {fileID: 1776710227}
+  - {fileID: 361797033}
+  - {fileID: 836261009}
   initLocation: {x: 0, y: 0}
   activePool: {fileID: 0}
   waitingPool: {fileID: 0}
