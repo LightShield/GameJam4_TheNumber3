@@ -58,6 +58,7 @@
             <e p="platformsSpawner.cs" t="Include" />
           </e>
           <e p="player" t="Include">
+            <e p="PlayerLogic.cs" t="Include" />
             <e p="playerMovement.cs" t="Include" />
             <e p="PlayerShooter.cs" t="Include" />
           </e>

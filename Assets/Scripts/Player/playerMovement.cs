@@ -13,9 +13,7 @@ public class playerMovement : MonoBehaviour
     public float _horizontalMove = 0f;
     public float _verticalMove;
     public float mPlayerSpeed = 4f;
-    public float maxMagnitude = 1f;
-    private Vector2 leftRotation = new Vector2(-2.5f,2.5f);
-    private Vector2 rightRotation = new Vector2(2.5f,2.5f);
+    private int angle = 0;
 
 
     [Header("Key Bindings")]
@@ -69,13 +67,29 @@ public class playerMovement : MonoBehaviour
         _verticalMove = Input.GetAxis("Vertical") * mPlayerSpeed;
         Vector2 direction = new Vector2(_horizontalMove,_verticalMove);
 
-
-        if (_horizontalMove != 0 || _verticalMove != 0)
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            
-            float angle = Mathf.Atan2(-direction.x, direction.y) * Mathf.Rad2Deg;
+            angle = (angle + 2) % 361;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        } 
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            angle-=2;
+            if (angle < 0)
+            {
+                angle += 360;
+            }
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+
+
+
+        if (_verticalMove > 0.1f)
+        {
             transform.Translate(Vector3.up * (mPlayerSpeed * Time.deltaTime));
+        }  else if (_verticalMove < -0.1f)
+        {
+            transform.Translate(Vector3.up * (-1f * (mPlayerSpeed * Time.deltaTime)));
         }
     }
 
