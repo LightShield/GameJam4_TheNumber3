@@ -60,6 +60,7 @@ public class BulletPollBehavior : MonoBehaviour
         bullet.movementDirection = shooter.getUpdatedTargetLocationVector().normalized;
         bullet.transform.position = shooter.transform.position;
         bullet.transform.parent = activePool.transform;
+        bullet.gameObject.GetComponent<SpriteRenderer>().color = shooter.gameObject.GetComponent<SpriteRenderer>().color;
         bullet.enabled = true;
     }
 
