@@ -13,8 +13,10 @@ public class EventManagerScript : Singleton<EventManagerScript>
     public class FloatEvent : UnityEvent<object> {} //empty class; just needs to exist
 
     public const string EVENT__BULLET_INACTIVE = "event_bulletInactive";
+	public const string EVENT__ENEMY_DEATH = "event_enemyInactive";
+	public const string EVENT__REG_BULLET_INACTIVE = "event_regBulletInactive";
 
-    private Dictionary <string, FloatEvent> eventDictionary;
+	private Dictionary <string, FloatEvent> eventDictionary;
 	
 	private void Init ()
 	{

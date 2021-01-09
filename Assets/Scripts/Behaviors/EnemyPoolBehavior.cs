@@ -32,6 +32,7 @@ public class EnemyPoolBehavior : MonoBehaviour
 
         //pooling init
         instantiateEmptyEnemies();
+        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH, returnToPool);
     }
 
     // Update is called once per frame
@@ -81,5 +82,14 @@ public class EnemyPoolBehavior : MonoBehaviour
         //TODO add starting location?
         newEnemy.enabled = true;
 
-}
+    }
+
+    void returnToPool(object obj)
+    {
+        GameObject go = (GameObject)obj;
+        go.transform.SetParent(waitingPool.transform);
+        waitingEnemies.Push(go.GetComponent<EnemyBehavior>());
+    }
+
+
 }

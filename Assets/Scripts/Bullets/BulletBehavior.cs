@@ -37,6 +37,7 @@ public class BulletBehavior : MonoBehaviour
         transform.position = waitingBulletPool.position;
         //disable script
         gameObject.GetComponent<BulletBehavior>().enabled = false;
-        //todo: INFORM BULLET POOL OF RETURN
+        //inform pool
+        EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__REG_BULLET_INACTIVE, gameObject);
     }
 }
