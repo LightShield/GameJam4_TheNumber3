@@ -75,11 +75,6 @@ public class playerMovement : MonoBehaviour
             
             float angle = Mathf.Atan2(-direction.x, direction.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            // Calculate a rotation a step closer to the target and applies rotation to this object
-            //transform.rotation = Quaternion.LookRotation(direction);
-            //transform.rotation = Quaternion.FromToRotation(direction,transform.position);
-
-            //transform.Rotate(new Vector3(0,0,Mathf.Atan2(_verticalMove,_horizontalMove)));
             transform.Translate(Vector3.up * (mPlayerSpeed * Time.deltaTime));
         }
     }

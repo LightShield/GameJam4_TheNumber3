@@ -57,8 +57,11 @@
             <e p="PlatformLogic.cs" t="Include" />
             <e p="platformsSpawner.cs" t="Include" />
           </e>
+          <e p="player" t="Include">
+            <e p="playerMovement.cs" t="Include" />
+            <e p="PlayerShooter.cs" t="Include" />
+          </e>
           <e p="player_or.cs" t="Include" />
-          <e p="playerMovement.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
           <e p="SpecialBullets" t="Include">
             <e p="GroupBullet.cs" t="Include" />
