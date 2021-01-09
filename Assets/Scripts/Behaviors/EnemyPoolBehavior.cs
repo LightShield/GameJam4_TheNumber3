@@ -44,7 +44,7 @@ public class EnemyPoolBehavior : MonoBehaviour
             debugTimer = 5f;
             if (waitingEnemies.Count != 0)
             {
-                activateEnemy(enemyTypes[1]);
+                generateEnemy();
             }
         }
     }
@@ -62,13 +62,19 @@ public class EnemyPoolBehavior : MonoBehaviour
         GameObject enemy = Instantiate(emptyEnemy, waitingPool.transform);
         enemy.transform.parent = waitingPool.transform;
         EnemyBehavior eb = enemy.GetComponent<EnemyBehavior>();
+        EnemyShooter es = enemy.GetComponent<EnemyShooter>();
         eb.enabled = false;
+        if (es != null)
+        {
+            es.enabled = false;
+        }
         waitingEnemies.Push(eb);
     }
 
     void activateEnemy(GameObject enemyType)
     {
         //basicly copy-constructor
+        //copy behavior
         EnemyBehavior behaviorTemplate = enemyType.GetComponent<EnemyBehavior>();
         EnemyBehavior newEnemy = waitingEnemies.Pop();
         newEnemy.speed = behaviorTemplate.speed;
@@ -79,9 +85,27 @@ public class EnemyPoolBehavior : MonoBehaviour
         newEnemy.health = behaviorTemplate.health;
         newEnemy.transform.parent = activePool.transform;
         newEnemy.waitingPool = waitingPool.transform;
-        //TODO add starting location?
-        newEnemy.enabled = true;
 
+        //copy looks
+        SpriteRenderer newEnemySR = newEnemy.gameObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer templateSR = enemyType.GetComponent<SpriteRenderer>();
+        newEnemySR.sprite = templateSR.sprite;
+        newEnemySR.color = templateSR.color;
+
+
+        //TODO add starting location?
+
+        //start logic
+        newEnemy.enabled = true;
+        EnemyShooter es = enemyType.GetComponent<EnemyShooter>();
+        if (es != null)
+        {
+            EnemyShooter newES = newEnemy.GetComponent<EnemyShooter>();
+            newES.isGroupShooter = es.isGroupShooter;
+            newES.isRandomShooter = es.isRandomShooter;
+            newES.isSpiralShooter = es.isSpiralShooter;
+            newES.enabled = true;
+        }
     }
 
     void returnToPool(object obj)
@@ -91,5 +115,16 @@ public class EnemyPoolBehavior : MonoBehaviour
         waitingEnemies.Push(go.GetComponent<EnemyBehavior>());
     }
 
+    void generateEnemy()
+    {
+        GameObject type;
+        //pick random type:
+        int randomTypeIndex = Mathf.RoundToInt(Random.Range(0, enemyTypes.Count));
+        type = enemyTypes[randomTypeIndex];
+        Debug.Log("Activated enemy of type " + type.name);
+        activateEnemy(type);
+        //activate special shooting, if enemy has it
+
+    }
 
 }

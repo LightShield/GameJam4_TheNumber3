@@ -20,7 +20,7 @@ public class SpecialBulletPool : MonoBehaviour
     {
         GameObject go = (GameObject) obj;
         go.transform.SetParent(transform);
-        go.transform.position = transform.parent.position;
+        go.transform.position = transform.position;
         inactiveBullets.Push(go);
     }
 
