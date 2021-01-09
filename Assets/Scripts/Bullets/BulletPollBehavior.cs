@@ -14,7 +14,6 @@ public class BulletPollBehavior : MonoBehaviour
     public Vector2 initLocation;
     public GameObject activePool;
     public GameObject waitingPool;
-    public Stack<BulletBehavior> activeBullets;
     public Stack<BulletBehavior> waitingBullets;
     void Start()
     {
@@ -22,7 +21,6 @@ public class BulletPollBehavior : MonoBehaviour
         initLocation = Camera.main.ViewportToWorldPoint(new Vector2(0.0f, 0.0f));
         activePool = transform.Find("ActivePool").gameObject;
         waitingPool = transform.Find("WaitingPool").gameObject;
-        activeBullets = new Stack<BulletBehavior>();
         waitingBullets = new Stack<BulletBehavior>();
 
 
@@ -32,6 +30,8 @@ public class BulletPollBehavior : MonoBehaviour
         {
             instantiateBullet();
         }
+
+        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__REG_BULLET_INACTIVE, returnToPool);
     }
 
     // Update is called once per frame
@@ -60,8 +60,16 @@ public class BulletPollBehavior : MonoBehaviour
         bullet.movementDirection = shooter.getUpdatedTargetLocationVector().normalized;
         bullet.transform.position = shooter.transform.position;
         bullet.transform.parent = activePool.transform;
+        bullet.gameObject.GetComponent<SpriteRenderer>().color = shooter.gameObject.GetComponent<SpriteRenderer>().color;
         bullet.enabled = true;
     }
 
     //todo add bullet return - create event manager
+
+    void returnToPool(object obj)
+    {
+        GameObject go = (GameObject)obj;
+        go.transform.SetParent(waitingPool.transform);
+        waitingBullets.Push(go.GetComponent<BulletBehavior>());
+    }
 }

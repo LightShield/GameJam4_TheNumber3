@@ -59,7 +59,8 @@ public class EnemyBehavior : ParentBehavior
         transform.position = waitingPool.position;
         //disable script
         gameObject.GetComponent<EnemyBehavior>().enabled = false;
-        //todo: INFORM BULLET POOL OF RETURN
+        //inform pool
+        EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__ENEMY_DEATH, gameObject);
     }
 
 }
