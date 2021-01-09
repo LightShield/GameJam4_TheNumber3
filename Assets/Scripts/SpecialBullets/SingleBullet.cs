@@ -7,11 +7,13 @@ public class SingleBullet : MonoBehaviour
 {
     private Vector2 moveDirection;
     private float moveSpeed;
+    private float size;
+    private float range;
     private SpriteRenderer _spriteRenderer;
 
     private void OnEnable()
     {
-        Invoke("Destroy",3f);
+        Invoke("Destroy", range);
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _spriteRenderer.color = Color.red;
     }
@@ -19,7 +21,10 @@ public class SingleBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        range = 3f;
         moveSpeed = 5f;
+        size = .2f;
+        transform.localScale = new Vector3(size, size, 1);
 
     }
 
