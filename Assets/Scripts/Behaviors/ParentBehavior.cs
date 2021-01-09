@@ -10,6 +10,8 @@ public class ParentBehavior : MonoBehaviour
     public float shootingRange = 1f;
     public float bulletSize = 1f;
     public float coolDown = 3f;
+    public float power = 1f;
+    public float health = 100;
         
     [Header("General Settings")]
     public Rigidbody2D rb;
@@ -76,5 +78,16 @@ public class ParentBehavior : MonoBehaviour
     {
         return currentCoolDown <= 0;
     }
+
+    public void getHit(float damage)
+    {
+        health -= damage;
+        if(health < 0)
+        {
+            die();
+        }
+    }
+
+    public virtual void die(){}
 
 }

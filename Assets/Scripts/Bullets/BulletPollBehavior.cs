@@ -56,6 +56,7 @@ public class BulletPollBehavior : MonoBehaviour
         BulletBehavior bullet = waitingBullets.Pop();
         bullet.speed = shooter.speed + relativeBulletSpeed;
         bullet.timeToLive = shooter.shootingRange;
+        bullet.damage = shooter.power;
         bullet.movementDirection = shooter.getUpdatedTargetLocationVector().normalized;
         bullet.transform.position = shooter.transform.position;
         bullet.transform.parent = activePool.transform;

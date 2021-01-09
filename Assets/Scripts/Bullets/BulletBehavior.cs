@@ -7,6 +7,7 @@ public class BulletBehavior : MonoBehaviour
     [Header("Bullet Data")]
     public float timeToLive = 5f;
     public float speed = 5f;
+    public float damage = 1f;
     public Vector3 movementDirection;
     public Transform waitingBulletPool;
 
@@ -30,7 +31,6 @@ public class BulletBehavior : MonoBehaviour
 
     public void endBulletLife()
     {
-        Debug.Log("Death");
         //return to waiting pool
         transform.parent = waitingBulletPool;
         //return to original location
