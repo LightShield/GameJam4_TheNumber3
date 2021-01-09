@@ -31,6 +31,7 @@ public class SpecialBulletPool : MonoBehaviour
         {
             GameObject go = Instantiate(bullet);
             go.transform.parent = transform;
+            go.transform.position = transform.position;
             inactiveBullets.Push(go);
         }
     }

@@ -59,6 +59,7 @@ public class EnemyShooter : MonoBehaviour
     {
         yield return new WaitForSeconds(waitUntil);
         GameObject bullet = BulletPool.GetBullet();
+        bullet.transform.position = transform.position;
         bullet.GetComponent<RandomBulletMovement>().enabled = true;
     }
 
@@ -67,6 +68,7 @@ public class EnemyShooter : MonoBehaviour
         yield return new WaitForSeconds(waitUntil);
         GameObject bullet = BulletPool.GetBullet();
         bullet.transform.SetParent(transform);
+        bullet.transform.position = transform.position;
         bullet.GetComponent<SpiralBulletMovement>().time = time;
         bullet.GetComponent<SpiralBulletMovement>().enabled = true;
     }
@@ -93,6 +95,7 @@ public class EnemyShooter : MonoBehaviour
             Vector2 dir = (moveVector - transform.position).normalized;
 
             GameObject bullet = BulletPool.GetBullet();
+            bullet.transform.position = transform.position;
             //bullet.transform.rotation = transform.rotation;
             bullet.GetComponent<SingleBullet>().SetMoveDirection(dir);
             bullet.GetComponent<SingleBullet>().enabled = true;
