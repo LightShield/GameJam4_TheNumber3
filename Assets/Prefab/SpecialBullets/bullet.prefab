@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 10
-  mBulletSpeed: 1
+  mBulletSpeed: 2
 --- !u!114 &7044496970118938749
 MonoBehaviour:
   m_ObjectHideFlags: 0

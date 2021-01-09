@@ -40,6 +40,7 @@
               <e p="FarSightEnemy.cs" t="Include" />
               <e p="FastEnemy.cs" t="Include" />
             </e>
+            <e p="EnemyPoolBehavior.cs" t="Include" />
             <e p="ParentBehavior.cs" t="Include" />
           </e>
           <e p="Blocks" t="Include">
