@@ -160,7 +160,7 @@ MonoBehaviour:
   spiralCount: 100
   spiralSpawnDelay: 0.1
   isSpiralShooter: 0
-  groupCount: 10
+  groupCount: 20
   numberOfGroups: 4
   groupDelay: 0.5
   isGroupShooter: 0
