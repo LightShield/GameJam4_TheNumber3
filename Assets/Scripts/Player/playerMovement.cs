@@ -18,13 +18,13 @@ public class playerMovement : MonoBehaviour
 
     [Header("Key Bindings")]
     public KeyCode state0 = KeyCode.Q;
-
     public KeyCode state1 = KeyCode.W;
     public KeyCode state2 = KeyCode.E;
 
 
     [Header("Player Data")]
     public int state = 0;
+    public int rotationSpeed = 4;
 
 
     // Start is called before the first frame update
@@ -69,12 +69,12 @@ public class playerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            angle = (angle + 2) % 361;
+            angle = (angle + rotationSpeed) % 361;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         } 
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            angle-=2;
+            angle-=rotationSpeed;
             if (angle < 0)
             {
                 angle += 360;
@@ -107,19 +107,10 @@ public class playerMovement : MonoBehaviour
         Debug.Log("collided, player");
         if (!gameObject.CompareTag("colors"))
         {
-            if (collision.gameObject.tag.StartsWith("block"))
+            if (collision.gameObject.CompareTag("block_state_0"))
             {
                 //state block collided
-                BlockLogic script = collision.GetComponent<BlockLogic>();
-                Debug.Log("collision detected. other's id = " + script.blockState);
-                if (state != script.blockState)
-                {
-                    die();
-                }
-            }
-            else if (collision.gameObject.CompareTag("colors"))
-            {
-                StartCoroutine(flickerPlayer());
+               EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_CRASH_ENEMY,collision.gameObject);
             }
         }
 

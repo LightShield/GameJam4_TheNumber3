@@ -7,7 +7,7 @@ public class UIController : MonoBehaviour
 {
     public void onStartClicked()
     {
-        SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public void onExitClicked()

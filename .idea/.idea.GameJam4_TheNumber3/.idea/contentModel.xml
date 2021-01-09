@@ -41,6 +41,7 @@
               <e p="FastEnemy.cs" t="Include" />
             </e>
             <e p="EnemyPoolBehavior.cs" t="Include" />
+            <e p="EnemyShooter.cs" t="Include" />
             <e p="ParentBehavior.cs" t="Include" />
           </e>
           <e p="Blocks" t="Include">
@@ -51,8 +52,12 @@
             <e p="BulletBehavior.cs" t="Include" />
             <e p="BulletPollBehavior.cs" t="Include" />
           </e>
-          <e p="EnemyShooter.cs" t="Include" />
-          <e p="EventManagerScript.cs" t="Include" />
+          <e p="Management" t="Include">
+            <e p="EventManagerScript.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+            <e p="Singleton.cs" t="Include" />
+            <e p="UIController.cs" t="Include" />
+          </e>
           <e p="Platform" t="Include">
             <e p="PlatformLogic.cs" t="Include" />
             <e p="platformsSpawner.cs" t="Include" />
@@ -63,7 +68,6 @@
             <e p="PlayerShooter.cs" t="Include" />
           </e>
           <e p="player_or.cs" t="Include" />
-          <e p="Singleton.cs" t="Include" />
           <e p="SpecialBullets" t="Include">
             <e p="GroupBullet.cs" t="Include" />
             <e p="RandomBulletMovement.cs" t="Include" />
@@ -79,7 +83,6 @@
             <e p="ScrollingBG.cs" t="Include" />
             <e p="ScrollingEnemy.cs" t="Include" />
           </e>
-          <e p="UIController.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

@@ -47,6 +47,7 @@ public class EnemyBehavior : ParentBehavior
     }
 
 
+
     public override void die()
     {
         base.die();
