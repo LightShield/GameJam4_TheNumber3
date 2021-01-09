@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class EnemyBehavior : ParentBehavior
@@ -47,6 +49,13 @@ public class EnemyBehavior : ParentBehavior
     }
 
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("bullet"))
+        {
+            die();
+        }
+    }
 
     public override void die()
     {

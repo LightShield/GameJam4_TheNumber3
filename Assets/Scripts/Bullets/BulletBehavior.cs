@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,5 +40,13 @@ public class BulletBehavior : MonoBehaviour
         gameObject.GetComponent<BulletBehavior>().enabled = false;
         //inform pool
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__REG_BULLET_INACTIVE, gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("boundary"))
+        {
+            endBulletLife();
+        }
     }
 }

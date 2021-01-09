@@ -8,10 +8,11 @@ TagManager:
   - block_state_0
   - block_state_1
   - block_state_2
-  - Scenery
   - midBlock
   - colors
   - BulletPool
+  - bullet
+  - boundary
   layers:
   - Default
   - TransparentFX

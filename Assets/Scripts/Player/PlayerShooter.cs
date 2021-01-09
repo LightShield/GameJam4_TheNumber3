@@ -41,5 +41,6 @@ public class PlayerShooter : MonoBehaviour
         bullet.GetComponent<SingleBullet>().SetMoveDirection(Vector2.up);
         bullet.GetComponent<SingleBullet>().enabled = true;
         bullet.transform.position = transform.position;
+        bullet.transform.tag = "bullet";
     }
 }
