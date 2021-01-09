@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,21 +11,24 @@ public class playerMovement : MonoBehaviour
     private Animator _animator;
     private Rigidbody2D _rigidbody;
     public float _horizontalMove = 0f;
+    public float _verticalMove;
     public float mPlayerSpeed = 4f;
     public float maxMagnitude = 1f;
-    public float jumpPower = 100f;
     private Vector2 leftRotation = new Vector2(-2.5f,2.5f);
     private Vector2 rightRotation = new Vector2(2.5f,2.5f);
-    
+
+
     [Header("Key Bindings")]
     public KeyCode state0 = KeyCode.Q;
+
     public KeyCode state1 = KeyCode.W;
     public KeyCode state2 = KeyCode.E;
+
 
     [Header("Player Data")]
     public int state = 0;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +39,6 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!_animator.GetBool("isJumping") && Input.GetKeyDown(KeyCode.Space))
-        {
-            _animator.SetBool("isJumping", true);
-            _rigidbody.AddForce(Vector2.up * jumpPower);
-            StartCoroutine(land());
-        }
-
         //change states (temp code - unscaleable. make it into an array later
         if (Input.GetKeyDown(state0))
         {
@@ -63,33 +60,27 @@ public class playerMovement : MonoBehaviour
 
     }
 
-    IEnumerator land()
-    {
-        yield return new WaitForSeconds(1f);
-        _animator.SetBool("isJumping", false);
-    }
+  
 
     // Update is called once per frame
     void FixedUpdate()
     {
         _horizontalMove = Input.GetAxis("Horizontal") * mPlayerSpeed;
-        _animator.SetFloat("speed", Mathf.Abs(_horizontalMove));
+        _verticalMove = Input.GetAxis("Vertical") * mPlayerSpeed;
+        Vector2 direction = new Vector2(_horizontalMove,_verticalMove);
 
-        if (Mathf.Abs(_horizontalMove) <= 0.01f && _rigidbody.velocity.magnitude <= 0.3f)
+
+        if (_horizontalMove != 0 || _verticalMove != 0)
         {
-            //_rigidbody.velocity = Vector2.zero;
-            transform.Translate(Time.deltaTime * 0.5f * -1 * 2f * GameControl.instance.globalSpeed, 0, 0,
-                            Camera.main.transform);
-        }
-        else if (_horizontalMove < -0.1f && _rigidbody.velocity.magnitude <= maxMagnitude)
-        {
-            transform.localScale = leftRotation;
-            _rigidbody.AddForce(Vector2.left * mPlayerSpeed);
-        }
-        else if (_horizontalMove > 0.1f && _rigidbody.velocity.magnitude <= maxMagnitude)
-        {
-            transform.localScale = rightRotation;
-            _rigidbody.AddForce(Vector2.right * mPlayerSpeed);
+            
+            float angle = Mathf.Atan2(-direction.x, direction.y) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            // Calculate a rotation a step closer to the target and applies rotation to this object
+            //transform.rotation = Quaternion.LookRotation(direction);
+            //transform.rotation = Quaternion.FromToRotation(direction,transform.position);
+
+            //transform.Rotate(new Vector3(0,0,Mathf.Atan2(_verticalMove,_horizontalMove)));
+            transform.Translate(Vector3.up * (mPlayerSpeed * Time.deltaTime));
         }
     }
 
