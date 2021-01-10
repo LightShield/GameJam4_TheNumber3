@@ -127,6 +127,8 @@ public class EnemyPoolBehavior : MonoBehaviour
             newES.isSpiralShooter = es.isSpiralShooter;
             newES.enabled = true;
         }
+
+        newEnemy.gameObject.SetActive(true);
     }
 
     void returnToPool(object obj)
