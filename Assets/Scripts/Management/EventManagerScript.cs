@@ -16,6 +16,7 @@ public class EventManagerScript : Singleton<EventManagerScript>
 	public const string EVENT__ENEMY_DEATH = "event_enemyInactive";
 	public const string EVENT__REG_BULLET_INACTIVE = "event_regBulletInactive";
 	public const string EVENT_PLAYER_HIT_BY_BULLET = "event_playerHitByBullet";
+	public const string EVENT_ENEMY_HIT_BY_BULLET = "event_enemyHitByBullet";
 	public const string EVENT_PLAYER_CRASH_ENEMY = "event_playerCrashEnemy";
 
 	private Dictionary <string, FloatEvent> eventDictionary;

@@ -53,6 +53,7 @@ public class EnemyBehavior : ParentBehavior
     {
         if (other.transform.CompareTag("bullet"))
         {
+            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET,gameObject.GetComponent<ParentBehavior>());
             die();
         }
     }

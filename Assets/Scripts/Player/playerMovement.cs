@@ -12,7 +12,6 @@ public class playerMovement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public float _horizontalMove = 0f;
     public float _verticalMove;
-    public float mPlayerSpeed = 4f;
     private int angle = 0;
 
 
@@ -25,7 +24,7 @@ public class playerMovement : MonoBehaviour
     [Header("Player Data")]
     public int state = 0;
     public int rotationSpeed = 4;
-
+    public float mPlayerSpeed = 4f;
 
     // Start is called before the first frame update
     void Start()
@@ -93,25 +92,18 @@ public class playerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        //TODO NEED TO MOVE TO PLAYER LOGIC !!
-        if (other.transform.CompareTag("leftBound"))
-        {
-            SceneManager.LoadScene(2);
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("collided, player");
-        if (!gameObject.CompareTag("colors"))
+        
+        if (collision.gameObject.CompareTag("block_state_0"))
         {
-            if (collision.gameObject.CompareTag("block_state_0"))
-            {
-                //state block collided
-               EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_CRASH_ENEMY,collision.gameObject);
-            }
+            //state block collided
+           EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_CRASH_ENEMY,collision.gameObject);
+        }
+        else if (!collision.gameObject.CompareTag("boundary"))
+        {
+            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_HIT_BY_BULLET,gameObject);
         }
 
     }
