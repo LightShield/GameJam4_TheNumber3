@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public int playerMaxPower;
     public int playerMaxBullet;
     public playerMovement playerMovement;
+    public PlayerShooter playerShooter;
 
 
     // Start is called before the first frame update
@@ -79,7 +80,10 @@ public class GameManager : MonoBehaviour
             {
                 powers[RANGE_POWER]++;
                 powerBar.SetHealth(powers[SPEED_POWER]);
-            }        }
+                playerShooter.bulletRange++;
+
+            }
+        }
         else if (pb.bulletSize > 1)
         {
             powers[BULLET_POWER]++;

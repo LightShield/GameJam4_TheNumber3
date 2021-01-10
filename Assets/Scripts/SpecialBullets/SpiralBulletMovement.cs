@@ -15,8 +15,8 @@ public class SpiralBulletMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.color = Color.green;
+        //_spriteRenderer = GetComponent<SpriteRenderer>();
+        //_spriteRenderer.color = Color.green;
     }
 
 

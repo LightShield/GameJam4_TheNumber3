@@ -101,7 +101,7 @@ public class playerMovement : MonoBehaviour
             //state block collided
            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_CRASH_ENEMY,collision.gameObject);
         }
-        else if (!collision.gameObject.CompareTag("boundary"))
+        else if (!collision.gameObject.CompareTag("boundary") && !collision.gameObject.CompareTag("bullet") )
         {
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_HIT_BY_BULLET,gameObject);
         }

@@ -18,8 +18,8 @@ public class RandomBulletMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.color = Color.blue;
+        //_spriteRenderer = GetComponent<SpriteRenderer>();
+        //_spriteRenderer.color = Color.blue;
         int angle = random.Next(0, 360);
         float x = Mathf.Sin(angle);
         float y =Mathf.Cos(angle);

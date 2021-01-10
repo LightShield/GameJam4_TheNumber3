@@ -61,6 +61,7 @@ public class EnemyShooter : MonoBehaviour
         GameObject bullet = BulletPool.GetBullet();
         bullet.transform.position = transform.position;
         bullet.GetComponent<RandomBulletMovement>().enabled = true;
+        bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
     }
 
     IEnumerator SpwanSpiral(float time, float waitUntil)
@@ -71,6 +72,8 @@ public class EnemyShooter : MonoBehaviour
         bullet.transform.position = transform.position;
         bullet.GetComponent<SpiralBulletMovement>().time = time;
         bullet.GetComponent<SpiralBulletMovement>().enabled = true;
+        bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
+
     }
 
     IEnumerator spawnGroup()
@@ -99,6 +102,7 @@ public class EnemyShooter : MonoBehaviour
             //bullet.transform.rotation = transform.rotation;
             bullet.GetComponent<SingleBulletMovement>().SetMoveDirection(dir);
             bullet.GetComponent<SingleBulletMovement>().enabled = true;
+            bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
             angle += angleStep;
         }
     }

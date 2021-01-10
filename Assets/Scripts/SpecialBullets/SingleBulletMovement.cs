@@ -14,8 +14,8 @@ public class SingleBulletMovement : MonoBehaviour
     private void OnEnable()
     {
         Invoke("Destroy", range);
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.color = Color.red;
+        //_spriteRenderer = GetComponent<SpriteRenderer>();
+        //_spriteRenderer.color = Color.red;
     }
 
     // Start is called before the first frame update

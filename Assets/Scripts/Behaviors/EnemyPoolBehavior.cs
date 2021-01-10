@@ -118,6 +118,10 @@ public class EnemyPoolBehavior : MonoBehaviour
         if (es != null)
         {
             EnemyShooter newES = newEnemy.GetComponent<EnemyShooter>();
+            if (newES == null)
+            {
+                Debug.Log("wtf?????");
+            }
             newES.isGroupShooter = es.isGroupShooter;
             newES.isRandomShooter = es.isRandomShooter;
             newES.isSpiralShooter = es.isSpiralShooter;
