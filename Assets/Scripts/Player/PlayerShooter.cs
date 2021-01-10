@@ -8,7 +8,7 @@ public class PlayerShooter : MonoBehaviour
     public SpecialBulletPool BulletPool;
 
     private ParentBehavior pb;
-
+    public Transform shootingPoint;
     private bool canShoot = true;
     public GameManager mGameManager;
 
@@ -38,9 +38,9 @@ public class PlayerShooter : MonoBehaviour
         transform.DOPunchScale (new Vector3 (.2f, .2f, .2f), .25f);
         GameObject bullet = BulletPool.GetBullet();
         bullet.transform.rotation = transform.rotation;
-        bullet.GetComponent<SingleBullet>().SetMoveDirection(Vector2.up);
-        bullet.GetComponent<SingleBullet>().enabled = true;
-        bullet.transform.position = transform.position;
+        bullet.GetComponent<SingleBulletMovement>().SetMoveDirection(Vector2.up);
+        bullet.GetComponent<SingleBulletMovement>().enabled = true;
+        bullet.transform.position = shootingPoint.position;
         bullet.transform.tag = "bullet";
     }
 }

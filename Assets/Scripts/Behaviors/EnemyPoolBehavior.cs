@@ -19,7 +19,13 @@ public class EnemyPoolBehavior : MonoBehaviour
     public Stack<EnemyBehavior> activeEnemies; //chnage from stack to some other behavior
     public Stack<EnemyBehavior> waitingEnemies;
 
+    
+    [Header("Spawner Settings")]
     public float debugTimer = 5f;
+    public Vector2[] bounds;
+    public Vector2 rightBound;
+    public Vector2 upBound;
+    public Vector2 downBound;
 
     // Start is called before the first frame update
     void Start()
@@ -64,10 +70,7 @@ public class EnemyPoolBehavior : MonoBehaviour
         EnemyBehavior eb = enemy.GetComponent<EnemyBehavior>();
         EnemyShooter es = enemy.GetComponent<EnemyShooter>();
         eb.enabled = false;
-        if (es != null)
-        {
-            es.enabled = false;
-        }
+        es.enabled = false;
         waitingEnemies.Push(eb);
     }
 
@@ -93,7 +96,21 @@ public class EnemyPoolBehavior : MonoBehaviour
         newEnemySR.color = templateSR.color;
 
 
-        //TODO add starting location?
+        //add starting location
+        int boundIndex = Mathf.RoundToInt(Random.Range(0, bounds.Length));
+        Vector2 newLocation = bounds[boundIndex];
+        if (boundIndex < 2)
+        {
+            newLocation.y = Mathf.RoundToInt(Random.Range(-6, 6));
+        }
+        else
+        {
+            newLocation.x = Mathf.RoundToInt(Random.Range(-10, 10));
+        }
+
+        newEnemy.transform.position = newLocation;
+
+
 
         //start logic
         newEnemy.enabled = true;

@@ -21,6 +21,11 @@ public class SpecialBulletPool : MonoBehaviour
         GameObject go = (GameObject) obj;
         go.transform.SetParent(transform);
         go.transform.position = transform.position;
+        go.transform.tag = "Untagged";
+        if (go.transform.CompareTag("bullet"))
+        {
+            Debug.Log("not a good destroy");
+        }
         inactiveBullets.Push(go);
     }
 

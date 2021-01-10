@@ -30,6 +30,6 @@ public class GroupBullet : MonoBehaviour
 
     private void Destroy()
     {
-        gameObject.GetComponent<SingleBullet>().enabled = false;
+        gameObject.GetComponent<SingleBulletMovement>().enabled = false;
     }
 }

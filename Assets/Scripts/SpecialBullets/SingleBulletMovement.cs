@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleBullet : MonoBehaviour
+public class SingleBulletMovement : MonoBehaviour
 {
     private Vector2 moveDirection;
     private float moveSpeed;
@@ -43,8 +43,9 @@ public class SingleBullet : MonoBehaviour
     private void Destroy()
     {
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__BULLET_INACTIVE,gameObject);
-        GetComponent<SingleBullet>().enabled = false;
-        transform.position = Vector3.zero;
+        GetComponent<SingleBulletMovement>().enabled = false;
+        tag = "Untagged";
+        //transform.position = Vector3.zero;
     }
 
 }

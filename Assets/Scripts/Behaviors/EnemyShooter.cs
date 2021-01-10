@@ -97,8 +97,8 @@ public class EnemyShooter : MonoBehaviour
             GameObject bullet = BulletPool.GetBullet();
             bullet.transform.position = transform.position;
             //bullet.transform.rotation = transform.rotation;
-            bullet.GetComponent<SingleBullet>().SetMoveDirection(dir);
-            bullet.GetComponent<SingleBullet>().enabled = true;
+            bullet.GetComponent<SingleBulletMovement>().SetMoveDirection(dir);
+            bullet.GetComponent<SingleBulletMovement>().enabled = true;
             angle += angleStep;
         }
     }

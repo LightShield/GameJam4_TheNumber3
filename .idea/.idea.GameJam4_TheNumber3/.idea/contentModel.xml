@@ -53,6 +53,7 @@
             <e p="BulletPollBehavior.cs" t="Include" />
           </e>
           <e p="Management" t="Include">
+            <e p="BoundaryLogic.cs" t="Include" />
             <e p="EventManagerScript.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
@@ -71,7 +72,7 @@
           <e p="SpecialBullets" t="Include">
             <e p="GroupBullet.cs" t="Include" />
             <e p="RandomBulletMovement.cs" t="Include" />
-            <e p="SingleBullet.cs" t="Include" />
+            <e p="SingleBulletMovement.cs" t="Include" />
             <e p="SpecialBulletPool.cs" t="Include" />
             <e p="SpiralBulletMovement.cs" t="Include" />
           </e>
