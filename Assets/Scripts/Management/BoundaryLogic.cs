@@ -9,10 +9,8 @@ public class BoundaryLogic : MonoBehaviour
     {
         if (other.transform.CompareTag("bullet"))
         {
-            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__BULLET_INACTIVE,other.gameObject);
-            other.gameObject.GetComponent<SingleBulletMovement>().enabled = false;
-            other.gameObject.GetComponent<RandomBulletMovement>().enabled = false;
-            other.gameObject.GetComponent<SpiralBulletMovement>().enabled = false;
+            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
+            other.gameObject.GetComponent<PlayerBulletMovement>().enabled = false;
             //other.transform.position = Vector3.zero;
         }
     }

@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
     private void OnEnemyDeath(object obj)
     {
         ParentBehavior pb = (ParentBehavior) obj;
+        Debug.Log("Game manager: enemy killed");
         if (pb.speed > 1)
         {
             if (powers[SPEED_POWER] < playerMaxSpeed)

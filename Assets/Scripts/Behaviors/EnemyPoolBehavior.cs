@@ -133,8 +133,11 @@ public class EnemyPoolBehavior : MonoBehaviour
 
     void returnToPool(object obj)
     {
+        Debug.Log("return to enemy pool");
         GameObject go = (GameObject)obj;
         go.transform.SetParent(waitingPool.transform);
+        go.GetComponent<Collider2D>().enabled = true;
+        go.gameObject.SetActive(false);
         waitingEnemies.Push(go.GetComponent<EnemyBehavior>());
     }
 

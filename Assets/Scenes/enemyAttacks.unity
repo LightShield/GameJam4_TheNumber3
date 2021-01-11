@@ -320,6 +320,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a20defc7d2cbdf479786235d7cf87fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &125422038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 125422040}
+  - component: {fileID: 125422039}
+  m_Layer: 0
+  m_Name: PlayerBulletsPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &125422039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125422038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3bba47a8ef12c4e936520c73d74e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6164460096330419242, guid: 536678a9ca1ccb344adc1dbe4f85049c, type: 3}
+  numOfBullets: 1000
+--- !u!4 &125422040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125422038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.14, y: 12.96, z: -0.24974573}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &170399996
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,11 +2211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1388720560827263017, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.551658
+      value: 18.69
       objectReference: {fileID: 0}
     - target: {fileID: 1388720560827263017, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4552
+      value: -15.1
       objectReference: {fileID: 0}
     - target: {fileID: 1388720560827263017, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2426,6 +2471,7 @@ MonoBehaviour:
   currentCoolDown: 0
   shootingTolerance: 1
   waitingPool: {fileID: 2602767397417364585}
+  killed: 0
   debugTimer: 0
 --- !u!61 &1744845593
 BoxCollider2D:
@@ -2870,6 +2916,7 @@ MonoBehaviour:
   currentCoolDown: 0
   shootingTolerance: 1
   waitingPool: {fileID: 2602767397417364585}
+  killed: 0
   debugTimer: 0
 --- !u!50 &2602767395832734655
 Rigidbody2D:
@@ -3051,6 +3098,7 @@ MonoBehaviour:
   currentCoolDown: 0
   shootingTolerance: 1
   waitingPool: {fileID: 2602767397417364585}
+  killed: 0
   debugTimer: 0
 --- !u!4 &2602767396121616594
 Transform:
@@ -3244,6 +3292,7 @@ MonoBehaviour:
   currentCoolDown: 0
   shootingTolerance: 1
   waitingPool: {fileID: 2602767397417364585}
+  killed: 0
   debugTimer: 0
 --- !u!50 &2602767396307264135
 Rigidbody2D:
@@ -3340,6 +3389,7 @@ MonoBehaviour:
   currentCoolDown: 0
   shootingTolerance: 1
   waitingPool: {fileID: 2602767397417364585}
+  killed: 0
   debugTimer: 0
 --- !u!1 &2602767396378293723
 GameObject:
@@ -3551,6 +3601,7 @@ MonoBehaviour:
   currentCoolDown: 0
   shootingTolerance: 1
   waitingPool: {fileID: 2602767397417364585}
+  killed: 0
   debugTimer: 0
 --- !u!50 &2602767397042128253
 Rigidbody2D:
@@ -3648,7 +3699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2602767397582157149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: -6.85557}
+  m_LocalPosition: {x: 21.61, y: 12.3, z: -6.85557}
   m_LocalScale: {x: 1, y: 1.0747, z: 1}
   m_Children:
   - {fileID: 2602767396121616594}
@@ -3675,7 +3726,7 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 2602767396054343833}
   - {fileID: 2602767396378293723}
-  - {fileID: 1744845588}
+  - {fileID: 3054599396664416638}
   - {fileID: 2602767397042128248}
   - {fileID: 2602767396307264130}
   - {fileID: 2602767395832734650}
@@ -3707,7 +3758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3054599396664416384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3835,6 +3886,7 @@ MonoBehaviour:
   currentCoolDown: 0
   shootingTolerance: 1
   waitingPool: {fileID: 2602767397417364585}
+  killed: 0
   debugTimer: 0
 --- !u!50 &3054599396664416636
 Rigidbody2D:
@@ -3918,10 +3970,10 @@ PrefabInstance:
     - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: BulletPool
       value: 
-      objectReference: {fileID: 1544670781}
+      objectReference: {fileID: 125422039}
     - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: bulletRange
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: mGameManager
@@ -4018,11 +4070,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8394593206424418493, guid: 1eccc19ac7d0eb045905abc19d55dd41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.4
+      value: -17.64
       objectReference: {fileID: 0}
     - target: {fileID: 8394593206424418493, guid: 1eccc19ac7d0eb045905abc19d55dd41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -18.04
       objectReference: {fileID: 0}
     - target: {fileID: 8394593206424418493, guid: 1eccc19ac7d0eb045905abc19d55dd41, type: 3}
       propertyPath: m_LocalPosition.z

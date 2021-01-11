@@ -10,6 +10,7 @@ public class EnemyBehavior : ParentBehavior
     [Header("Enemy Data")]
     public float shootingTolerance = 1f;
     public Transform waitingPool;
+    public bool killed = false;
 
     public float debugTimer; //remove in final game
 
@@ -53,8 +54,16 @@ public class EnemyBehavior : ParentBehavior
     {
         if (other.transform.CompareTag("bullet"))
         {
-            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET,gameObject.GetComponent<ParentBehavior>());
-            die();
+            if (!killed)
+            {
+                killed = true;
+                //GetComponent<Collider2D>().enabled = false;
+                Debug.Log("?????????????????");
+                EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
+                EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET,gameObject.GetComponent<ParentBehavior>());
+                die();
+            }
+            
         }
     }
 
@@ -70,6 +79,7 @@ public class EnemyBehavior : ParentBehavior
         transform.position = waitingPool.position;
         //disable script
         gameObject.GetComponent<EnemyBehavior>().enabled = false;
+        killed = false;
         //inform pool
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__ENEMY_DEATH, gameObject);
     }

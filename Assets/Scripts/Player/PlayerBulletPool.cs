@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
-public class SpecialBulletPool : MonoBehaviour
+public class PlayerBulletPool : MonoBehaviour
 {
     private Stack<GameObject> inactiveBullets;
     public GameObject bullet;
@@ -13,16 +12,16 @@ public class SpecialBulletPool : MonoBehaviour
     void Start()
     {
         InitPool();
-        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__BULLET_INACTIVE,ReturnToPool);
+        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,ReturnToPool);
     }
 
     private void ReturnToPool(object obj)
     {
+        Debug.Log("playerBulletPool: return to pool");
         GameObject go = (GameObject) obj;
         go.SetActive(false);
         go.transform.SetParent(transform);
         go.transform.position = transform.position;
-        go.transform.tag = "Untagged";
         inactiveBullets.Push(go);
     }
 
@@ -35,7 +34,9 @@ public class SpecialBulletPool : MonoBehaviour
             GameObject go = Instantiate(bullet);
             go.transform.parent = transform;
             go.transform.position = transform.position;
-            go.SetActive(false);
+            go.transform.tag = "bullet";
+            go.SetActive(false);   
+            go.GetComponent<SpriteRenderer>().color = Color.yellow;
             inactiveBullets.Push(go);
         }
     }
@@ -44,20 +45,11 @@ public class SpecialBulletPool : MonoBehaviour
     {
         if (inactiveBullets.Count > 0)
         {
+            Debug.Log("playerBulletPool: getting bullet");
             var newBullet =  inactiveBullets.Pop();
-            newBullet.tag = "Untagged";
             newBullet.SetActive(true);
-            if (newBullet.CompareTag("bullet"))
-            {
-                Debug.Log("god damn it");
-            }
-
             return newBullet;
         }
         return null;
     }
-
-
-
-
-}        
+}

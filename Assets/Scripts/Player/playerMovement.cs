@@ -29,7 +29,7 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<SpriteRenderer>().material.color = Color.red;
+        //GetComponent<SpriteRenderer>().material.color = Color.red;
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }

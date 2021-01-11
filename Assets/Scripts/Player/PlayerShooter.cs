@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerShooter : MonoBehaviour
 {
-    public SpecialBulletPool BulletPool;
+    public PlayerBulletPool BulletPool;
 
     private ParentBehavior pb;
     public Transform shootingPoint;
@@ -40,11 +40,10 @@ public class PlayerShooter : MonoBehaviour
         {
             
             float angleStep = (endAngle - startAngle) / bulletRange;
-            float angle = transform.eulerAngles.z -45;
+            float angle = -startAngle ;
 
             for (int i = 0; i < bulletRange; i++)
             {
-                Debug.Log("player shoot once");
                 //pb.shoot();
                 
                 GameObject bullet = BulletPool.GetBullet();
@@ -53,32 +52,34 @@ public class PlayerShooter : MonoBehaviour
 
                 Vector3 moveVector = new Vector3(x,y,0f);
                 Vector2 dir = (moveVector - transform.position).normalized;
-
-                bullet.GetComponent<SingleBulletMovement>().SetMoveDirection(dir);
-                bullet.GetComponent<SingleBulletMovement>().enabled = true;
+                bullet.transform.rotation = transform.rotation;
+                bullet.GetComponent<PlayerBulletMovement>().SetMoveDirection(dir);
+                bullet.GetComponent<PlayerBulletMovement>().enabled = true;
                 bullet.transform.position = shootingPoint.position;
-                bullet.transform.tag = "bullet";
 
                 angle += angleStep;
             }
             transform.DORewind ();
             transform.DOPunchScale (new Vector3 (.2f, .2f, .2f), .25f);
-            canShoot = true;
+            Invoke("enableShooting", .5f);
         }
         else
         {
             canShoot = true;
-            Debug.Log("player shoot once");
             //pb.shoot();
             transform.DORewind ();
             transform.DOPunchScale (new Vector3 (.2f, .2f, .2f), .25f);
             GameObject bullet = BulletPool.GetBullet();
             bullet.transform.rotation = transform.rotation;
-            bullet.GetComponent<SingleBulletMovement>().SetMoveDirection(Vector2.up);
-            bullet.GetComponent<SingleBulletMovement>().enabled = true;
+            bullet.GetComponent<PlayerBulletMovement>().SetMoveDirection(Vector2.up);
+            bullet.GetComponent<PlayerBulletMovement>().enabled = true;
             bullet.transform.position = shootingPoint.position;
-            bullet.transform.tag = "bullet";
         }
         
+    }
+
+    private void enableShooting()
+    {
+        canShoot = true;
     }
 }
