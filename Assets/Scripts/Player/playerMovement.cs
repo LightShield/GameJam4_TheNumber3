@@ -102,10 +102,19 @@ public class playerMovement : MonoBehaviour
             //state block collided
            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_CRASH_ENEMY,collision.gameObject);
         }
+        else if (collision.transform.CompareTag("soul"))
+        {
+            collision.GetComponent<Collider2D>().enabled = false;
+            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET,collision.gameObject);
+
+        }
         else if (!collision.gameObject.CompareTag("boundary") && !collision.gameObject.CompareTag("bullet") )
         {
+            collision.gameObject.GetComponent<Collider2D>().enabled = false;
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_HIT_BY_BULLET,gameObject);
-        }
+            //EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__BULLET_INACTIVE,gameObject);
+        }     //TODO need to cancel this bullet
+        
 
     }
 

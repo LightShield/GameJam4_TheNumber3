@@ -11,6 +11,7 @@ public class EnemyBehavior : ParentBehavior
     public float shootingTolerance = 1f;
     public Transform waitingPool;
     public bool killed = false;
+    public GameObject soul;
 
     public float debugTimer; //remove in final game
 
@@ -57,14 +58,22 @@ public class EnemyBehavior : ParentBehavior
             if (!killed)
             {
                 killed = true;
-                //GetComponent<Collider2D>().enabled = false;
-                Debug.Log("?????????????????");
+                createSoul();
                 EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
-                EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET,gameObject.GetComponent<ParentBehavior>());
                 die();
             }
-            
         }
+    }
+
+
+    private void createSoul()
+    {
+        GameObject go = Instantiate(soul, transform.position, transform.rotation);
+        SoulLogic sl = go.GetComponent<SoulLogic>();
+        sl.speed = (int)base.speed;
+        sl.range = (int)base.shootingRange;
+        sl.empty = (int)base.power;
+        go.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
     }
 
     public override void die()

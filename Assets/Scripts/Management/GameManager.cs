@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_PLAYER_HIT_BY_BULLET,OnPlayerHit);
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_PLAYER_CRASH_ENEMY,OnPlayerCrash);
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET,OnEnemyDeath);
-
+        playerHealth = playerMaxHealth;
         healthBar.SetMaxHealth(playerMaxHealth);
         powerBar.SetMaxHealth(playerMaxPower);
         powerBar.SetHealth(1);
@@ -63,9 +63,10 @@ public class GameManager : MonoBehaviour
 
     private void OnEnemyDeath(object obj)
     {
-        ParentBehavior pb = (ParentBehavior) obj;
+        GameObject soul = (GameObject) obj;
+        SoulLogic sl = soul.GetComponent<SoulLogic>();
         Debug.Log("Game manager: enemy killed");
-        if (pb.speed > 1)
+        if (sl.speed > 1)
         {
             if (powers[SPEED_POWER] < playerMaxSpeed)
             {
@@ -75,20 +76,22 @@ public class GameManager : MonoBehaviour
             }
 
         }   
-        else if (pb.shootingRange > 1)
+        else if (sl.range > 1)
         {
             if (powers[RANGE_POWER] < playerMaxPower)
             {
                 powers[RANGE_POWER]++;
                 powerBar.SetHealth(powers[SPEED_POWER]);
-                playerShooter.bulletRange++;
+                playerShooter.bulletRange+= 4;
 
             }
         }
-        else if (pb.bulletSize > 1)
+        else
         {
             powers[BULLET_POWER]++;
+            bulletBar.SetHealth(powers[BULLET_POWER]);
         }
+        Destroy(soul);
 
     }
     // Update is called once per frame

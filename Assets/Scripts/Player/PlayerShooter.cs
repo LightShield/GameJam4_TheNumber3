@@ -61,7 +61,7 @@ public class PlayerShooter : MonoBehaviour
             }
             transform.DORewind ();
             transform.DOPunchScale (new Vector3 (.2f, .2f, .2f), .25f);
-            Invoke("enableShooting", .5f);
+            Invoke("enableShooting", .2f);
         }
         else
         {
