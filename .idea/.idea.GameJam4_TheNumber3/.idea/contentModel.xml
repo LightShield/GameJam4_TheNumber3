@@ -8,7 +8,6 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="PlayerBulletMovement.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -66,6 +65,7 @@
             <e p="platformsSpawner.cs" t="Include" />
           </e>
           <e p="player" t="Include">
+            <e p="PlayerBulletMovement.cs" t="Include" />
             <e p="PlayerBulletPool.cs" t="Include" />
             <e p="PlayerLogic.cs" t="Include" />
             <e p="playerMovement.cs" t="Include" />

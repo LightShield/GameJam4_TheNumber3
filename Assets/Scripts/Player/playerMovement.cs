@@ -86,7 +86,8 @@ public class playerMovement : MonoBehaviour
         if (_verticalMove > 0.1f)
         {
             transform.Translate(Vector3.up * (mPlayerSpeed * Time.deltaTime));
-        }  else if (_verticalMove < -0.1f)
+        }  
+        else if (_verticalMove < -0.1f)
         {
             transform.Translate(Vector3.up * (-1f * (mPlayerSpeed * Time.deltaTime)));
         }

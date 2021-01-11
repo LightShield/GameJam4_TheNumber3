@@ -13,6 +13,7 @@ TagManager:
   - BulletPool
   - bullet
   - boundary
+  - playerBounds
   layers:
   - Default
   - TransparentFX
