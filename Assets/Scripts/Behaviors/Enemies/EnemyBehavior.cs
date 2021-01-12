@@ -42,12 +42,13 @@ public class EnemyBehavior : ParentBehavior
             //gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
 
-        debugTimer -= Time.deltaTime;
+        //DEBUG CODE - TO REMOVE IN FINAL VERSION
+        /*debugTimer -= Time.deltaTime;
         if(debugTimer < 0)
         {
             debugTimer = 10f;
             die();
-        }
+        }*/
     }
 
 
