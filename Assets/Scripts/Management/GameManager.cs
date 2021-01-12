@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public HealthBar speedBar;
     public HealthBar bulletBar;
     private HealthBar[] skillBars;
+    public bool godmode = true;
 
 
     [Header("Player Data")] 
@@ -61,17 +62,23 @@ public class GameManager : MonoBehaviour
 
     private void OnPlayerHit(object obj)
     {
-        playerHealth--;
-        healthBar.SetHealth(playerHealth);
-        if (playerHealth == 0)
+        if (!godmode)
         {
-            SceneManager.LoadScene(2);
+            playerHealth--;
+            healthBar.SetHealth(playerHealth);
+            if (playerHealth == 0)
+            {
+                SceneManager.LoadScene(2);
+            }
         }
     }
 
     private void OnPlayerCrash(object obj)
     {
-        SceneManager.LoadScene(2);
+        if (!godmode)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     private void OnEnemyDeath(object obj)
