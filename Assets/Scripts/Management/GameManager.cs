@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private int[] powers = {1, 1, 1};
+    private float[] powers = {1, 1, 1};
     private const int SPEED_POWER = 0;
     private const int RANGE_POWER = 1;
     private const int BULLET_POWER = 2;
 
+    private int[] MIN_POWER_VALUES = {1, 1, 1};
+    
+
     private int playerPoints = 0;
+    private int playerRangeChange = 2;
     private int playerHealth = 10;
 
     [Header("Player Bars")]
@@ -18,6 +22,8 @@ public class GameManager : MonoBehaviour
     public HealthBar powerBar;
     public HealthBar speedBar;
     public HealthBar bulletBar;
+    private HealthBar[] skillBars;
+
 
     [Header("Player Data")] 
     public int playerMaxHealth;
@@ -26,6 +32,8 @@ public class GameManager : MonoBehaviour
     public int playerMaxBullet;
     public playerMovement playerMovement;
     public PlayerShooter playerShooter;
+    public float powerDecayRate = 0.002f;
+    private float playerRangeDecayCounter = 0f;
 
 
     // Start is called before the first frame update
@@ -43,6 +51,7 @@ public class GameManager : MonoBehaviour
         bulletBar.SetMaxHealth(playerMaxBullet);
         bulletBar.SetHealth(1);
 
+        skillBars = new HealthBar[]{speedBar, powerBar, bulletBar};
         initBoundaries();
 
 
@@ -84,16 +93,19 @@ public class GameManager : MonoBehaviour
         {
             if (powers[RANGE_POWER] < playerMaxPower)
             {
-                powers[RANGE_POWER]++;
+                powers[RANGE_POWER] = Mathf.Min(playerMaxPower, powers[RANGE_POWER] + playerRangeChange);
                 powerBar.SetHealth(powers[SPEED_POWER]);
-                playerShooter.bulletRange+= 4;
+                playerShooter.bulletRange += playerRangeChange;
 
             }
         }
         else
         {
-            powers[BULLET_POWER]++;
-            bulletBar.SetHealth(powers[BULLET_POWER]);
+            if (powers[BULLET_POWER] < playerMaxBullet)
+            {
+                powers[BULLET_POWER]++;
+                bulletBar.SetHealth(powers[BULLET_POWER]);
+            }
         }
         Destroy(soul);
 
@@ -101,10 +113,37 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        powersDecay();
     }
 
+    void powersDecay()
+    {
+        for(int i = 0; i < 3; ++i)
+        {
+            powers[i] = Mathf.Max(MIN_POWER_VALUES[i], powers[i] - Time.deltaTime * powerDecayRate);
+            skillBars[i].SetHealth(powers[i]);
+            updatespecificPowerDecay(i);
+        }
+    }
 
+    private void updatespecificPowerDecay(int index)
+    {
+        switch (index)
+        {
+        case SPEED_POWER : 
+                playerMovement.mPlayerSpeed = powers[SPEED_POWER];
+                break;
+        case RANGE_POWER :
+                /*playerRangeDecayCounter += powerDecayRate * Time.deltaTime;
+                if(playerRangeDecayCounter >= 1 / playerRangeChange){
+                    playerRangeDecayCounter = 0;
+                    playerShooter.bulletRange = Mathf.Max(playerShooter.bulletRange - 1, MIN_POWER_VALUES[RANGE_POWER]);
+                }*/
+                playerShooter.bulletRange = Mathf.RoundToInt(powers[RANGE_POWER]);
+                break;
+        case BULLET_POWER :break;
+        }
+    }
     private void initBoundaries()
     {
         initBulletBoundaries();
@@ -120,7 +159,7 @@ public class GameManager : MonoBehaviour
         GameObject boundaryUp = GameObject.Find("UpCollider");
         GameObject boundaryDown = GameObject.Find("DownCollider");
 
-        generalBoundaries(boundaryRight, boundaryLeft, boundaryUp, boundaryDown);
+        generalBoundariesInit(boundaryRight, boundaryLeft, boundaryUp, boundaryDown);
     }
 
     void initPlayerBoundaries()
@@ -130,10 +169,10 @@ public class GameManager : MonoBehaviour
         GameObject boundaryUp = GameObject.Find("PlayerUpCollider");
         GameObject boundaryDown = GameObject.Find("PlayerDownCollider");
 
-        generalBoundaries(boundaryRight, boundaryLeft, boundaryUp, boundaryDown);
+        generalBoundariesInit(boundaryRight, boundaryLeft, boundaryUp, boundaryDown);
     }
 
-    void generalBoundaries(GameObject boundaryRight, GameObject boundaryLeft, GameObject boundaryUp, GameObject boundaryDown)
+    void generalBoundariesInit(GameObject boundaryRight, GameObject boundaryLeft, GameObject boundaryUp, GameObject boundaryDown)
     {
         Vector3 left = Camera.main.ViewportToWorldPoint(new Vector2(0.0f, 0.5f));
         Vector3 right = Camera.main.ViewportToWorldPoint(new Vector2(1.0f, 0.5f));

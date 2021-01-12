@@ -23,7 +23,8 @@ public class playerMovement : MonoBehaviour
     [Header("Player Data")]
     public int state = 0;
     public int rotationSpeed = 4;
-    public float mPlayerSpeed = 4f;
+    public float mPlayerSpeed = 1f;
+    public float minSpeed = 4f;
 
     // Start is called before the first frame update
     void Start()
@@ -61,8 +62,8 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        _horizontalMove = Input.GetAxis("Horizontal") * mPlayerSpeed;
-        _verticalMove = Input.GetAxis("Vertical") * mPlayerSpeed;
+        _horizontalMove = Input.GetAxis("Horizontal") * (mPlayerSpeed + minSpeed - 1);
+        _verticalMove = Input.GetAxis("Vertical") * (mPlayerSpeed + minSpeed - 1);
         Vector2 direction = new Vector2(_horizontalMove,_verticalMove);
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -84,11 +85,11 @@ public class playerMovement : MonoBehaviour
 
         if (_verticalMove > 0.1f)
         {
-            transform.Translate(Vector3.up * (mPlayerSpeed * Time.deltaTime));
+            transform.Translate(Vector3.up * ((mPlayerSpeed + minSpeed - 1) * Time.deltaTime));
         }  
         else if (_verticalMove < -0.1f)
         {
-            transform.Translate(Vector3.up * (-1f * (mPlayerSpeed * Time.deltaTime)));
+            transform.Translate(Vector3.up * (-1f * ((mPlayerSpeed + minSpeed - 1) * Time.deltaTime)));
         }
     }
 
