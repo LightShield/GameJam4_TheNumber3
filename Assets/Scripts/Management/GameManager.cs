@@ -43,22 +43,26 @@ public class GameManager : MonoBehaviour
         bulletBar.SetMaxHealth(playerMaxBullet);
         bulletBar.SetHealth(1);
 
+        initBoundaries();
+
+
+
         //EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH,OnEnemyDeath);
     }
 
     private void OnPlayerHit(object obj)
     {
-        playerHealth--;
+      /*  playerHealth--;
         healthBar.SetHealth(playerHealth);
         if (playerHealth == 0)
         {
             SceneManager.LoadScene(2);
-        }
+        }*/
     }
 
     private void OnPlayerCrash(object obj)
     {
-        SceneManager.LoadScene(2);
+      /*  SceneManager.LoadScene(2);*/
     }
 
     private void OnEnemyDeath(object obj)
@@ -98,5 +102,67 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    private void initBoundaries()
+    {
+        initBulletBoundaries();
+        initPlayerBoundaries();
+
+    }
+
+    void initBulletBoundaries()
+    {
+        //init locations of boundaries colliders
+        GameObject boundaryRight = GameObject.Find("RightCollider");
+        GameObject boundaryLeft = GameObject.Find("LeftCollider");
+        GameObject boundaryUp = GameObject.Find("UpCollider");
+        GameObject boundaryDown = GameObject.Find("DownCollider");
+
+        generalBoundaries(boundaryRight, boundaryLeft, boundaryUp, boundaryDown);
+    }
+
+    void initPlayerBoundaries()
+    {
+        GameObject boundaryRight = GameObject.Find("PlayerRightCollider");
+        GameObject boundaryLeft = GameObject.Find("PlayerLeftCollider");
+        GameObject boundaryUp = GameObject.Find("PlayerUpCollider");
+        GameObject boundaryDown = GameObject.Find("PlayerDownCollider");
+
+        generalBoundaries(boundaryRight, boundaryLeft, boundaryUp, boundaryDown);
+    }
+
+    void generalBoundaries(GameObject boundaryRight, GameObject boundaryLeft, GameObject boundaryUp, GameObject boundaryDown)
+    {
+        Vector3 left = Camera.main.ViewportToWorldPoint(new Vector2(0.0f, 0.5f));
+        Vector3 right = Camera.main.ViewportToWorldPoint(new Vector2(1.0f, 0.5f));
+        Vector3 up = Camera.main.ViewportToWorldPoint(new Vector2(0.5f, 1f));
+        Vector3 down = Camera.main.ViewportToWorldPoint(new Vector2(0.5f, 0.0f));
+
+        Vector3 right_boundary_location = new Vector3(right.x + boundaryRight.transform.localScale.x / 2, right.y, right.z);
+        Vector3 left_boundary_location = new Vector3(left.x - boundaryLeft.transform.localScale.x / 2, left.y, left.z);
+        Vector3 up_boundary_location = new Vector3(up.x, up.y + boundaryUp.transform.localScale.y / 2, up.z);
+        Vector3 down_boundary_location = new Vector3(down.x, down.y - boundaryDown.transform.localScale.y / 2, down.z);
+
+        boundaryRight.transform.position = right_boundary_location;
+        boundaryLeft.transform.position = left_boundary_location;
+        boundaryUp.transform.position = up_boundary_location;
+        boundaryDown.transform.position = down_boundary_location;
+
+        //init sizes of boundaries
+
+        BoxCollider2D leftCollider = boundaryLeft.GetComponent<BoxCollider2D>();
+        BoxCollider2D rightCollider = boundaryRight.GetComponent<BoxCollider2D>();
+        BoxCollider2D upCollider = boundaryUp.GetComponent<BoxCollider2D>();
+        BoxCollider2D downCollider = boundaryDown.GetComponent<BoxCollider2D>();
+
+        Vector2 verticalBoundarySize = new Vector2(right.x - left.x, upCollider.size.y);
+        upCollider.size = verticalBoundarySize;
+        downCollider.size = verticalBoundarySize;
+
+        Vector2 horizontalBoundarySize = new Vector2(rightCollider.size.x, up.y - down.y);
+        leftCollider.size = horizontalBoundarySize;
+        rightCollider.size = horizontalBoundarySize;
     }
 }
