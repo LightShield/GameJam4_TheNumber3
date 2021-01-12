@@ -348,7 +348,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 10.046428}
+  m_Size: {x: 5, y: 10.046428}
   m_EdgeRadius: 0
 --- !u!1 &121228667 stripped
 GameObject:
@@ -1369,7 +1369,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.754627, y: 1}
+  m_Size: {x: 17.754627, y: 5}
   m_EdgeRadius: 0
 --- !u!1 &632717188
 GameObject:
@@ -2238,6 +2238,7 @@ MonoBehaviour:
   playerMaxBullet: 10
   playerMovement: {fileID: 121228672}
   playerShooter: {fileID: 121228669}
+  powerDecayRate: 0.2
 --- !u!4 &1501031513
 Transform:
   m_ObjectHideFlags: 0
@@ -2458,7 +2459,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.754627, y: 1}
+  m_Size: {x: 17.754627, y: 5}
   m_EdgeRadius: 0
 --- !u!1 &1717746599
 GameObject:
@@ -3015,7 +3016,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 10.046428}
+  m_Size: {x: 5, y: 10.046428}
   m_EdgeRadius: 0
 --- !u!114 &2602767395832734648
 MonoBehaviour:
@@ -3998,10 +3999,15 @@ MonoBehaviour:
   - {fileID: 2602767397042128248}
   - {fileID: 2602767396307264130}
   - {fileID: 2602767395832734650}
+  maxEnemyCreationInterval: 7
   initLocation: {x: 0, y: 0}
   activePool: {fileID: 2602767396121616595}
   waitingPool: {fileID: 2602767397417364586}
-  debugTimer: 5
+  amountOfActiveEnemies: 0
+  waveCounter: 1
+  maxAmountOfEnemiesInWave: 5
+  countToEnemy: 5
+  enemyCounterStartValue: 3
   bounds:
   - {x: -10, y: 0}
   - {x: 10, y: 0}

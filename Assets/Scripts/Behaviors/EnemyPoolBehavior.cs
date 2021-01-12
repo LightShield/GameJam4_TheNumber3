@@ -11,6 +11,7 @@ public class EnemyPoolBehavior : MonoBehaviour
     public GameObject emptyEnemy;
     public float relativeBulletSpeed = 10f; //addition of speed compared to shooter's speed
     public List<GameObject> enemyTypes;
+    public float maxEnemyCreationInterval = 7f;
 
     [Header("Pool Data")]
     public Vector2 initLocation;
@@ -18,10 +19,14 @@ public class EnemyPoolBehavior : MonoBehaviour
     public GameObject waitingPool;
     public Stack<EnemyBehavior> activeEnemies; //chnage from stack to some other behavior
     public Stack<EnemyBehavior> waitingEnemies;
+    public int amountOfActiveEnemies = 0;
+    public int waveCounter = 1;
+    public int maxAmountOfEnemiesInWave = 5;
 
-    
+
     [Header("Spawner Settings")]
-    public float debugTimer = 5f;
+    public float countToEnemy = 5f;
+    public float enemyCounterStartValue = 3f;
     public Vector2[] bounds;
     public Vector2 rightBound;
     public Vector2 upBound;
@@ -44,14 +49,11 @@ public class EnemyPoolBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        debugTimer -= Time.deltaTime;
-        if (debugTimer < 0)
+        countToEnemy -= Time.deltaTime;
+        if (countToEnemy < 0)
         {
-            debugTimer = 5f;
-            if (waitingEnemies.Count != 0)
-            {
-                generateEnemy();
-            }
+            generateEnemyWave();
+            countToEnemy = Mathf.Min(enemyCounterStartValue + amountOfActiveEnemies, maxEnemyCreationInterval);
         }
     }
 
@@ -139,6 +141,8 @@ public class EnemyPoolBehavior : MonoBehaviour
         go.GetComponent<Collider2D>().enabled = true;
         go.gameObject.SetActive(false);
         waitingEnemies.Push(go.GetComponent<EnemyBehavior>());
+        --amountOfActiveEnemies;
+        --countToEnemy;
     }
 
     void generateEnemy()
@@ -150,7 +154,19 @@ public class EnemyPoolBehavior : MonoBehaviour
         Debug.Log("Activated enemy of type " + type.name);
         activateEnemy(type);
         //activate special shooting, if enemy has it
+        ++amountOfActiveEnemies;
+    }
 
+    void generateEnemyWave()
+    {
+        for(int i = 0; i < Mathf.Min(waveCounter, maxAmountOfEnemiesInWave); ++i)
+        {
+            if (waitingEnemies.Count != 0)
+            {
+                generateEnemy();
+            }
+        }
+        ++waveCounter;
     }
 
 }

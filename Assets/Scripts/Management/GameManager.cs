@@ -174,20 +174,12 @@ public class GameManager : MonoBehaviour
 
     void generalBoundariesInit(GameObject boundaryRight, GameObject boundaryLeft, GameObject boundaryUp, GameObject boundaryDown)
     {
+
+
         Vector3 left = Camera.main.ViewportToWorldPoint(new Vector2(0.0f, 0.5f));
         Vector3 right = Camera.main.ViewportToWorldPoint(new Vector2(1.0f, 0.5f));
         Vector3 up = Camera.main.ViewportToWorldPoint(new Vector2(0.5f, 1f));
         Vector3 down = Camera.main.ViewportToWorldPoint(new Vector2(0.5f, 0.0f));
-
-        Vector3 right_boundary_location = new Vector3(right.x + boundaryRight.transform.localScale.x / 2, right.y, right.z);
-        Vector3 left_boundary_location = new Vector3(left.x - boundaryLeft.transform.localScale.x / 2, left.y, left.z);
-        Vector3 up_boundary_location = new Vector3(up.x, up.y + boundaryUp.transform.localScale.y / 2, up.z);
-        Vector3 down_boundary_location = new Vector3(down.x, down.y - boundaryDown.transform.localScale.y / 2, down.z);
-
-        boundaryRight.transform.position = right_boundary_location;
-        boundaryLeft.transform.position = left_boundary_location;
-        boundaryUp.transform.position = up_boundary_location;
-        boundaryDown.transform.position = down_boundary_location;
 
         //init sizes of boundaries
 
@@ -196,12 +188,24 @@ public class GameManager : MonoBehaviour
         BoxCollider2D upCollider = boundaryUp.GetComponent<BoxCollider2D>();
         BoxCollider2D downCollider = boundaryDown.GetComponent<BoxCollider2D>();
 
-        Vector2 verticalBoundarySize = new Vector2(right.x - left.x, upCollider.size.y);
+        Vector2 verticalBoundarySize = new Vector2(right.x - left.x + 2, upCollider.size.y);
         upCollider.size = verticalBoundarySize;
         downCollider.size = verticalBoundarySize;
 
-        Vector2 horizontalBoundarySize = new Vector2(rightCollider.size.x, up.y - down.y);
+        Vector2 horizontalBoundarySize = new Vector2(rightCollider.size.x, up.y - down.y + 2);
         leftCollider.size = horizontalBoundarySize;
         rightCollider.size = horizontalBoundarySize;
+
+
+        Vector3 right_boundary_location = new Vector3(right.x + rightCollider.size.x / 2, right.y, right.z);
+        Vector3 left_boundary_location = new Vector3(left.x - leftCollider.size.x / 2, left.y, left.z);
+        Vector3 up_boundary_location = new Vector3(up.x, up.y + upCollider.size.y / 2, up.z);
+        Vector3 down_boundary_location = new Vector3(down.x, down.y - downCollider.size.y / 2, down.z);
+
+        boundaryRight.transform.position = right_boundary_location;
+        boundaryLeft.transform.position = left_boundary_location;
+        boundaryUp.transform.position = up_boundary_location;
+        boundaryDown.transform.position = down_boundary_location;
+
     }
 }
