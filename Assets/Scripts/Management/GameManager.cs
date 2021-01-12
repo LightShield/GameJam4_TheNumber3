@@ -61,17 +61,17 @@ public class GameManager : MonoBehaviour
 
     private void OnPlayerHit(object obj)
     {
-      /*  playerHealth--;
+        playerHealth--;
         healthBar.SetHealth(playerHealth);
         if (playerHealth == 0)
         {
             SceneManager.LoadScene(2);
-        }*/
+        }
     }
 
     private void OnPlayerCrash(object obj)
     {
-      /*  SceneManager.LoadScene(2);*/
+        SceneManager.LoadScene(2);
     }
 
     private void OnEnemyDeath(object obj)
