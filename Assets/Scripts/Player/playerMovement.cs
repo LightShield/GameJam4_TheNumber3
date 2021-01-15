@@ -112,7 +112,10 @@ public class playerMovement : MonoBehaviour
         {
             collision.gameObject.GetComponent<Collider2D>().enabled = false;
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_HIT_BY_BULLET,gameObject);
-            //EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__BULLET_INACTIVE,gameObject);
+            if(collision.GetComponent<BulletBehavior>() == null)
+                EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__BULLET_INACTIVE,collision.gameObject);
+            else
+                EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__REG_BULLET_INACTIVE,collision.gameObject);
         }     //TODO need to cancel this bullet
         
 

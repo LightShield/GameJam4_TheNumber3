@@ -98,10 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded4860b58ba2624b956e16c1e479b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
-  mBulletSpeed: 0.01
-  angle: 0
-  time: 0
+  moveSpeed: 0.5
 --- !u!114 &3237904158356378688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 10
-  mBulletSpeed: 2
+  mBulletSpeed: 1
 --- !u!114 &7044496970118938749
 MonoBehaviour:
   m_ObjectHideFlags: 0

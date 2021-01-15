@@ -2232,6 +2232,7 @@ MonoBehaviour:
   powerBar: {fileID: 33943076}
   speedBar: {fileID: 976934952}
   bulletBar: {fileID: 632717190}
+  godmode: 0
   playerMaxHealth: 50
   playerMaxSpeed: 10
   playerMaxPower: 10
@@ -2401,6 +2402,10 @@ PrefabInstance:
     - target: {fileID: 1388720560827263019, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
       propertyPath: m_Name
       value: BulletPool
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388720562025363762, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
@@ -3910,7 +3915,7 @@ MonoBehaviour:
   randomSpawnDelay: 0.1
   isRandomShooter: 0
   spiralCount: 100
-  spiralSpawnDelay: 0.1
+  spiralSpawnDelay: 2
   isSpiralShooter: 1
   groupCount: 10
   numberOfGroups: 4
@@ -4050,7 +4055,7 @@ MonoBehaviour:
   randomSpawnDelay: 0.1
   isRandomShooter: 0
   spiralCount: 100
-  spiralSpawnDelay: 0.1
+  spiralSpawnDelay: 1
   isSpiralShooter: 0
   groupCount: 10
   numberOfGroups: 4

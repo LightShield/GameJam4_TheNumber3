@@ -13,8 +13,9 @@ public class EnemyShooter : MonoBehaviour
 
     [Header("Spiral Bullet")]
     public int spiralCount = 100;
-    public float spiralSpawnDelay = 0.1f;
+    public float spiralSpawnDelay;
     public bool isSpiralShooter = false;
+    private float angle = 0f;
 
 
     [Header("Group Bullet")]
@@ -38,12 +39,10 @@ public class EnemyShooter : MonoBehaviour
         }  else if (isSpiralShooter)
         {
             isSpiralShooter = false;
-            float fraction = 1f / (4f);
-            float angle = (fraction * 2 * Mathf.PI);
-
-            for (int i = 0; i < spiralCount; ++i)
+            Debug.Log("spiral with delay: "+spiralSpawnDelay);
+            for (float i = 0; i < spiralCount; ++i)
             {
-                StartCoroutine(SpwanSpiral(angle*i,spiralSpawnDelay*i));
+                StartCoroutine(SpwanSpiral(spiralSpawnDelay*i));
 
             }
         } else if (isGroupShooter)
@@ -60,19 +59,30 @@ public class EnemyShooter : MonoBehaviour
         yield return new WaitForSeconds(waitUntil);
         GameObject bullet = BulletPool.GetBullet();
         bullet.transform.position = transform.position;
+        bullet.transform.parent = transform;
         bullet.GetComponent<RandomBulletMovement>().enabled = true;
         bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
     }
 
-    IEnumerator SpwanSpiral(float time, float waitUntil)
+    IEnumerator SpwanSpiral(float waitUntil)
     {
         yield return new WaitForSeconds(waitUntil);
-        GameObject bullet = BulletPool.GetBullet();
-        bullet.transform.SetParent(transform);
-        bullet.transform.position = transform.position;
-        bullet.GetComponent<SpiralBulletMovement>().time = time;
-        bullet.GetComponent<SpiralBulletMovement>().enabled = true;
-        bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
+        for (int i = 0; i < 2; ++i)
+        {
+            //yield return new WaitForSeconds(0.1f);
+
+            float bilDirX = transform.position.x + Mathf.Sin(((angle + 90f * i) * Mathf.PI) / 90f);
+            float bilDirY = transform.position.y + Mathf.Cos(((angle + 90f * i) * Mathf.PI) / 90f);
+            Vector3 moveVector = new Vector3(bilDirX,bilDirY,0f);
+            Vector2 bulDir = (moveVector - transform.position).normalized;
+            GameObject bullet = BulletPool.GetBullet();
+            bullet.transform.SetParent(transform,true);
+            bullet.transform.position = transform.position;
+            bullet.GetComponent<SpiralBulletMovement>().SetMoveDirection(bulDir);
+            bullet.GetComponent<SpiralBulletMovement>().enabled = true;
+            bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
+        }
+        angle = (angle + 10f) % 360f;
 
     }
 
@@ -99,7 +109,7 @@ public class EnemyShooter : MonoBehaviour
 
             GameObject bullet = BulletPool.GetBullet();
             bullet.transform.position = transform.position;
-            //bullet.transform.rotation = transform.rotation;
+            bullet.transform.parent = transform;
             bullet.GetComponent<SingleBulletMovement>().SetMoveDirection(dir);
             bullet.GetComponent<SingleBulletMovement>().enabled = true;
             bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
