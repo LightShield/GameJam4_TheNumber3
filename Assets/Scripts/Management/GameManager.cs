@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private float[] powers = {1, 1, 1};
     private const int SPEED_POWER = 0;
     private const int RANGE_POWER = 1;
-    private const int BULLET_POWER = 2;
+    private const int DAMAGE_POWER = 2;
 
     private int[] MIN_POWER_VALUES = {1, 1, 1};
     
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
             {
                 powers[SPEED_POWER]++;
                 speedBar.SetHealth(powers[SPEED_POWER]);
-                playerMovement.mPlayerSpeed++;
+                playerShooter.bulletSpeed++;
             }
 
         }   
@@ -108,10 +108,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (powers[BULLET_POWER] < playerMaxBullet)
+            if (powers[DAMAGE_POWER] < playerMaxBullet)
             {
-                powers[BULLET_POWER]++;
-                bulletBar.SetHealth(powers[BULLET_POWER]);
+                powers[DAMAGE_POWER]++;
+                bulletBar.SetHealth(powers[DAMAGE_POWER]);
             }
         }
         Destroy(soul);
@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
         switch (index)
         {
         case SPEED_POWER : 
-                playerMovement.mPlayerSpeed = powers[SPEED_POWER];
+                playerShooter.bulletSpeed = powers[SPEED_POWER];
                 break;
         case RANGE_POWER :
                 /*playerRangeDecayCounter += powerDecayRate * Time.deltaTime;
@@ -148,7 +148,9 @@ public class GameManager : MonoBehaviour
                 }*/
                 playerShooter.bulletRange = Mathf.RoundToInt(powers[RANGE_POWER]);
                 break;
-        case BULLET_POWER :break;
+        case DAMAGE_POWER :
+                playerShooter.bulletDamage = powers[DAMAGE_POWER];
+                break;
         }
     }
     private void initBoundaries()

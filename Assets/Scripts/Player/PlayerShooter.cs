@@ -11,10 +11,13 @@ public class PlayerShooter : MonoBehaviour
     public Transform shootingPoint;
     private bool canShoot = true;
     public GameManager mGameManager;
-
-    public int bulletRange = 1;
     private float startAngle = 90f, endAngle = 270f;
 
+
+    [Header("bullet powers")]
+    public int bulletRange = 1;
+    public float bulletSpeed = 1f;
+    public float bulletDamage = 1f;
 
 
     // Update is called once per frame
@@ -44,8 +47,6 @@ public class PlayerShooter : MonoBehaviour
 
             for (int i = 0; i < bulletRange; i++)
             {
-                //pb.shoot();
-                
                 GameObject bullet = BulletPool.GetBullet();
                 float x = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180);
                 float y = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180);
@@ -54,6 +55,8 @@ public class PlayerShooter : MonoBehaviour
                 Vector2 dir = (moveVector - transform.position).normalized;
                 bullet.transform.rotation = transform.rotation;
                 bullet.GetComponent<PlayerBulletMovement>().SetMoveDirection(dir);
+                bullet.GetComponent<PlayerBulletMovement>().moveSpeed = bulletSpeed;
+                bullet.GetComponent<PlayerBulletMovement>().bulletDamage = bulletDamage;
                 bullet.GetComponent<PlayerBulletMovement>().enabled = true;
                 bullet.transform.position = shootingPoint.position;
 
@@ -61,7 +64,7 @@ public class PlayerShooter : MonoBehaviour
             }
             transform.DORewind ();
             transform.DOPunchScale (new Vector3 (.2f, .2f, .2f), .25f);
-            Invoke("enableShooting", .2f);
+            Invoke("enableShooting", .05f);
         }
         else
         {
@@ -71,9 +74,11 @@ public class PlayerShooter : MonoBehaviour
             GameObject bullet = BulletPool.GetBullet();
             bullet.transform.rotation = transform.rotation;
             bullet.GetComponent<PlayerBulletMovement>().SetMoveDirection(Vector2.up);
+            bullet.GetComponent<PlayerBulletMovement>().moveSpeed = bulletSpeed;
+            bullet.GetComponent<PlayerBulletMovement>().bulletDamage = bulletDamage;
             bullet.GetComponent<PlayerBulletMovement>().enabled = true;
             bullet.transform.position = shootingPoint.position;
-            Invoke("enableShooting", .2f);
+            Invoke("enableShooting", .05f);
         }
         
     }

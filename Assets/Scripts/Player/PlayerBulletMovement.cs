@@ -7,10 +7,14 @@ using UnityEngine.Serialization;
 public class PlayerBulletMovement : MonoBehaviour
 {
     private Vector2 moveDirection;
-    public float moveSpeed = 1f;
     private float size;
-     public float lifeTime = 10f;
+    public float lifeTime = 10f;
     private SpriteRenderer _spriteRenderer;
+
+    [Header("bullet powers")]
+    public int bulletRange = 1;
+    public float moveSpeed = 1f;
+    public float bulletDamage = 1f;
 
     private void OnEnable()
     {
