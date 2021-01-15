@@ -136,9 +136,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         powersDecay();
+
+        //temp score UI update
         Text tempScore = GameObject.Find("Score (temp)").GetComponent<Text>();
         tempScore.text = "Score = " + score;
-        
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            godmode = !godmode;
+        }
     }
 
     void powersDecay()
