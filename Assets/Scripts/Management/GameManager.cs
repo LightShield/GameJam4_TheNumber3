@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,6 +35,14 @@ public class GameManager : MonoBehaviour
     public playerMovement playerMovement;
     public PlayerShooter playerShooter;
     public float powerDecayRate = 0.002f;
+    
+    [Header("Player Score")]
+    public int score;
+    public int scoreLossFromCrash = 10;
+    public int scoreLossFromHit = 1;
+    //public int scoreGainFromKill = 1; do we want to have this?
+    public int scoreGainFromSoul = 3;
+
     private float playerRangeDecayCounter = 0f;
 
 
@@ -53,6 +62,7 @@ public class GameManager : MonoBehaviour
         bulletBar.SetHealth(1);
 
         skillBars = new HealthBar[]{speedBar, powerBar, bulletBar};
+        score = 0;
         initBoundaries();
 
 
@@ -65,9 +75,11 @@ public class GameManager : MonoBehaviour
         if (!godmode)
         {
             playerHealth--;
+            score -= scoreLossFromHit;
             healthBar.SetHealth(playerHealth);
             if (playerHealth == 0)
             {
+                Debug.Log("final score: " + score);
                 SceneManager.LoadScene(2);
             }
         }
@@ -77,6 +89,8 @@ public class GameManager : MonoBehaviour
     {
         if (!godmode)
         {
+            score -= scoreLossFromCrash;
+            Debug.Log("final score: " + score);
             SceneManager.LoadScene(2);
         }
     }
@@ -114,6 +128,7 @@ public class GameManager : MonoBehaviour
                 bulletBar.SetHealth(powers[DAMAGE_POWER]);
             }
         }
+        score += scoreGainFromSoul;
         Destroy(soul);
 
     }
@@ -121,6 +136,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         powersDecay();
+        Text tempScore = GameObject.Find("Score (temp)").GetComponent<Text>();
+        tempScore.text = "Score = " + score;
+        
     }
 
     void powersDecay()
