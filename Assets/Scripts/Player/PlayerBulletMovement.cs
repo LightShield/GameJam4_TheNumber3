@@ -2,24 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerBulletMovement : MonoBehaviour
 {
     private Vector2 moveDirection;
-    private float moveSpeed;
+    public float moveSpeed = 1f;
     private float size;
-    public float range = 10f;
+     public float lifeTime = 10f;
     private SpriteRenderer _spriteRenderer;
 
     private void OnEnable()
     {
-        range = 10f;
+        lifeTime = 10f;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = 5f;
         size = .2f;
         transform.localScale = new Vector3(size, size, 1);
 
@@ -28,8 +28,8 @@ public class PlayerBulletMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        range -= Time.deltaTime;
-        if (range <= 0)
+        lifeTime -= Time.deltaTime;
+        if (lifeTime <= 0)
         {
             Destroy();
         }
@@ -49,7 +49,7 @@ public class PlayerBulletMovement : MonoBehaviour
     {
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,gameObject);
         GetComponent<PlayerBulletMovement>().enabled = false;
-        range = 10;
+        lifeTime = 10;
         //transform.position = Vector3.zero;
     }
 }

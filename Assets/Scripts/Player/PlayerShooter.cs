@@ -65,7 +65,6 @@ public class PlayerShooter : MonoBehaviour
         }
         else
         {
-            canShoot = true;
             //pb.shoot();
             transform.DORewind ();
             transform.DOPunchScale (new Vector3 (.2f, .2f, .2f), .25f);
@@ -74,6 +73,7 @@ public class PlayerShooter : MonoBehaviour
             bullet.GetComponent<PlayerBulletMovement>().SetMoveDirection(Vector2.up);
             bullet.GetComponent<PlayerBulletMovement>().enabled = true;
             bullet.transform.position = shootingPoint.position;
+            Invoke("enableShooting", .2f);
         }
         
     }

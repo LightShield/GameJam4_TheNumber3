@@ -83,10 +83,17 @@ public class EnemyBehavior : ParentBehavior
         Debug.Log("Death");
         //stop movement
         rb.velocity = Vector2.zero;
+        //move all bullets to the game hirarchy 
+        for (int i=transform.childCount-1; i >= 0; --i) {
+            Transform child = transform.GetChild(i);
+            Debug.Log("moving object: " + child.name);
+            child.SetParent(null, true);
+        }
         //return to waiting pool
         transform.parent = waitingPool;
         //return to original location
         transform.position = waitingPool.position;
+
         //disable script
         gameObject.GetComponent<EnemyBehavior>().enabled = false;
         killed = false;
