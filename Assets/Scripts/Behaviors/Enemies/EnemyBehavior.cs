@@ -12,14 +12,46 @@ public class EnemyBehavior : ParentBehavior
     public Transform waitingPool;
     public bool killed = false;
     public GameObject soul;
-
     public float debugTimer; //remove in final game
+
+
+    [Header("Power Colors")]
+    public Color speedColor = Color.green;
+    public Color RangeColor = Color.blue;
+    public Color DamageColor = Color.red;
+
+    [Header("powerSprite")]
+    private SpriteRenderer _sr;
+    public Sprite speedSprite;
+    public Sprite rangeSprite;
+    public Sprite damageSprite;
 
     protected override void Start()
     {
         base.Start();
         target = GameObject.FindGameObjectWithTag("Player");;
         debugTimer = 10f;
+        _sr = GetComponent<SpriteRenderer>();
+    }
+
+
+    private void OnEnable()
+    {
+        if (base.speed > 1)
+        {
+            _sr.color = speedColor;
+            _sr.sprite = speedSprite;
+        }            
+        else if (base.shootingRange > 1)
+        {
+            _sr.color = RangeColor;
+            _sr.sprite = rangeSprite;
+        }
+        else
+        {
+            _sr.color = DamageColor;
+            _sr.sprite = damageSprite;
+        }
     }
 
     // Update is called once per frame
