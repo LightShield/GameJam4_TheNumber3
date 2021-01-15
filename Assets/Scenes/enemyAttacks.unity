@@ -2232,7 +2232,7 @@ MonoBehaviour:
   powerBar: {fileID: 33943076}
   speedBar: {fileID: 976934952}
   bulletBar: {fileID: 632717190}
-  godmode: 0
+  godmode: 1
   playerMaxHealth: 50
   playerMaxSpeed: 10
   playerMaxPower: 10

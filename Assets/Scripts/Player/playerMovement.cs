@@ -83,12 +83,18 @@ public class playerMovement : MonoBehaviour
 
 
 
-        if (_verticalMove > 0.1f)
+        /*if (_verticalMove > 0.1f)
         {
             transform.Translate(Vector3.up * ((mPlayerSpeed + minSpeed - 1) * Time.deltaTime));
         }  
         else if (_verticalMove < -0.1f)
         {
+            transform.Translate(Vector3.up * (-1f * ((mPlayerSpeed + minSpeed - 1) * Time.deltaTime)));
+        }*/
+        if (Input.GetKey(KeyCode.UpArrow)) {
+            transform.Translate(Vector3.up * ((mPlayerSpeed + minSpeed - 1) * Time.deltaTime));
+        }
+        else if (Input.GetKey(KeyCode.DownArrow)) {
             transform.Translate(Vector3.up * (-1f * ((mPlayerSpeed + minSpeed - 1) * Time.deltaTime)));
         }
     }
