@@ -13,6 +13,7 @@ public class EnemyBehavior : ParentBehavior
     public bool killed = false;
     public GameObject soul;
     public float debugTimer; //remove in final game
+    public int lives = 3;
 
 
     [Header("Power Colors")]
@@ -22,9 +23,9 @@ public class EnemyBehavior : ParentBehavior
 
     [Header("powerSprite")]
     private SpriteRenderer _sr;
-    public Sprite speedSprite;
-    public Sprite rangeSprite;
-    public Sprite damageSprite;
+    public Sprite[] speedSprites;
+    public Sprite[] rangeSprites;
+    public Sprite[] damageSprites;
 
     protected override void Start()
     {
@@ -34,25 +35,34 @@ public class EnemyBehavior : ParentBehavior
         _sr = GetComponent<SpriteRenderer>();
     }
 
-
     private void OnEnable()
     {
+        lives = 3;
+        SetSprite();
+    }
+
+    public void SetSprite()
+    {
+        _sr = GetComponent<SpriteRenderer>();
+
+        Debug.Log("change sprite of enemy");
         if (base.speed > 1)
         {
             _sr.color = speedColor;
-            _sr.sprite = speedSprite;
+            _sr.sprite = speedSprites[lives-1];
         }            
         else if (base.shootingRange > 1)
         {
             _sr.color = RangeColor;
-            _sr.sprite = rangeSprite;
+            _sr.sprite = rangeSprites[lives-1];
         }
         else
         {
             _sr.color = DamageColor;
-            _sr.sprite = damageSprite;
+            _sr.sprite = damageSprites[lives-1];
         }
     }
+
 
     // Update is called once per frame
     protected override void Update()
@@ -88,14 +98,35 @@ public class EnemyBehavior : ParentBehavior
     {
         if (other.transform.CompareTag("bullet"))
         {
-            if (!killed)
+            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
+            if (lives>1)
             {
-                killed = true;
+                lives--;
+                SetSprite();
+                StartCoroutine(flickerEnemy());
+            }
+            else
+            {
                 createSoul();
-                EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
                 die();
             }
         }
+    }
+
+
+    IEnumerator flickerEnemy()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        Color color = _sr.color;
+        Color noColor = new Color(0,0,0,0);
+        for (int i = 0; i < 2; i++)
+        {
+            _sr.color = noColor;
+            yield return new WaitForSeconds(0.2f);
+            _sr.color = color;
+            yield return new WaitForSeconds(0.2f);
+        }
+        GetComponent<Collider2D>().enabled = true;
     }
 
 

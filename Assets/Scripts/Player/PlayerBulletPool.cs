@@ -22,6 +22,7 @@ public class PlayerBulletPool : MonoBehaviour
         go.SetActive(false);
         go.transform.SetParent(transform);
         go.transform.position = transform.position;
+        go.GetComponent<Collider2D>().enabled = true;
         inactiveBullets.Push(go);
     }
 

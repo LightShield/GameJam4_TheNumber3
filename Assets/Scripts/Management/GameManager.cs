@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     public int scoreLossFromHit = 1;
     //public int scoreGainFromKill = 1; do we want to have this?
     public int scoreGainFromSoul = 3;
+    
 
     private float playerRangeDecayCounter = 0f;
 
