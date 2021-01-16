@@ -174,7 +174,7 @@ public class GameManager : MonoBehaviour
                 playerShooter.bulletRange = Mathf.RoundToInt(powers[RANGE_POWER]);
                 break;
         case DAMAGE_POWER :
-                playerShooter.bulletDamage = powers[DAMAGE_POWER];
+                playerShooter.bulletDamage = Mathf.RoundToInt(powers[DAMAGE_POWER]);
                 break;
         }
     }

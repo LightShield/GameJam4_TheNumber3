@@ -26,6 +26,7 @@ public class EnemyBehavior : ParentBehavior
     public Sprite[] speedSprites;
     public Sprite[] rangeSprites;
     public Sprite[] damageSprites;
+  
 
     protected override void Start()
     {
@@ -99,9 +100,10 @@ public class EnemyBehavior : ParentBehavior
         if (other.transform.CompareTag("bullet"))
         {
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
-            if (lives>1)
+            int damage = (int) other.gameObject.GetComponent<PlayerBulletMovement>().bulletDamage;
+            if (lives-damage>1)
             {
-                lives--;
+                lives-= damage;
                 SetSprite();
                 StartCoroutine(flickerEnemy());
             }
@@ -153,7 +155,7 @@ public class EnemyBehavior : ParentBehavior
             child.SetParent(null, true);
         }
         //return to waiting pool
-        transform.parent = waitingPool;
+        transform.SetParent(waitingPool,true);
         //return to original location
         transform.position = waitingPool.position;
 

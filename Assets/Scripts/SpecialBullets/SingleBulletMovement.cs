@@ -23,9 +23,6 @@ public class SingleBulletMovement : MonoBehaviour
     {
         range = 3f;
         moveSpeed = 5f;
-        size = .2f;
-        transform.localScale = new Vector3(size, size, 1);
-
     }
 
     // Update is called once per frame

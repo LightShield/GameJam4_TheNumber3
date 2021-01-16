@@ -59,7 +59,7 @@ public class EnemyShooter : MonoBehaviour
         yield return new WaitForSeconds(waitUntil);
         GameObject bullet = BulletPool.GetBullet();
         bullet.transform.position = transform.position;
-        bullet.transform.parent = transform;
+        bullet.transform.SetParent(transform,true);
         bullet.GetComponent<RandomBulletMovement>().enabled = true;
         bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
     }
@@ -109,7 +109,7 @@ public class EnemyShooter : MonoBehaviour
 
             GameObject bullet = BulletPool.GetBullet();
             bullet.transform.position = transform.position;
-            bullet.transform.parent = transform;
+            bullet.transform.SetParent(transform,true);
             bullet.GetComponent<SingleBulletMovement>().SetMoveDirection(dir);
             bullet.GetComponent<SingleBulletMovement>().enabled = true;
             bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;

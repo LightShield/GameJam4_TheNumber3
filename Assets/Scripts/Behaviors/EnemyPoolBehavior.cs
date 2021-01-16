@@ -68,7 +68,7 @@ public class EnemyPoolBehavior : MonoBehaviour
     void initEmptyEnemy()
     {
         GameObject enemy = Instantiate(emptyEnemy, waitingPool.transform);
-        enemy.transform.parent = waitingPool.transform;
+        enemy.transform.SetParent(waitingPool.transform,true);
         EnemyBehavior eb = enemy.GetComponent<EnemyBehavior>();
         EnemyShooter es = enemy.GetComponent<EnemyShooter>();
         eb.enabled = false;
@@ -88,7 +88,7 @@ public class EnemyPoolBehavior : MonoBehaviour
         newEnemy.bulletSize = behaviorTemplate.bulletSize;
         newEnemy.coolDown = behaviorTemplate.coolDown;
         newEnemy.health = behaviorTemplate.health;
-        newEnemy.transform.parent = activePool.transform;
+        newEnemy.transform.SetParent(activePool.transform,true);
         newEnemy.waitingPool = waitingPool.transform;
 
         //copy looks
@@ -133,7 +133,7 @@ public class EnemyPoolBehavior : MonoBehaviour
     {
         Debug.Log("return to enemy pool");
         GameObject go = (GameObject)obj;
-        go.transform.SetParent(waitingPool.transform);
+        go.transform.SetParent(waitingPool.transform,true);
         go.GetComponent<Collider2D>().enabled = true;
         go.gameObject.SetActive(false);
         waitingEnemies.Push(go.GetComponent<EnemyBehavior>());

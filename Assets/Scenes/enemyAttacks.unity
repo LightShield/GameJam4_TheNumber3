@@ -1044,7 +1044,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.2008521, b: 0.3773585, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.045106143, b: 0.084905684, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2250,7 +2250,7 @@ MonoBehaviour:
   playerMaxHealth: 50
   playerMaxSpeed: 10
   playerMaxPower: 10
-  playerMaxBullet: 10
+  playerMaxBullet: 3
   playerMovement: {fileID: 121228672}
   playerShooter: {fileID: 121228669}
   powerDecayRate: 0.2
@@ -2373,6 +2373,22 @@ PrefabInstance:
       propertyPath: waitingPool
       value: 
       objectReference: {fileID: 1327973762}
+    - target: {fileID: 1388720560827263016, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: bulletsSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388720560827263016, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: bulletsSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 4407380705868529231, guid: 01cbd4a45fb02bb4cbfa2d186215d584, type: 3}
+    - target: {fileID: 1388720560827263016, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: bulletsSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 3823713781110627689, guid: 01cbd4a45fb02bb4cbfa2d186215d584, type: 3}
+    - target: {fileID: 1388720560827263016, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: bulletsSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: -1953637080077936836, guid: 01cbd4a45fb02bb4cbfa2d186215d584, type: 3}
     - target: {fileID: 1388720560827263017, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2421,9 +2437,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletPool
       objectReference: {fileID: 0}
+    - target: {fileID: 1388720562025363760, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388720562025363760, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1388720562025363762, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
       propertyPath: speed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388720562025363763, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388720562025363763, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388720562025363763, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4407380705868529231, guid: 01cbd4a45fb02bb4cbfa2d186215d584, type: 3}
+    - target: {fileID: 1388720562025363765, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: m_Radius
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
@@ -2695,6 +2735,7 @@ MonoBehaviour:
   active: 0
   resetLocation: {x: 0, y: 0}
   bp: {fileID: 605443646}
+  bulletsSprites: []
   target: {fileID: 121228667}
   targetLocationVector: {x: 0, y: 0}
   currentCoolDown: 0
@@ -2703,12 +2744,22 @@ MonoBehaviour:
   killed: 0
   soul: {fileID: 5270148665211215522, guid: eddcbf3656541ba499b6a6cdd5a7a361, type: 3}
   debugTimer: 0
+  lives: 3
   speedColor: {r: 0, g: 1, b: 0, a: 1}
   RangeColor: {r: 0, g: 0, b: 1, a: 1}
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  speedSprite: {fileID: 3229708652140166120, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  rangeSprite: {fileID: 876784968147787122, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  damageSprite: {fileID: 2731795287329381114, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  speedSprites:
+  - {fileID: 6230911579049521198, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: -3351989875833439213, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: 3229708652140166120, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  rangeSprites:
+  - {fileID: -8108438390446734492, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: -3029504926045522119, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: 876784968147787122, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  damageSprites:
+  - {fileID: -2782341204894616949, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: 1961183383047197949, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: 2731795287329381114, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
 --- !u!61 &1744845593
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3283,6 +3334,7 @@ MonoBehaviour:
   active: 0
   resetLocation: {x: 0, y: 0}
   bp: {fileID: 605443646}
+  bulletsSprites: []
   target: {fileID: 121228667}
   targetLocationVector: {x: 0, y: 0}
   currentCoolDown: 0
@@ -3291,12 +3343,13 @@ MonoBehaviour:
   killed: 0
   soul: {fileID: 5270148665211215522, guid: eddcbf3656541ba499b6a6cdd5a7a361, type: 3}
   debugTimer: 0
+  lives: 3
   speedColor: {r: 0, g: 1, b: 0, a: 1}
   RangeColor: {r: 0, g: 0, b: 1, a: 1}
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  speedSprite: {fileID: 3229708652140166120, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  rangeSprite: {fileID: 876784968147787122, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  damageSprite: {fileID: 2731795287329381114, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  speedSprites: []
+  rangeSprites: []
+  damageSprites: []
 --- !u!50 &2602767395832734655
 Rigidbody2D:
   serializedVersion: 4
@@ -3472,6 +3525,7 @@ MonoBehaviour:
   active: 0
   resetLocation: {x: 0, y: 0}
   bp: {fileID: 605443646}
+  bulletsSprites: []
   target: {fileID: 121228667}
   targetLocationVector: {x: 0, y: 0}
   currentCoolDown: 0
@@ -3480,12 +3534,22 @@ MonoBehaviour:
   killed: 0
   soul: {fileID: 5270148665211215522, guid: eddcbf3656541ba499b6a6cdd5a7a361, type: 3}
   debugTimer: 0
+  lives: 3
   speedColor: {r: 0, g: 1, b: 0, a: 1}
   RangeColor: {r: 0, g: 0, b: 1, a: 1}
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  speedSprite: {fileID: 3229708652140166120, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  rangeSprite: {fileID: 876784968147787122, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  damageSprite: {fileID: 2731795287329381114, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  speedSprites:
+  - {fileID: 3229708652140166120, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  rangeSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  damageSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &2602767396121616594
 Transform:
   m_ObjectHideFlags: 0
@@ -3673,6 +3737,7 @@ MonoBehaviour:
   active: 0
   resetLocation: {x: 0, y: 0}
   bp: {fileID: 605443646}
+  bulletsSprites: []
   target: {fileID: 121228667}
   targetLocationVector: {x: 0, y: 0}
   currentCoolDown: 0
@@ -3681,12 +3746,13 @@ MonoBehaviour:
   killed: 0
   soul: {fileID: 5270148665211215522, guid: eddcbf3656541ba499b6a6cdd5a7a361, type: 3}
   debugTimer: 0
+  lives: 3
   speedColor: {r: 0, g: 1, b: 0, a: 1}
   RangeColor: {r: 0, g: 0, b: 1, a: 1}
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  speedSprite: {fileID: 3229708652140166120, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  rangeSprite: {fileID: 876784968147787122, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  damageSprite: {fileID: 2731795287329381114, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  speedSprites: []
+  rangeSprites: []
+  damageSprites: []
 --- !u!50 &2602767396307264135
 Rigidbody2D:
   serializedVersion: 4
@@ -3777,6 +3843,7 @@ MonoBehaviour:
   active: 0
   resetLocation: {x: 0, y: 0}
   bp: {fileID: 605443646}
+  bulletsSprites: []
   target: {fileID: 121228667}
   targetLocationVector: {x: 0, y: 0}
   currentCoolDown: 0
@@ -3785,12 +3852,13 @@ MonoBehaviour:
   killed: 0
   soul: {fileID: 5270148665211215522, guid: eddcbf3656541ba499b6a6cdd5a7a361, type: 3}
   debugTimer: 0
+  lives: 3
   speedColor: {r: 0, g: 1, b: 0, a: 1}
   RangeColor: {r: 0, g: 0, b: 1, a: 1}
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  speedSprite: {fileID: 3229708652140166120, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  rangeSprite: {fileID: 876784968147787122, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  damageSprite: {fileID: 2731795287329381114, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  speedSprites: []
+  rangeSprites: []
+  damageSprites: []
 --- !u!1 &2602767396378293723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3996,6 +4064,7 @@ MonoBehaviour:
   active: 0
   resetLocation: {x: 0, y: 0}
   bp: {fileID: 605443646}
+  bulletsSprites: []
   target: {fileID: 121228667}
   targetLocationVector: {x: 0, y: 0}
   currentCoolDown: 0
@@ -4004,12 +4073,13 @@ MonoBehaviour:
   killed: 0
   soul: {fileID: 5270148665211215522, guid: eddcbf3656541ba499b6a6cdd5a7a361, type: 3}
   debugTimer: 0
+  lives: 3
   speedColor: {r: 0, g: 1, b: 0, a: 1}
   RangeColor: {r: 0, g: 0, b: 1, a: 1}
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  speedSprite: {fileID: 3229708652140166120, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  rangeSprite: {fileID: 876784968147787122, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  damageSprite: {fileID: 2731795287329381114, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  speedSprites: []
+  rangeSprites: []
+  damageSprites: []
 --- !u!50 &2602767397042128253
 Rigidbody2D:
   serializedVersion: 4
@@ -4293,6 +4363,7 @@ MonoBehaviour:
   active: 0
   resetLocation: {x: 0, y: 0}
   bp: {fileID: 605443646}
+  bulletsSprites: []
   target: {fileID: 121228667}
   targetLocationVector: {x: 0, y: 0}
   currentCoolDown: 0
@@ -4301,12 +4372,22 @@ MonoBehaviour:
   killed: 0
   soul: {fileID: 5270148665211215522, guid: eddcbf3656541ba499b6a6cdd5a7a361, type: 3}
   debugTimer: 0
+  lives: 3
   speedColor: {r: 0, g: 1, b: 0, a: 1}
   RangeColor: {r: 0, g: 0, b: 1, a: 1}
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  speedSprite: {fileID: 3229708652140166120, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  rangeSprite: {fileID: 876784968147787122, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
-  damageSprite: {fileID: 2731795287329381114, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  speedSprites:
+  - {fileID: 6230911579049521198, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: -3351989875833439213, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: 3229708652140166120, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  rangeSprites:
+  - {fileID: -8108438390446734492, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: -3029504926045522119, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: 876784968147787122, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  damageSprites:
+  - {fileID: -2782341204894616949, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: 1961183383047197949, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
+  - {fileID: 2731795287329381114, guid: ecd1751dfc2079740921a9a2ed3742b2, type: 3}
 --- !u!50 &3054599396664416636
 Rigidbody2D:
   serializedVersion: 4
@@ -4413,26 +4494,38 @@ PrefabInstance:
     - target: {fileID: 4414814770377810500, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: cbf8449b1316ecc478b5b637a6964647, type: 3}
+      objectReference: {fileID: 21300000, guid: eaa48db18ba4c3e4ea6978d0cb43eeea, type: 3}
+    - target: {fileID: 4414814770377810500, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810500, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810500, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810501, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810501, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.6729
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810501, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.7383
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810501, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.671
+      value: -2.8346
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810501, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.384
+      value: -3.2531
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810501, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4467,16 +4560,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810502, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810502, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810502, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810502, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810502, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810502, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810502, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.32
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810503, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: mPlayerSpeed

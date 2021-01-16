@@ -9,7 +9,7 @@ public class SoulLogic : MonoBehaviour
     public int empty = 1;
 
     public float tolerance = 1f;
-    public float ttl = 5f;
+    public float ttl = 10f;
     public float countdown = 0f;
     public float originalScale;
     private float size;

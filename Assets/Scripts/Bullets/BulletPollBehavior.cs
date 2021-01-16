@@ -8,7 +8,7 @@ public class BulletPollBehavior : MonoBehaviour
     [Header("Pool Settings")]
     public int poolSize = 1000;
     public GameObject bullet;
-    public float relativeBulletSpeed = 10f; //addition of speed compared to shooter's speed
+    public float relativeBulletSpeed = 1f; //addition of speed compared to shooter's speed
 
     [Header("Pool Data")]
     public Vector2 initLocation;
@@ -16,6 +16,7 @@ public class BulletPollBehavior : MonoBehaviour
     public GameObject waitingPool;
     public Stack<BulletBehavior> waitingBullets;
     private float startAngle = 90f, endAngle = 270f;
+    public Sprite[] bulletsSprites;
 
     void Start()
     {
@@ -45,7 +46,7 @@ public class BulletPollBehavior : MonoBehaviour
     public void instantiateBullet()
     {
         GameObject bul = Instantiate(bullet, waitingPool.transform);
-        bul.transform.parent = waitingPool.transform;
+        bul.transform.SetParent(waitingPool.transform,true);
         BulletBehavior bb = bul.GetComponent<BulletBehavior>();
         bb.enabled = false;
         waitingBullets.Push(bb);
@@ -55,7 +56,7 @@ public class BulletPollBehavior : MonoBehaviour
     public void activateBullet(ParentBehavior shooter)
     {
         //SET BULLET CHARECTARISTICS BASED ON SHOOTER'S CHARS
-        if (shooter.bulletSize > 1)
+        if (shooter.shootingRange > 1)
         {
             Vector3 movementDirection = shooter.getUpdatedTargetLocationVector().normalized;
             float angleStep = (endAngle - startAngle) / shooter.bulletSize;
@@ -76,13 +77,29 @@ public class BulletPollBehavior : MonoBehaviour
                 bullet.timeToLive = shooter.shootingRange;
                 bullet.damage = shooter.power;
                 bullet.transform.position = shooter.transform.position;
-                bullet.transform.parent = activePool.transform;
+                bullet.transform.SetParent(activePool.transform,true);
                 bullet.gameObject.GetComponent<SpriteRenderer>().color = shooter.gameObject.GetComponent<SpriteRenderer>().color;
+                bullet.gameObject.GetComponent<SpriteRenderer>().sprite = bulletsSprites[0];
+
                 bullet.enabled = true;
                 //bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
 
                 angle += angleStep;
             }
+        }
+        else if(shooter.speed > 1)
+        {
+            BulletBehavior bullet = waitingBullets.Pop();
+            bullet.speed = shooter.speed + relativeBulletSpeed;
+            bullet.timeToLive = shooter.shootingRange;
+            bullet.damage = shooter.power;
+            bullet.movementDirection = shooter.getUpdatedTargetLocationVector().normalized;
+            bullet.transform.position = shooter.transform.position;
+            bullet.transform.SetParent(activePool.transform,true);
+            bullet.gameObject.GetComponent<SpriteRenderer>().sprite = bulletsSprites[1];
+            bullet.gameObject.GetComponent<SpriteRenderer>().color = shooter.gameObject.GetComponent<SpriteRenderer>().color;
+            bullet.enabled = true;
+            //bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
         }
         else
         {
@@ -92,10 +109,10 @@ public class BulletPollBehavior : MonoBehaviour
             bullet.damage = shooter.power;
             bullet.movementDirection = shooter.getUpdatedTargetLocationVector().normalized;
             bullet.transform.position = shooter.transform.position;
-            bullet.transform.parent = activePool.transform;
+            bullet.transform.SetParent(activePool.transform,true);
+            bullet.gameObject.GetComponent<SpriteRenderer>().sprite = bulletsSprites[2];
             bullet.gameObject.GetComponent<SpriteRenderer>().color = shooter.gameObject.GetComponent<SpriteRenderer>().color;
             bullet.enabled = true;
-            //bullet.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
         }
 
         
@@ -106,7 +123,7 @@ public class BulletPollBehavior : MonoBehaviour
     void returnToPool(object obj)
     {
         GameObject go = (GameObject)obj;
-        go.transform.SetParent(waitingPool.transform);
+        go.transform.SetParent(waitingPool.transform,true);
         waitingBullets.Push(go.GetComponent<BulletBehavior>());
     }
 }

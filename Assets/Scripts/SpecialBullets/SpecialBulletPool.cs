@@ -20,7 +20,7 @@ public class SpecialBulletPool : MonoBehaviour
     {
         GameObject go = (GameObject) obj;
         go.SetActive(false);
-        go.transform.SetParent(transform);
+        go.transform.SetParent(transform,true);
         go.transform.position = transform.position;
         go.GetComponent<Collider2D>().enabled = true;
         inactiveBullets.Push(go);
@@ -33,7 +33,7 @@ public class SpecialBulletPool : MonoBehaviour
         for (int i = 0; i < numOfBullets; ++i)
         {
             GameObject go = Instantiate(bullet);
-            go.transform.parent = transform;
+            go.transform.SetParent(transform,true);
             go.transform.position = transform.position;
             go.SetActive(false);
             inactiveBullets.Push(go);

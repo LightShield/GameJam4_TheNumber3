@@ -18,6 +18,7 @@ public class ParentBehavior : MonoBehaviour
     public bool active = false;
     public Vector2 resetLocation;
     public BulletPollBehavior bp;
+    public Sprite[] bulletsSprites;
 
     [Header("Live In Game Data")]
     public GameObject target; //target to pursue - direction of shooting currently only the player
@@ -42,9 +43,9 @@ public class ParentBehavior : MonoBehaviour
 
     protected void move(Vector2 direction)
     {
-        Vector2 scaledDirection = direction * speed * Time.deltaTime;
+        Vector2 scaledDirection = direction *  Time.deltaTime;
         Vector2 newVelocity = rb.velocity + scaledDirection;
-        if (newVelocity.magnitude < speed || newVelocity.magnitude < rb.velocity.magnitude) {
+        if (newVelocity.magnitude < 1 || newVelocity.magnitude < rb.velocity.magnitude) {
             // not over the speed limit
             //option 1 behavior:
             rb.velocity = newVelocity;

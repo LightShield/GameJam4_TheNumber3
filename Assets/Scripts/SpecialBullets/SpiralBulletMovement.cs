@@ -17,9 +17,6 @@ public class SpiralBulletMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        size = .2f;
-        transform.localScale = new Vector3(size, size, 1);
-
     }
 
     // Update is called once per frame

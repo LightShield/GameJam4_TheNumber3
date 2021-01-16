@@ -33,7 +33,7 @@ public class BulletBehavior : MonoBehaviour
     public void endBulletLife()
     {
         //return to waiting pool
-        transform.parent = waitingBulletPool;
+        transform.SetParent(waitingBulletPool,true);
         //return to original location
         transform.position = waitingBulletPool.position;
         //disable script
