@@ -17,9 +17,9 @@ public class EnemyBehavior : ParentBehavior
 
 
     [Header("Power Colors")]
-    public Color speedColor = Color.green;
-    public Color RangeColor = Color.blue;
-    public Color DamageColor = Color.red;
+    public Color speedColor;
+    public Color RangeColor;
+    public Color DamageColor;
 
     [Header("powerSprite")]
     private SpriteRenderer _sr;
