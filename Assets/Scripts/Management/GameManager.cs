@@ -16,10 +16,10 @@ public class GameManager : MonoBehaviour
 
     private int playerPoints = 0;
     private int playerRangeChange = 2;
-    private int playerHealth = 10;
+    private float playerHealth = 10f;
 
     [Header("Player Bars")]
-    public HealthBar healthBar;
+    public Image healthBar;
     public HealthBar powerBar;
     public HealthBar speedBar;
     public HealthBar bulletBar;
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_PLAYER_CRASH_ENEMY,OnPlayerCrash);
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET,OnEnemyDeath);
         playerHealth = playerMaxHealth;
-        healthBar.SetMaxHealth(playerMaxHealth);
+        healthBar.fillAmount = 1f;
         powerBar.SetMaxHealth(playerMaxPower);
         powerBar.SetHealth(1);
         speedBar.SetMaxHealth(playerMaxSpeed);
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         {
             playerHealth--;
             score -= scoreLossFromHit;
-            healthBar.SetHealth(playerHealth);
+            healthBar.fillAmount = playerHealth / playerMaxHealth;
             if (playerHealth == 0)
             {
                 Debug.Log("final score: " + score);

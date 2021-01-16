@@ -92,11 +92,11 @@ public class EnemyPoolBehavior : MonoBehaviour
         newEnemy.transform.SetParent(activePool.transform,true);
         newEnemy.waitingPool = waitingPool.transform;
 
-        //copy looks
-        SpriteRenderer newEnemySR = newEnemy.gameObject.GetComponent<SpriteRenderer>();
-        SpriteRenderer templateSR = enemyType.GetComponent<SpriteRenderer>();
-        newEnemySR.sprite = templateSR.sprite;
-        newEnemySR.color = templateSR.color;
+        // //copy looks
+        // SpriteRenderer newEnemySR = newEnemy.gameObject.GetComponent<SpriteRenderer>();
+        // SpriteRenderer templateSR = enemyType.GetComponent<SpriteRenderer>();
+        // newEnemySR.sprite = templateSR.sprite;
+        // newEnemySR.color = templateSR.color;
 
         newEnemy.layerCounter = behaviorTemplate.layerCounter;
         for(int i = 0; i < newEnemy.layerCounter; ++i)

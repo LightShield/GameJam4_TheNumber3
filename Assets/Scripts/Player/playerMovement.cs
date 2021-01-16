@@ -37,23 +37,23 @@ public class playerMovement : MonoBehaviour
     private void Update()
     {
         //change states (temp code - unscaleable. make it into an array later
-        if (Input.GetKeyDown(state0))
-        {
-            state = 0;
-            GetComponent<SpriteRenderer>().material.color = Color.red;
-        }
-        if (Input.GetKeyDown(state1))
-        {
-            state = 1;
-            GetComponent<SpriteRenderer>().material.color = Color.blue;
-
-        }
-        if (Input.GetKeyDown(state2))
-        {
-            state = 2;
-            GetComponent<SpriteRenderer>().material.color = Color.green;
-
-        }
+        // if (Input.GetKeyDown(state0))
+        // {
+        //     state = 0;
+        //     GetComponent<SpriteRenderer>().material.color = Color.red;
+        // }
+        // if (Input.GetKeyDown(state1))
+        // {
+        //     state = 1;
+        //     GetComponent<SpriteRenderer>().material.color = Color.blue;
+        //
+        // }
+        // if (Input.GetKeyDown(state2))
+        // {
+        //     state = 2;
+        //     GetComponent<SpriteRenderer>().material.color = Color.green;
+        //
+        // }
 
     }
 
@@ -128,33 +128,6 @@ public class playerMovement : MonoBehaviour
     }
 
 
-    IEnumerator flickerPlayer()
-    {
-        gameObject.tag = "colors";
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-
-        for (int i = 0; i < 10; i++)
-        {
-            sr.material.color = Color.red;
-            yield return new WaitForSeconds(0.1f);
-            sr.material.color = Color.blue;
-            yield return new WaitForSeconds(0.1f);
-            sr.material.color = Color.green;
-            yield return new WaitForSeconds(0.1f);
-        }
-
-        if (state == 0)
-        {
-            sr.material.color = Color.red;
-        } else if (state == 1)
-        {
-            sr.material.color = Color.blue;
-        } else if (state == 2)
-        {
-            sr.material.color = Color.green;
-        }
-        gameObject.tag = "Player";
-    }
     private void die()
     {
         Debug.Log("Death");
