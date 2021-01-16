@@ -26,7 +26,12 @@ public class EnemyBehavior : ParentBehavior
     public Sprite[] speedSprites;
     public Sprite[] rangeSprites;
     public Sprite[] damageSprites;
-  
+
+    [Header("Layer Sprites")]
+    public int layerCounter = 4;
+    public SpriteRenderer[] layers;
+    private string[] spriteNames = { "L_Sprite", "M_Sprite", "S_Sprite", "X_Sprite" };
+
 
     protected override void Start()
     {
@@ -34,6 +39,13 @@ public class EnemyBehavior : ParentBehavior
         target = GameObject.FindGameObjectWithTag("Player");;
         debugTimer = 10f;
         _sr = GetComponent<SpriteRenderer>();
+        _sr.enabled = false;
+
+        //init layers 
+        layers = new SpriteRenderer[layerCounter];
+        for(int i = layerCounter - 1; i >= 0; --i) {
+            layers[i] = transform.Find("Sprites").Find(spriteNames[i]).GetComponent<SpriteRenderer>();
+        }
     }
 
     private void OnEnable()
@@ -101,7 +113,8 @@ public class EnemyBehavior : ParentBehavior
         {
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
             int damage = (int) other.gameObject.GetComponent<PlayerBulletMovement>().bulletDamage;
-            if (lives-damage>1)
+            updateSprites(damage);
+            if (lives-damage>0)
             {
                 lives-= damage;
                 SetSprite();
@@ -109,6 +122,7 @@ public class EnemyBehavior : ParentBehavior
             }
             else
             {
+                updateSprites(1);//make sprite of soul disappear from parent\enemy
                 createSoul();
                 die();
             }
@@ -140,6 +154,7 @@ public class EnemyBehavior : ParentBehavior
         sl.range = (int)base.shootingRange;
         sl.empty = (int)base.power;
         go.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
+        go.GetComponent<SpriteRenderer>().sprite = layers[0].sprite;
     }
 
     public override void die()
@@ -148,22 +163,51 @@ public class EnemyBehavior : ParentBehavior
         Debug.Log("Death");
         //stop movement
         rb.velocity = Vector2.zero;
+
+        //save sprites (for hirarichical movevement later)
+        Transform sprites = transform.Find("Sprites");
+
         //move all bullets to the game hirarchy 
         for (int i=transform.childCount-1; i >= 0; --i) {
             Transform child = transform.GetChild(i);
             Debug.Log("moving object: " + child.name);
             child.SetParent(null, true);
         }
+        Debug.Log("Ahoy, sprites is" + sprites);
         //return to waiting pool
         transform.SetParent(waitingPool,true);
         //return to original location
         transform.position = waitingPool.position;
+        //move all sprites to parent position
+        sprites.SetParent(transform);
+        sprites.position = transform.position;
+        //transform.Find("Sprites").transform.position = transform.position;
 
         //disable script
         gameObject.GetComponent<EnemyBehavior>().enabled = false;
         killed = false;
         //inform pool
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__ENEMY_DEATH, gameObject);
+    }
+
+
+    public void updateSprites(float damage)
+    {
+        while(damage > 0)
+        {
+            --damage;
+            --layerCounter;
+            layers[layerCounter].enabled = false;
+        }
+    }
+
+    public void initSprites()
+    {
+        layers = new SpriteRenderer[layerCounter];
+        for (int i = layerCounter - 1; i >= 0; --i)
+        {
+            layers[i] = transform.Find("Sprites").Find(spriteNames[i]).GetComponent<SpriteRenderer>();
+        }
     }
 
 }

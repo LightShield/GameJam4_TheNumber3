@@ -80,7 +80,7 @@ public class ParentBehavior : MonoBehaviour
         return currentCoolDown <= 0;
     }
 
-    public void getHit(float damage)
+    public virtual void getHit(float damage)
     {
         health -= damage;
         if(health < 0)

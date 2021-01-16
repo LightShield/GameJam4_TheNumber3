@@ -52,7 +52,7 @@ public class EnemyPoolBehavior : MonoBehaviour
         countToEnemy -= Time.deltaTime;
         if (countToEnemy < 0)
         {
-            generateEnemyWave();
+            generateEnemyWave(); 
             countToEnemy = Mathf.Min(enemyCounterStartValue + amountOfActiveEnemies, maxEnemyCreationInterval);
         }
     }
@@ -70,6 +70,7 @@ public class EnemyPoolBehavior : MonoBehaviour
         GameObject enemy = Instantiate(emptyEnemy, waitingPool.transform);
         enemy.transform.SetParent(waitingPool.transform,true);
         EnemyBehavior eb = enemy.GetComponent<EnemyBehavior>();
+        eb.initSprites();
         EnemyShooter es = enemy.GetComponent<EnemyShooter>();
         eb.enabled = false;
         es.enabled = false;
@@ -96,6 +97,13 @@ public class EnemyPoolBehavior : MonoBehaviour
         SpriteRenderer templateSR = enemyType.GetComponent<SpriteRenderer>();
         newEnemySR.sprite = templateSR.sprite;
         newEnemySR.color = templateSR.color;
+
+        newEnemy.layerCounter = behaviorTemplate.layerCounter;
+        for(int i = 0; i < newEnemy.layerCounter; ++i)
+        {
+            newEnemy.layers[i].sprite = behaviorTemplate.layers[i].sprite;
+        }
+
 
 
         //add starting location
@@ -124,6 +132,11 @@ public class EnemyPoolBehavior : MonoBehaviour
             newES.isRandomShooter = es.isRandomShooter;
             newES.isSpiralShooter = es.isSpiralShooter;
             newES.enabled = true;
+        }
+
+        for (int i = 0; i < newEnemy.layerCounter; ++i)
+        {
+            newEnemy.layers[newEnemy.layerCounter - 1 - i].enabled = true;
         }
 
         newEnemy.gameObject.SetActive(true);
