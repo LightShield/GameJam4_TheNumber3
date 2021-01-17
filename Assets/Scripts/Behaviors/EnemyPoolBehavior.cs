@@ -103,7 +103,9 @@ public class EnemyPoolBehavior : MonoBehaviour
         {
             newEnemy.layers[i].sprite = behaviorTemplate.layers[i].sprite;
         }
-
+        /*newEnemy.speedColor = behaviorTemplate.speedColor;
+        newEnemy.RangeColor = behaviorTemplate.RangeColor;
+        newEnemy.DamageColor = behaviorTemplate.DamageColor;*/
 
 
         //add starting location

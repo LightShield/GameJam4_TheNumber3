@@ -69,7 +69,6 @@ public class ParentBehavior : MonoBehaviour
     {
         if (canShoot())
         {
-            Debug.Log("Pew");
             bp.activateBullet(this);
             currentCoolDown = coolDown;
         }

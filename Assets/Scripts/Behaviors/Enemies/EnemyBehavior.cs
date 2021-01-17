@@ -39,6 +39,7 @@ public class EnemyBehavior : ParentBehavior
         target = GameObject.FindGameObjectWithTag("Player");;
         debugTimer = 10f;
         _sr = GetComponent<SpriteRenderer>();
+        SetSprite();
         _sr.enabled = false;
 
         //init layers 
@@ -59,7 +60,6 @@ public class EnemyBehavior : ParentBehavior
     {
         _sr = GetComponent<SpriteRenderer>();
 
-        Debug.Log("change sprite of enemy");
         if (base.speed > 1)
         {
             _sr.color = speedColor;
@@ -149,13 +149,17 @@ public class EnemyBehavior : ParentBehavior
 
     private void createSoul()
     {
+        SetSprite();
         GameObject go = Instantiate(soul, transform.position, transform.rotation);
         SoulLogic sl = go.GetComponent<SoulLogic>();
         sl.speed = (int)base.speed;
         sl.range = (int)base.shootingRange;
         sl.empty = (int)base.power;
-        go.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
-        go.GetComponent<SpriteRenderer>().sprite = layers[0].sprite;
+        SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
+        sr.color =_sr.color;
+        Debug.Log(sr.color + " " + _sr.color);
+        sr.sprite = layers[0].sprite;
+        sr.enabled = true;
     }
 
     public override void die()
@@ -171,10 +175,8 @@ public class EnemyBehavior : ParentBehavior
         //move all bullets to the game hirarchy 
         for (int i=transform.childCount-1; i >= 0; --i) {
             Transform child = transform.GetChild(i);
-            Debug.Log("moving object: " + child.name);
             child.SetParent(null, true);
         }
-        Debug.Log("Ahoy, sprites is" + sprites);
         //return to waiting pool
         transform.SetParent(waitingPool,true);
         //return to original location

@@ -101,7 +101,6 @@ public class playerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collided, player");
         
         if (collision.gameObject.CompareTag("block_state_0"))
         {

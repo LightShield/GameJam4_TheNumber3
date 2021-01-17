@@ -17,7 +17,6 @@ public class PlayerBulletPool : MonoBehaviour
 
     private void ReturnToPool(object obj)
     {
-        Debug.Log("playerBulletPool: return to pool");
         GameObject go = (GameObject) obj;
         go.SetActive(false);
         go.transform.SetParent(transform,true);
@@ -46,7 +45,6 @@ public class PlayerBulletPool : MonoBehaviour
     {
         if (inactiveBullets.Count > 0)
         {
-            Debug.Log("playerBulletPool: getting bullet");
             var newBullet =  inactiveBullets.Pop();
             newBullet.SetActive(true);
             return newBullet;
