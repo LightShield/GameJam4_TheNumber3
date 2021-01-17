@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private float[] powers = {1, 1, 1};
+    private float[] maxPowers;
     private const int SPEED_POWER = 0;
     private const int RANGE_POWER = 1;
     private const int DAMAGE_POWER = 2;
@@ -20,10 +21,10 @@ public class GameManager : MonoBehaviour
 
     [Header("Player Bars")]
     public Image healthBar;
-    public HealthBar powerBar;
-    public HealthBar speedBar;
-    public HealthBar bulletBar;
-    private HealthBar[] skillBars;
+    public Image powerBar;
+    public Image speedBar;
+    public Image bulletBar;
+    private Image[] skillBars;
     public bool godmode = true;
 
 
@@ -55,14 +56,12 @@ public class GameManager : MonoBehaviour
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET,OnEnemyDeath);
         playerHealth = playerMaxHealth;
         healthBar.fillAmount = 1f;
-        powerBar.SetMaxHealth(playerMaxPower);
-        powerBar.SetHealth(1);
-        speedBar.SetMaxHealth(playerMaxSpeed);
-        speedBar.SetHealth(1);
-        bulletBar.SetMaxHealth(playerMaxBullet);
-        bulletBar.SetHealth(1);
+        powerBar.fillAmount = 1f / playerMaxPower;
+        speedBar.fillAmount = 1f / playerMaxSpeed;
+        bulletBar.fillAmount = 1f / playerMaxBullet;
 
-        skillBars = new HealthBar[]{speedBar, powerBar, bulletBar};
+        skillBars = new Image[]{speedBar, powerBar, bulletBar};
+        maxPowers = new float[]{playerMaxSpeed,playerMaxPower,playerMaxBullet};
         score = 0;
         initBoundaries();
 
@@ -106,7 +105,7 @@ public class GameManager : MonoBehaviour
             if (powers[SPEED_POWER] < playerMaxSpeed)
             {
                 powers[SPEED_POWER]++;
-                speedBar.SetHealth(powers[SPEED_POWER]);
+                speedBar.fillAmount = powers[SPEED_POWER]/ playerMaxSpeed;
                 playerShooter.bulletSpeed++;
             }
 
@@ -116,7 +115,7 @@ public class GameManager : MonoBehaviour
             if (powers[RANGE_POWER] < playerMaxPower)
             {
                 powers[RANGE_POWER] = Mathf.Min(playerMaxPower, powers[RANGE_POWER] + playerRangeChange);
-                powerBar.SetHealth(powers[SPEED_POWER]);
+                powerBar.fillAmount = powers[SPEED_POWER] / playerMaxPower;
                 playerShooter.bulletRange += playerRangeChange;
 
             }
@@ -126,7 +125,7 @@ public class GameManager : MonoBehaviour
             if (powers[DAMAGE_POWER] < playerMaxBullet)
             {
                 powers[DAMAGE_POWER]++;
-                bulletBar.SetHealth(powers[DAMAGE_POWER]);
+                bulletBar.fillAmount = powers[DAMAGE_POWER]/playerMaxBullet;
             }
         }
         score += scoreGainFromSoul;
@@ -153,7 +152,7 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < 3; ++i)
         {
             powers[i] = Mathf.Max(MIN_POWER_VALUES[i], powers[i] - Time.deltaTime * powerDecayRate);
-            skillBars[i].SetHealth(powers[i]);
+            skillBars[i].fillAmount = powers[i] / maxPowers[i];
             updatespecificPowerDecay(i);
         }
     }
