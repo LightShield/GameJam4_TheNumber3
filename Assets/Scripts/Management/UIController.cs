@@ -15,4 +15,9 @@ public class UIController : MonoBehaviour
         Debug.Log("exit clicked");
         Application.Quit();
     }
+
+    public void onQuitClicked()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
 }
