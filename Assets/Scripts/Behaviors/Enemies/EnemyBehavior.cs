@@ -51,6 +51,7 @@ public class EnemyBehavior : ParentBehavior
     private void OnEnable()
     {
         lives = 3;
+        layerCounter = 4;
         SetSprite();
     }
 
@@ -193,7 +194,7 @@ public class EnemyBehavior : ParentBehavior
 
     public void updateSprites(float damage)
     {
-        while(damage > 0)
+        while(damage > 0 && layerCounter > 0)//TODO why from the beggining we did not check layerCounter??
         {
             --damage;
             --layerCounter;

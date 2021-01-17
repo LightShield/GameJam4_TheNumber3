@@ -81,6 +81,7 @@
             <e p="SpecialBulletPool.cs" t="Include" />
             <e p="SpiralBulletMovement.cs" t="Include" />
           </e>
+          <e p="testScript.cs" t="Include" />
           <e p="toDELETE" t="Include">
             <e p="backgroundScript.cs" t="Include" />
             <e p="ColumnPool.cs" t="Include" />
