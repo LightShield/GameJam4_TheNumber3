@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -29,10 +30,10 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Player Data")] 
-    public int playerMaxHealth;
-    public int playerMaxSpeed;
-    public int playerMaxPower;
-    public int playerMaxBullet;
+    public float playerMaxHealth;
+    public float playerMaxSpeed;
+    public float playerMaxPower;
+    public float playerMaxBullet;
     public playerMovement playerMovement;
     public PlayerShooter playerShooter;
     public float powerDecayRate = 0.002f;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
     public int scoreLossFromHit = 1;
     //public int scoreGainFromKill = 1; do we want to have this?
     public int scoreGainFromSoul = 3;
+    public TextMeshProUGUI _scoreText;
     
 
     private float playerRangeDecayCounter = 0f;
@@ -138,8 +140,7 @@ public class GameManager : MonoBehaviour
         powersDecay();
 
         //temp score UI update
-        Text tempScore = GameObject.Find("Score (temp)").GetComponent<Text>();
-        tempScore.text = "Score = " + score;
+        _scoreText.text = "Score " + score;
 
         if (Input.GetKey(KeyCode.G))
         {
