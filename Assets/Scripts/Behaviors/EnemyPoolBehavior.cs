@@ -25,8 +25,9 @@ public class EnemyPoolBehavior : MonoBehaviour
 
 
     [Header("Spawner Settings")]
-    public float countToEnemy = 5f;
+    public float countToEnemy = 50f; //tutorial length
     public float enemyCounterStartValue = 3f;
+    public bool intro = true;
     public Vector2[] bounds;
     public Vector2 rightBound;
     public Vector2 upBound;
@@ -44,16 +45,18 @@ public class EnemyPoolBehavior : MonoBehaviour
         //pooling init
         instantiateEmptyEnemies();
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH, returnToPool);
+        StartCoroutine("tutorial");
     }
 
     // Update is called once per frame
     void Update()
     {
         countToEnemy -= Time.deltaTime;
-        if (countToEnemy < 0)
+        if (countToEnemy < 0 & !intro)
         {
             generateEnemyWave(); 
             countToEnemy = Mathf.Min(enemyCounterStartValue + amountOfActiveEnemies, maxEnemyCreationInterval);
+            countToEnemy = Mathf.Max(countToEnemy, 0);
         }
     }
 
@@ -68,7 +71,7 @@ public class EnemyPoolBehavior : MonoBehaviour
     void initEmptyEnemy()
     {
         GameObject enemy = Instantiate(emptyEnemy, waitingPool.transform);
-        enemy.transform.SetParent(waitingPool.transform,true);
+        enemy.transform.SetParent(waitingPool.transform, true);
         EnemyBehavior eb = enemy.GetComponent<EnemyBehavior>();
         eb.initSprites();
         EnemyShooter es = enemy.GetComponent<EnemyShooter>();
@@ -79,8 +82,6 @@ public class EnemyPoolBehavior : MonoBehaviour
 
     void activateEnemy(GameObject enemyType)
     {
-        //basicly copy-constructor
-        //copy behavior
         EnemyBehavior behaviorTemplate = enemyType.GetComponent<EnemyBehavior>();
         EnemyBehavior newEnemy = waitingEnemies.Pop();
         newEnemy.speed = behaviorTemplate.speed;
@@ -89,24 +90,14 @@ public class EnemyPoolBehavior : MonoBehaviour
         newEnemy.bulletSize = behaviorTemplate.bulletSize;
         newEnemy.coolDown = behaviorTemplate.coolDown;
         newEnemy.health = behaviorTemplate.health;
-        newEnemy.transform.SetParent(activePool.transform,true);
+        newEnemy.transform.SetParent(activePool.transform, true);
         newEnemy.waitingPool = waitingPool.transform;
-
-        // //copy looks
-        // SpriteRenderer newEnemySR = newEnemy.gameObject.GetComponent<SpriteRenderer>();
-        // SpriteRenderer templateSR = enemyType.GetComponent<SpriteRenderer>();
-        // newEnemySR.sprite = templateSR.sprite;
-        // newEnemySR.color = templateSR.color;
-
         newEnemy.layerCounter = behaviorTemplate.layerCounter;
-        for(int i = 0; i < newEnemy.layerCounter; ++i)
+
+        for (int i = 0; i < newEnemy.layerCounter; ++i)
         {
             newEnemy.layers[i].sprite = behaviorTemplate.layers[i].sprite;
         }
-        /*newEnemy.speedColor = behaviorTemplate.speedColor;
-        newEnemy.RangeColor = behaviorTemplate.RangeColor;
-        newEnemy.DamageColor = behaviorTemplate.DamageColor;*/
-
 
         //add starting location
         int boundIndex = Mathf.RoundToInt(Random.Range(0, bounds.Length));
@@ -121,8 +112,6 @@ public class EnemyPoolBehavior : MonoBehaviour
         }
 
         newEnemy.transform.position = newLocation;
-
-
 
         //start logic
         newEnemy.enabled = true;
@@ -148,7 +137,7 @@ public class EnemyPoolBehavior : MonoBehaviour
     {
         Debug.Log("return to enemy pool");
         GameObject go = (GameObject)obj;
-        go.transform.SetParent(waitingPool.transform,true);
+        go.transform.SetParent(waitingPool.transform, true);
         go.GetComponent<Collider2D>().enabled = true;
         go.gameObject.SetActive(false);
         waitingEnemies.Push(go.GetComponent<EnemyBehavior>());
@@ -156,28 +145,65 @@ public class EnemyPoolBehavior : MonoBehaviour
         --countToEnemy;
     }
 
-    void generateEnemy()
+    void generateRandomEnemy()
     {
-        GameObject type;
         //pick random type:
         int randomTypeIndex = Mathf.RoundToInt(Random.Range(0, enemyTypes.Count));
-        type = enemyTypes[randomTypeIndex];
-        Debug.Log("Activated enemy of type " + type.name);
-        activateEnemy(type);
-        //activate special shooting, if enemy has it
-        ++amountOfActiveEnemies;
+        generateEnemy(enemyTypes[randomTypeIndex]);
     }
 
     void generateEnemyWave()
     {
-        for(int i = 0; i < Mathf.Min(waveCounter, maxAmountOfEnemiesInWave); ++i)
+        for (int i = 0; i < Mathf.Min(waveCounter, maxAmountOfEnemiesInWave); ++i)
         {
             if (waitingEnemies.Count != 0)
             {
-                generateEnemy();
+                generateRandomEnemy();
             }
         }
         ++waveCounter;
     }
 
+    void generateEnemy(GameObject type)
+    {
+        Debug.Log("Activated enemy of type " + type.name);
+        activateEnemy(type);
+        ++amountOfActiveEnemies;
+    }
+
+
+    /*void Start(){
+    ...
+    tutorial();
+    }*/
+
+    IEnumerator tutorial()
+    {
+        //blue regular enemy
+        StartCoroutine("introduceEnemy", enemyTypes[1]);
+        yield return new WaitForSeconds(10);
+
+        //blue spiral
+        StartCoroutine("introduceEnemy", enemyTypes[3]);
+        yield return new WaitForSeconds(10);
+
+        //group
+        StartCoroutine("introduceEnemy", enemyTypes[5]);
+        yield return new WaitForSeconds(10);
+       
+        //random
+        StartCoroutine("introduceEnemy", enemyTypes[4]);
+        
+        //end intro
+        intro = false;
+        countToEnemy = 3;
+    }
+
+    IEnumerator introduceEnemy(GameObject enemyType)
+    {
+        generateEnemy(enemyType);
+        yield return new WaitForSeconds(5);
+        generateEnemy(enemyType);
+        generateEnemy(enemyType);
+    }
 }

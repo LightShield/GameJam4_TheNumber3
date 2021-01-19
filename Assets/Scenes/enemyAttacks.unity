@@ -1144,7 +1144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 153.5, y: -53.2}
+  m_AnchoredPosition: {x: 153.5, y: -53.19995}
   m_SizeDelta: {x: 470.8646, y: 445.3849}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573968601
@@ -3246,7 +3246,7 @@ MonoBehaviour:
   powerBar: {fileID: 1341113121}
   speedBar: {fileID: 1624298656}
   bulletBar: {fileID: 36337620}
-  godmode: 1
+  godmode: 0
   playerMaxHealth: 50
   playerMaxSpeed: 10
   playerMaxPower: 10
