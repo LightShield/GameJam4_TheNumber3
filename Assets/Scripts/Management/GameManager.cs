@@ -146,6 +146,18 @@ public class GameManager : MonoBehaviour
         {
             godmode = !godmode;
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Paused");
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+        }
     }
 
     void powersDecay()

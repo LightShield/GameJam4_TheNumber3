@@ -57,23 +57,23 @@ public class playerMovement : MonoBehaviour
 
     }
 
-  
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
         _horizontalMove = Input.GetAxis("Horizontal") * (mPlayerSpeed + minSpeed - 1);
         _verticalMove = Input.GetAxis("Vertical") * (mPlayerSpeed + minSpeed - 1);
-        Vector2 direction = new Vector2(_horizontalMove,_verticalMove);
+        Vector2 direction = new Vector2(_horizontalMove, _verticalMove);
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             angle = (angle + rotationSpeed) % 361;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        } 
+        }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            angle-=rotationSpeed;
+            angle -= rotationSpeed;
             if (angle < 0)
             {
                 angle += 360;
@@ -91,10 +91,12 @@ public class playerMovement : MonoBehaviour
         {
             transform.Translate(Vector3.up * (-1f * ((mPlayerSpeed + minSpeed - 1) * Time.deltaTime)));
         }*/
-        if (Input.GetKey(KeyCode.UpArrow)) {
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
             transform.Translate(Vector3.up * ((mPlayerSpeed + minSpeed - 1) * Time.deltaTime));
         }
-        else if (Input.GetKey(KeyCode.DownArrow)) {
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
             transform.Translate(Vector3.up * (-1f * ((mPlayerSpeed + minSpeed - 1) * Time.deltaTime)));
         }
     }
