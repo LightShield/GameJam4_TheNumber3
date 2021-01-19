@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     public float powerDecayRate = 0.002f;
     
     [Header("Player Score")]
-    public int score;
+    public float score;
     public int scoreLossFromCrash = 10;
     public int scoreLossFromHit = 1;
     //public int scoreGainFromKill = 1; do we want to have this?
@@ -77,7 +77,6 @@ public class GameManager : MonoBehaviour
         if (!godmode)
         {
             playerHealth--;
-            score -= scoreLossFromHit;
             healthBar.fillAmount = playerHealth / playerMaxHealth;
             if (playerHealth == 0)
             {
@@ -91,7 +90,6 @@ public class GameManager : MonoBehaviour
     {
         if (!godmode)
         {
-            score -= scoreLossFromCrash;
             Debug.Log("final score: " + score);
             SceneManager.LoadScene(2);
         }
@@ -130,7 +128,6 @@ public class GameManager : MonoBehaviour
                 bulletBar.fillAmount = powers[DAMAGE_POWER]/playerMaxBullet;
             }
         }
-        score += scoreGainFromSoul;
         Destroy(soul);
 
     }
@@ -146,6 +143,7 @@ public class GameManager : MonoBehaviour
         {
             godmode = !godmode;
         }
+        //pause
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("Paused");
@@ -158,6 +156,7 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
+        score += Time.deltaTime;
     }
 
     void powersDecay()
