@@ -2780,6 +2780,10 @@ PrefabInstance:
       value: EnemyPool
       objectReference: {fileID: 0}
     - target: {fileID: 8844322022694828283, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: countToEnemy
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022694828283, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: enemyTypes.Array.data[2]
       value: 
       objectReference: {fileID: 1588055174}
