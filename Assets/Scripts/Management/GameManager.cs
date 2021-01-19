@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         powersDecay();
 
         //temp score UI update
-        _scoreText.text = "Score " + score;
+        _scoreText.text = "Score " + (int) score;
 
         if (Input.GetKey(KeyCode.G))
         {
