@@ -107,7 +107,7 @@ public class playerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("block_state_0"))
         {
             //state block collided
-           EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_CRASH_ENEMY,collision.gameObject);
+           EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_PLAYER_CRASH_ENEMY,gameObject);
         }
         else if (collision.transform.CompareTag("soul"))
         {
