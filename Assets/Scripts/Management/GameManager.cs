@@ -169,18 +169,18 @@ public class GameManager : MonoBehaviour
             godmode = !godmode;
         }
         //pause
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Debug.Log("Paused");
-            if (Time.timeScale == 1)
-            {
-                Time.timeScale = 0;
-            }
-            else
-            {
-                Time.timeScale = 1;
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     Debug.Log("Paused");
+        //     if (Time.timeScale == 1)
+        //     {
+        //         Time.timeScale = 0;
+        //     }
+        //     else
+        //     {
+        //         Time.timeScale = 1;
+        //     }
+        // }
         score += Time.deltaTime;
     }
 
@@ -207,7 +207,7 @@ public class GameManager : MonoBehaviour
                     playerRangeDecayCounter = 0;
                     playerShooter.bulletRange = Mathf.Max(playerShooter.bulletRange - 1, MIN_POWER_VALUES[RANGE_POWER]);
                 }*/
-                playerShooter.bulletRange = Mathf.RoundToInt(powers[RANGE_POWER]);
+                //playerShooter.bulletRange = Mathf.RoundToInt(powers[RANGE_POWER]);
                 break;
         case DAMAGE_POWER :
                 playerShooter.bulletDamage = Mathf.RoundToInt(powers[DAMAGE_POWER]);

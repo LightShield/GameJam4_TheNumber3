@@ -9,6 +9,7 @@ public class PlayerBulletMovement : MonoBehaviour
     private Vector2 moveDirection;
     private float size;
     public float lifeTime = 10f;
+    private float currentLife;
     private SpriteRenderer _spriteRenderer;
 
     [Header("bullet powers")]
@@ -18,26 +19,25 @@ public class PlayerBulletMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        lifeTime = 10f;
+        currentLife = lifeTime;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        lifeTime -= Time.deltaTime;
-        if (lifeTime <= 0)
+        currentLife -= Time.deltaTime;
+        if (currentLife <= 0)
         {
             Destroy();
         }
         else
         {
+            if (currentLife > 0.75f * lifeTime)
+                moveSpeed += 0.05f;
+            else if (currentLife < 0.25f * lifeTime)
+                moveSpeed -= 0.05f;
             transform.Translate(moveDirection * (moveSpeed * Time.deltaTime));
         }
 
