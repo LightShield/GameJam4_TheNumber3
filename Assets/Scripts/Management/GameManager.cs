@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     public playerMovement playerMovement;
     public PlayerShooter playerShooter;
     public float powerDecayRate = 0.002f;
+    public GameObject playerUI;
     
     [Header("Player Score")]
     public float score;
@@ -78,7 +80,7 @@ public class GameManager : MonoBehaviour
         {
             playerHealth--;
             healthBar.fillAmount = playerHealth / playerMaxHealth;
-            if (playerHealth == 0)
+            if (playerHealth <= 0)
             {
                 Debug.Log("final score: " + score);
                 SceneManager.LoadScene(2);
@@ -90,9 +92,32 @@ public class GameManager : MonoBehaviour
     {
         if (!godmode)
         {
-            Debug.Log("final score: " + score);
-            SceneManager.LoadScene(2);
+            playerHealth/=2f;
+            healthBar.fillAmount = playerHealth / playerMaxHealth;
+            StartCoroutine(throwPlayer(obj));
+            if (playerHealth <= 0.5f)
+            {
+                Debug.Log("final score: " + score);
+                SceneManager.LoadScene(2);
+            }
         }
+    }
+
+    IEnumerator throwPlayer(object obj)
+    {
+        GameObject go = (GameObject) obj;
+        SpriteRenderer _sr = go.GetComponent<SpriteRenderer>();
+        go.transform.DOJump(go.transform.forward * -2f, 1, 1, 1f);
+
+        go.GetComponent<Collider2D>().enabled = false;
+        for (int i = 0; i < 5; i++)
+        {
+            playerUI.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+            playerUI.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+        }
+        go.GetComponent<Collider2D>().enabled = true;
     }
 
     private void OnEnemyDeath(object obj)
