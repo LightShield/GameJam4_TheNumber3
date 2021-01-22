@@ -201,6 +201,12 @@ public class EnemyBehavior : ParentBehavior
             --damage;
             --layerCounter;
             layers[layerCounter].enabled = false;
+            if (layerCounter > 0)
+            {
+                BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
+                //layers = SpriteRenderer[], z = scale change
+                collider.size = layers[layerCounter - 1].sprite.bounds.size * layers[layerCounter - 1].sprite.bounds.size.z; 
+            }
         }
     }
 

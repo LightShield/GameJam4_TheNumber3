@@ -45,7 +45,7 @@ public class EnemyPoolBehavior : MonoBehaviour
         //pooling init
         instantiateEmptyEnemies();
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH, returnToPool);
-        StartCoroutine("tutorial");
+        StartCoroutine("tutorial"); //TODO RETURN
     }
 
     // Update is called once per frame
@@ -93,11 +93,17 @@ public class EnemyPoolBehavior : MonoBehaviour
         newEnemy.transform.SetParent(activePool.transform, true);
         newEnemy.waitingPool = waitingPool.transform;
         newEnemy.layerCounter = behaviorTemplate.layerCounter;
+       
 
         for (int i = 0; i < newEnemy.layerCounter; ++i)
         {
             newEnemy.layers[i].sprite = behaviorTemplate.layers[i].sprite;
         }
+
+        BoxCollider2D bc = newEnemy.gameObject.GetComponent<BoxCollider2D>();
+        bc.size = newEnemy.layers[newEnemy.layerCounter - 1].sprite.bounds.size * newEnemy.layers[newEnemy.layerCounter - 1].sprite.bounds.size.z;
+        //  collider.size = layers[layerCounter - 1].sprite.bounds.size * layers[layerCounter - 1].sprite.bounds.size.z; 
+
 
         //add starting location
         int boundIndex = Mathf.RoundToInt(Random.Range(0, bounds.Length));
