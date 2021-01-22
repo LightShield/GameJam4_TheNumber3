@@ -45,7 +45,7 @@ public class SpecialBulletPool : MonoBehaviour
         if (inactiveBullets.Count > 0)
         {
             var newBullet =  inactiveBullets.Pop();
-            newBullet.tag = "Untagged";
+            //newBullet.tag = "Untagged";
             newBullet.SetActive(true);
             if (newBullet.CompareTag("bullet"))
             {

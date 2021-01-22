@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +25,7 @@ public class playerMovement : MonoBehaviour
     public int state = 0;
     public int rotationSpeed = 4;
     public float mPlayerSpeed = 1f;
+    public float maxSpeed = 4f;
     public float minSpeed = 4f;
 
     // Start is called before the first frame update

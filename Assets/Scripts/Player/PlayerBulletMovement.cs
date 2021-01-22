@@ -55,4 +55,17 @@ public class PlayerBulletMovement : MonoBehaviour
         lifeTime = 10;
         //transform.position = Vector3.zero;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            if(other.gameObject.GetComponent<BulletBehavior>() == null)
+                EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__BULLET_INACTIVE,other.gameObject);
+            else
+                EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__REG_BULLET_INACTIVE,other.gameObject);
+            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,gameObject);
+        }
+    }
+
 }

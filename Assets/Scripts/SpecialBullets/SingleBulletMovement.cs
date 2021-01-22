@@ -41,7 +41,7 @@ public class SingleBulletMovement : MonoBehaviour
     {
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__BULLET_INACTIVE,gameObject);
         GetComponent<SingleBulletMovement>().enabled = false;
-        tag = "Untagged";
+        //tag = "Untagged";
         //transform.position = Vector3.zero;
     }
 

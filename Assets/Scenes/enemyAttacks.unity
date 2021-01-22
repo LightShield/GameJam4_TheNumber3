@@ -3906,7 +3906,7 @@ MonoBehaviour:
   playerMovement: {fileID: 121228672}
   playerShooter: {fileID: 121228669}
   powerDecayRate: 0.2
-  playerUI: {fileID: 0}
+  playerUI: {fileID: 1041601429}
   score: 0
   scoreLossFromCrash: 5
   scoreLossFromHit: 1
@@ -4400,6 +4400,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 4407380705868529231, guid: 01cbd4a45fb02bb4cbfa2d186215d584, type: 3}
+    - target: {fileID: 1388720562025363764, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
+      propertyPath: m_TagString
+      value: EnemyBullet
+      objectReference: {fileID: 0}
     - target: {fileID: 1388720562025363765, guid: 96931a0c395501e4ba25d68b9947361a, type: 3}
       propertyPath: m_Radius
       value: 0.1
@@ -5546,6 +5550,10 @@ PrefabInstance:
     - target: {fileID: 4414814770377810502, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810503, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: maxSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810503, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: mPlayerSpeed

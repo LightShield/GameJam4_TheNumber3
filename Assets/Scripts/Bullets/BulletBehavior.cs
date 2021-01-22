@@ -38,8 +38,8 @@ public class BulletBehavior : MonoBehaviour
         transform.position = waitingBulletPool.position;
         //disable script
         gameObject.GetComponent<BulletBehavior>().enabled = false;
-        //return to default tag
-        transform.tag = "Untagged";
+        // //return to default tag
+        // transform.tag = "Untagged";
         //inform pool
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__REG_BULLET_INACTIVE, gameObject);
     }

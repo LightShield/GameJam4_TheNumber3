@@ -15,6 +15,7 @@ TagManager:
   - boundary
   - playerBounds
   - soul
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
