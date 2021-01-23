@@ -75,8 +75,7 @@ public class PlayerShooter : MonoBehaviour
         bullet1.GetComponent<PlayerBulletMovement>().SetMoveDirection(moveDir);
         bullet1.GetComponent<PlayerBulletMovement>().moveSpeed = bulletSpeed;
         bullet1.GetComponent<PlayerBulletMovement>().bulletDamage = bulletDamage;
-        bullet1.GetComponent<PlayerBulletMovement>().enabled = true;
-        bullet1.transform.position = shootingPoint.position;
+        bullet1.GetComponent<PlayerBulletMovement>().isClockWise = true;
 
         GameObject bullet2 = BulletPool.GetBullet();
         bullet2.transform.rotation = transform.rotation;
@@ -84,6 +83,9 @@ public class PlayerShooter : MonoBehaviour
         bullet2.GetComponent<PlayerBulletMovement>().moveSpeed = bulletSpeed;
         bullet2.GetComponent<PlayerBulletMovement>().bulletDamage = bulletDamage;
         bullet2.GetComponent<PlayerBulletMovement>().isClockWise = false;
+
+        bullet1.GetComponent<PlayerBulletMovement>().enabled = true;
+        bullet1.transform.position = shootingPoint.position;
         bullet2.GetComponent<PlayerBulletMovement>().enabled = true;
         bullet2.transform.position = shootingPoint.position;
     }

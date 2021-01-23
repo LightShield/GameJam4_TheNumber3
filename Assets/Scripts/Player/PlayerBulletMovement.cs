@@ -22,6 +22,8 @@ public class PlayerBulletMovement : MonoBehaviour
     private void OnEnable()
     {
         currentLife = lifeTime;
+        if (!isClockWise)
+            Debug.Log("non clockwise created !!!");
     }
 
     // Update is called once per frame

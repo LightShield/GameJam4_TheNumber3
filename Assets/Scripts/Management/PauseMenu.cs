@@ -49,12 +49,12 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
-    public void loadMenu()
+    public void retry()
     {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        GameIsPaused = false;
     }
-
     public void quitGame()
     {
         Application.Quit();
