@@ -1,10 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class UIController : MonoBehaviour
 {
+
+    public GameObject startButton, quitButton;
+
+    private void Start()
+    {                    
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(startButton);
+    }
+
     public void onStartClicked()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);

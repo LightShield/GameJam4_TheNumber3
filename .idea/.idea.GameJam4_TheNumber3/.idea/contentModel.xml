@@ -57,6 +57,7 @@
             <e p="EventManagerScript.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
+            <e p="MenuController.cs" t="Include" />
             <e p="PauseMenu.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
