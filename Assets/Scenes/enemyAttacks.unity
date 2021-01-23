@@ -3421,6 +3421,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8844322021735625527, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 6337309776760167661, guid: 1307bbf90a8c8b541b8cb9c41e4ac67c, type: 3}
     - target: {fileID: 8844322021765798159, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3437,6 +3441,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8844322021871513938, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 6337309776760167661, guid: 1307bbf90a8c8b541b8cb9c41e4ac67c, type: 3}
     - target: {fileID: 8844322021988496619, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3445,6 +3453,10 @@ PrefabInstance:
       propertyPath: bp
       value: 
       objectReference: {fileID: 605443646}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 6337309776760167661, guid: 1307bbf90a8c8b541b8cb9c41e4ac67c, type: 3}
     - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: target
       value: 
@@ -3497,6 +3509,10 @@ PrefabInstance:
       propertyPath: BulletPool
       value: 
       objectReference: {fileID: 1544670781}
+    - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 6337309776760167661, guid: 1307bbf90a8c8b541b8cb9c41e4ac67c, type: 3}
     - target: {fileID: 8844322022056195331, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3521,6 +3537,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 6337309776760167661, guid: 1307bbf90a8c8b541b8cb9c41e4ac67c, type: 3}
     - target: {fileID: 8844322022360142795, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3549,6 +3569,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 8844322022447567345, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 6337309776760167661, guid: 1307bbf90a8c8b541b8cb9c41e4ac67c, type: 3}
     - target: {fileID: 8844322022447567347, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3625,6 +3649,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 6337309776760167661, guid: 1307bbf90a8c8b541b8cb9c41e4ac67c, type: 3}
     - target: {fileID: 8844322022730332766, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4296,7 +4324,7 @@ MonoBehaviour:
   shootingTolerance: 1
   waitingPool: {fileID: 193829803}
   killed: 0
-  soul: {fileID: 5270148665211215522, guid: eddcbf3656541ba499b6a6cdd5a7a361, type: 3}
+  soul: {fileID: 6337309776760167661, guid: 1307bbf90a8c8b541b8cb9c41e4ac67c, type: 3}
   debugTimer: 0
   lives: 3
   speedColor: {r: 0.77647066, g: 0.6039216, b: 0.30980393, a: 1}
