@@ -16,13 +16,13 @@ public class PlayerBulletMovement : MonoBehaviour
     public int bulletRange = 1;
     public float moveSpeed = 1f;
     public float bulletDamage = 1f;
+    [Header("bullets movement data")] 
+    public bool isClockWise= true;
 
     private void OnEnable()
     {
         currentLife = lifeTime;
     }
-
-    
 
     // Update is called once per frame
     void Update()
@@ -34,15 +34,16 @@ public class PlayerBulletMovement : MonoBehaviour
         }
         else
         {
-            if (currentLife > 0.75f * lifeTime)
-                moveSpeed += 0.05f;
-            else if (currentLife < 0.25f * lifeTime)
-                moveSpeed -= 0.05f;
-            transform.Translate(moveDirection * (moveSpeed * Time.deltaTime));
+            if(isClockWise)
+                transform.Rotate(0, 0, .2f);
+            else
+                transform.Rotate(0, 0, -.2f);
+            // transform.Translate(transform.right * Mathf.Sin(Time.deltaTime * frequency) * magnitude);
+            transform.Translate(moveDirection * (moveSpeed * 5f * Time.deltaTime));
         }
 
     }
-
+    
     public void SetMoveDirection(Vector2 dir)
     {
         moveDirection = dir;
