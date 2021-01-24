@@ -36,7 +36,6 @@ public class PlayerBulletPool : MonoBehaviour
             go.transform.position = transform.position;
             go.transform.tag = "bullet";
             go.SetActive(false);   
-            go.GetComponent<SpriteRenderer>().color = Color.yellow;
             inactiveBullets.Push(go);
         }
     }

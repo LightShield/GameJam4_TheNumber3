@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class PlayerBulletMovement : MonoBehaviour
 {
-    private Vector2 moveDirection;
+    private Vector3 moveDirection;
     private float size;
     public float lifeTime = 10f;
     private float currentLife;
@@ -18,10 +18,21 @@ public class PlayerBulletMovement : MonoBehaviour
     public float bulletDamage = 1f;
     [Header("bullets movement data")] 
     public bool isClockWise= true;
+    public float frequency = 10f;
+    public float magnitude = 1f;
+    
+    private Vector3 pos;
+    private SpriteRenderer _sr;
+
+
+ 
 
     private void OnEnable()
     {
+        pos = transform.position;
         currentLife = lifeTime;
+        _sr = GetComponent<SpriteRenderer>();
+        _sr.color = Color.white;
         if (!isClockWise)
             Debug.Log("non clockwise created !!!");
     }
@@ -36,13 +47,20 @@ public class PlayerBulletMovement : MonoBehaviour
         }
         else
         {
-            if(isClockWise)
-                transform.Rotate(0, 0, .2f);
+            if (isClockWise)
+            {
+                transform.Rotate(0, 0, Mathf.Sin(Time.time * frequency) * magnitude);
+            }
             else
-                transform.Rotate(0, 0, -.2f);
-            // transform.Translate(transform.right * Mathf.Sin(Time.deltaTime * frequency) * magnitude);
+            {
+                transform.Rotate(0, 0, -Mathf.Sin(Time.time * frequency) * magnitude);
+
+            }
             transform.Translate(moveDirection * (moveSpeed * 5f * Time.deltaTime));
+            _sr.color = Color.Lerp(Color.black, Color.white, currentLife / lifeTime);
+
         }
+
 
     }
     

@@ -52,7 +52,7 @@ public class PlayerShooter : MonoBehaviour
                 Vector3 moveVector = new Vector3(x, y, 0f);
                 Vector2 dir = (moveVector - transform.position).normalized;
                 shootOnce(dir);
-                angle += angleStep;
+                angle += angleStep;  
             }
 
             transform.DORewind();
@@ -83,6 +83,7 @@ public class PlayerShooter : MonoBehaviour
         bullet2.GetComponent<PlayerBulletMovement>().moveSpeed = bulletSpeed;
         bullet2.GetComponent<PlayerBulletMovement>().bulletDamage = bulletDamage;
         bullet2.GetComponent<PlayerBulletMovement>().isClockWise = false;
+
 
         bullet1.GetComponent<PlayerBulletMovement>().enabled = true;
         bullet1.transform.position = shootingPoint.position;
