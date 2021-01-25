@@ -84,10 +84,10 @@ public class EnemyPoolBehavior : MonoBehaviour
     {
         EnemyBehavior behaviorTemplate = enemyType.GetComponent<EnemyBehavior>();
         EnemyBehavior newEnemy = waitingEnemies.Pop();
-        newEnemy.speed = behaviorTemplate.speed;
-        newEnemy.shootingRange = behaviorTemplate.shootingRange;
+        newEnemy.frequency = behaviorTemplate.frequency;
+        newEnemy.bulletCount = behaviorTemplate.bulletCount;
         newEnemy.power = behaviorTemplate.power;
-        newEnemy.bulletSize = behaviorTemplate.bulletSize;
+        newEnemy.magnitude = behaviorTemplate.magnitude;
         newEnemy.coolDown = behaviorTemplate.coolDown;
         newEnemy.health = behaviorTemplate.health;
         newEnemy.transform.SetParent(activePool.transform, true);

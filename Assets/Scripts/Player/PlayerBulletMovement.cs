@@ -8,33 +8,22 @@ public class PlayerBulletMovement : MonoBehaviour
 {
     private Vector3 moveDirection;
     private float size;
-    public float lifeTime = 10f;
+    public float lifeTime = 5f;
     private float currentLife;
-    private SpriteRenderer _spriteRenderer;
+    private SpriteRenderer _sr;
 
-    [Header("bullet powers")]
-    public int bulletRange = 1;
-    public float moveSpeed = 1f;
-    public float bulletDamage = 1f;
+
     [Header("bullets movement data")] 
     public bool isClockWise= true;
     public float frequency = 10f;
     public float magnitude = 1f;
-    
-    private Vector3 pos;
-    private SpriteRenderer _sr;
 
-
- 
 
     private void OnEnable()
     {
-        pos = transform.position;
         currentLife = lifeTime;
         _sr = GetComponent<SpriteRenderer>();
         _sr.color = Color.white;
-        if (!isClockWise)
-            Debug.Log("non clockwise created !!!");
     }
 
     // Update is called once per frame
@@ -44,6 +33,10 @@ public class PlayerBulletMovement : MonoBehaviour
         if (currentLife <= 0)
         {
             Destroy();
+        }
+        else   if(currentLife<=3f)
+        {
+            transform.Translate(moveDirection * ( 5f * Time.deltaTime));
         }
         else
         {
@@ -56,9 +49,8 @@ public class PlayerBulletMovement : MonoBehaviour
                 transform.Rotate(0, 0, -Mathf.Sin(Time.time * frequency) * magnitude);
 
             }
-            transform.Translate(moveDirection * (moveSpeed * 5f * Time.deltaTime));
+            transform.Translate(moveDirection * ( 5f * Time.deltaTime));
             _sr.color = Color.Lerp(Color.black, Color.white, currentLife / lifeTime);
-
         }
 
 
@@ -73,7 +65,7 @@ public class PlayerBulletMovement : MonoBehaviour
     {
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,gameObject);
         GetComponent<PlayerBulletMovement>().enabled = false;
-        lifeTime = 10;
+            //lifeTime = 10;
         //transform.position = Vector3.zero;
     }
 

@@ -8,7 +8,7 @@ public class FarSightEnemy : EnemyBehavior
     void Start()
     {
         base.Start();
-        shootingRange *= 2;
+        bulletCount *= 2;
     }
 
     // Update is called once per frame

@@ -48,6 +48,7 @@ public class PlayerBulletPool : MonoBehaviour
             newBullet.SetActive(true);
             return newBullet;
         }
+        Debug.Log("player bullet pool empty");
         return null;
     }
 }

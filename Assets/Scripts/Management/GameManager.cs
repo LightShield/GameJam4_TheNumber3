@@ -10,15 +10,17 @@ public class GameManager : MonoBehaviour
 {
     private float[] powers = {1, 1, 1};
     private float[] maxPowers;
-    private const int SPEED_POWER = 0;
-    private const int RANGE_POWER = 1;
-    private const int DAMAGE_POWER = 2;
+    private const int FREQUENCY_POWER = 0;
+    private const int BULLET_COUNT_POWER = 1;
+    private const int MAGNITUDE = 2;
 
     private int[] MIN_POWER_VALUES = {1, 1, 1};
     
 
     private int playerPoints = 0;
     private int playerRangeChange = 2;
+    private float playerMagnitudeChange = 0.1f;
+    private float playerFrequencyChange = 0.1f;
     private float playerHealth = 10f;
 
     [Header("Player Bars")]
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_PLAYER_HIT_BY_BULLET,OnPlayerHit);
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_PLAYER_CRASH_ENEMY,OnPlayerCrash);
-        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET,OnEnemyDeath);
+        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET, OnEnemyDeath);
         playerHealth = playerMaxHealth;
         healthBar.fillAmount = 1f;
         powerBar.fillAmount = 1f / playerMaxPower;
@@ -125,32 +127,33 @@ public class GameManager : MonoBehaviour
         GameObject soul = (GameObject) obj;
         SoulLogic sl = soul.GetComponent<SoulLogic>();
         Debug.Log("Game manager: enemy killed");
-        if (sl.speed > 1)
+        if (sl.frequency > 1)
         {
-            if (powers[SPEED_POWER] < playerMaxSpeed)
+            if (powers[FREQUENCY_POWER] < playerMaxSpeed)
             {
-                powers[SPEED_POWER]++;
-                speedBar.fillAmount = powers[SPEED_POWER]/ playerMaxSpeed;
-                playerShooter.bulletSpeed++;
+                powers[FREQUENCY_POWER]++;
+                speedBar.fillAmount = powers[FREQUENCY_POWER]/ playerMaxSpeed;
+                playerShooter.frequency += playerFrequencyChange;
             }
 
         }   
-        else if (sl.range > 1)
+        else if (sl.bulletCount > 1)
         {
-            if (powers[RANGE_POWER] < playerMaxPower)
+            if (powers[BULLET_COUNT_POWER] < playerMaxPower)
             {
-                powers[RANGE_POWER] = Mathf.Min(playerMaxPower, powers[RANGE_POWER] + playerRangeChange);
-                powerBar.fillAmount = powers[SPEED_POWER] / playerMaxPower;
-                playerShooter.bulletRange += playerRangeChange;
+                powers[BULLET_COUNT_POWER] = Mathf.Min(playerMaxPower, powers[BULLET_COUNT_POWER] + playerRangeChange);
+                powerBar.fillAmount = powers[BULLET_COUNT_POWER] / playerMaxPower;
+                playerShooter.bulletCount += playerRangeChange;
 
             }
         }
         else
         {
-            if (powers[DAMAGE_POWER] < playerMaxBullet)
+            if (powers[MAGNITUDE] < playerMaxBullet)
             {
-                powers[DAMAGE_POWER]++;
-                bulletBar.fillAmount = powers[DAMAGE_POWER]/playerMaxBullet;
+                powers[MAGNITUDE]++;
+                bulletBar.fillAmount = powers[MAGNITUDE]/playerMaxBullet;
+                playerShooter.magnitude += playerMagnitudeChange;
             }
         }
         Destroy(soul);
@@ -198,19 +201,20 @@ public class GameManager : MonoBehaviour
     {
         switch (index)
         {
-        case SPEED_POWER : 
-                playerShooter.bulletSpeed = powers[SPEED_POWER];
+        case BULLET_COUNT_POWER : 
+                playerShooter.bulletCount =  Mathf.RoundToInt(powers[BULLET_COUNT_POWER]);
                 break;
-        case RANGE_POWER :
+        case FREQUENCY_POWER :
                 /*playerRangeDecayCounter += powerDecayRate * Time.deltaTime;
                 if(playerRangeDecayCounter >= 1 / playerRangeChange){
                     playerRangeDecayCounter = 0;
                     playerShooter.bulletRange = Mathf.Max(playerShooter.bulletRange - 1, MIN_POWER_VALUES[RANGE_POWER]);
                 }*/
                 //playerShooter.bulletRange = Mathf.RoundToInt(powers[RANGE_POWER]);
+                //playerShooter.magnitude = Mathf.RoundToInt(powers[MAGNITUDE]);
                 break;
-        case DAMAGE_POWER :
-                playerShooter.bulletDamage = Mathf.RoundToInt(powers[DAMAGE_POWER]);
+        case MAGNITUDE :
+                //playerShooter.frequency = Mathf.RoundToInt(powers[FREQUENCY_POWER]);
                 break;
         }
     }

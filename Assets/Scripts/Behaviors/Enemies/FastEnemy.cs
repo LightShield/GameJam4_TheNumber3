@@ -10,7 +10,7 @@ public class FastEnemy : EnemyBehavior
         Debug.Log("Before parent");
         base.Start();
         Debug.Log("After parent");
-        speed *= 2;
+        frequency *= 2;
     }
 
     // Update is called once per frame

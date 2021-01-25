@@ -14,9 +14,10 @@ public class PlayerShooter : MonoBehaviour
     private float startAngle = 90f, endAngle = 270f;
 
 
-    [Header("bullet powers")] public int bulletRange = 1;
-    public float bulletSpeed = 1f;
-    public float bulletDamage = 1f;
+    [Header("bullet powers")] 
+    public float frequency = 1f;
+    public float bulletCount = 1f;
+    public float magnitude = 1f;
 
 
     // Update is called once per frame
@@ -38,13 +39,13 @@ public class PlayerShooter : MonoBehaviour
 
     private void Shoot()
     {
-        if (bulletRange > 1)
+        if (bulletCount > 1)
         {
 
-            float angleStep = (endAngle - startAngle) / bulletRange;
+            float angleStep = (endAngle - startAngle) / bulletCount;
             float angle = -startAngle;
 
-            for (int i = 0; i < bulletRange; i++)
+            for (int i = 0; i < bulletCount; i++)
             {
                 float x = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180);
                 float y = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180);
@@ -62,33 +63,43 @@ public class PlayerShooter : MonoBehaviour
         else
         {
             //pb.shoot();
-            shootOnce(Vector2.up);
+            shootOnce(Vector2.up,true);
             Invoke("enableShooting", .05f);
             transform.DORewind();
             transform.DOPunchScale(new Vector3(.2f, .2f, .2f), .25f);
         }
     }
-    private void shootOnce(Vector2 moveDir)
+    private void shootOnce(Vector2 moveDir, bool isSingleShot=false)
     {
         GameObject bullet1 = BulletPool.GetBullet();
-        bullet1.transform.rotation = transform.rotation;
-        bullet1.GetComponent<PlayerBulletMovement>().SetMoveDirection(moveDir);
-        bullet1.GetComponent<PlayerBulletMovement>().moveSpeed = bulletSpeed;
-        bullet1.GetComponent<PlayerBulletMovement>().bulletDamage = bulletDamage;
-        bullet1.GetComponent<PlayerBulletMovement>().isClockWise = true;
+        if (bullet1 != null)
+        {
+            bullet1.transform.rotation = transform.rotation;
+            bullet1.GetComponent<PlayerBulletMovement>().SetMoveDirection(moveDir);
+            bullet1.GetComponent<PlayerBulletMovement>().magnitude = magnitude;
+            bullet1.GetComponent<PlayerBulletMovement>().frequency = frequency;
+            bullet1.GetComponent<PlayerBulletMovement>().isClockWise = true;
+            bullet1.GetComponent<PlayerBulletMovement>().enabled = true;
+            bullet1.transform.position = shootingPoint.position;
+        }
 
-        GameObject bullet2 = BulletPool.GetBullet();
-        bullet2.transform.rotation = transform.rotation;
-        bullet2.GetComponent<PlayerBulletMovement>().SetMoveDirection(moveDir);
-        bullet2.GetComponent<PlayerBulletMovement>().moveSpeed = bulletSpeed;
-        bullet2.GetComponent<PlayerBulletMovement>().bulletDamage = bulletDamage;
-        bullet2.GetComponent<PlayerBulletMovement>().isClockWise = false;
+        if (!isSingleShot)
+        {
+            GameObject bullet2 = BulletPool.GetBullet();
+            if (bullet2 != null)
+            {
+                bullet2.transform.rotation = transform.rotation;
+                bullet2.GetComponent<PlayerBulletMovement>().SetMoveDirection(moveDir);
+                bullet2.GetComponent<PlayerBulletMovement>().magnitude = magnitude;
+                bullet2.GetComponent<PlayerBulletMovement>().frequency = frequency;
+                bullet2.GetComponent<PlayerBulletMovement>().isClockWise = false;
+                bullet2.GetComponent<PlayerBulletMovement>().enabled = true;
+                bullet2.transform.position = shootingPoint.position;
+            }
+        }
 
 
-        bullet1.GetComponent<PlayerBulletMovement>().enabled = true;
-        bullet1.transform.position = shootingPoint.position;
-        bullet2.GetComponent<PlayerBulletMovement>().enabled = true;
-        bullet2.transform.position = shootingPoint.position;
+
     }
 
     private void enableShooting()

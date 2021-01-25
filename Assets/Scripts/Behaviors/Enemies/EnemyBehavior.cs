@@ -60,12 +60,12 @@ public class EnemyBehavior : ParentBehavior
     {
         _sr = GetComponent<SpriteRenderer>();
 
-        if (base.speed > 1)
+        if (base.frequency > 1)
         {
             _sr.color = speedColor;
             _sr.sprite = speedSprites[lives-1];
         }            
-        else if (base.shootingRange > 1)
+        else if (base.bulletCount > 1)
         {
             _sr.color = RangeColor;
             _sr.sprite = rangeSprites[lives-1];
@@ -87,7 +87,7 @@ public class EnemyBehavior : ParentBehavior
         move(getUpdatedTargetLocationVector().normalized);
 
         //shoot if needed
-        if(distanceFromTarget() < shootingRange + shootingTolerance)
+        if(distanceFromTarget() < bulletCount + shootingTolerance)
         {
             shoot();
             //gameObject.GetComponent<SpriteRenderer>().color = Color.red;
@@ -113,11 +113,10 @@ public class EnemyBehavior : ParentBehavior
         if (other.transform.CompareTag("bullet"))
         {
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
-            int damage = (int) other.gameObject.GetComponent<PlayerBulletMovement>().bulletDamage;
-            updateSprites(damage);
-            if (lives-damage>0)
+            updateSprites(1);
+            if (lives-1>0)
             {
-                lives-= damage;
+                lives--;
                 SetSprite();
                 StartCoroutine(flickerEnemy());
             }
@@ -152,9 +151,9 @@ public class EnemyBehavior : ParentBehavior
         SetSprite();
         GameObject go = Instantiate(soul, transform.position, transform.rotation);
         SoulLogic sl = go.GetComponent<SoulLogic>();
-        sl.speed = (int)base.speed;
-        sl.range = (int)base.shootingRange;
-        sl.empty = (int)base.power;
+        sl.frequency = (int)base.frequency;
+        sl.bulletCount = (int)base.bulletCount;
+        sl.magnitude = (int)base.magnitude;
         SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
         sr.color =_sr.color;
         Debug.Log(sr.color + " " + _sr.color);

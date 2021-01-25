@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ParentBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("Skill Settings")]
-    public float speed = 1f;
-    public float shootingRange = 1f;
-    public float bulletSize = 1f;
+    public float frequency = 1f;
+    public float bulletCount = 1f;
+    public float magnitude = 1f;
     public float coolDown = 3f;
     public float power = 1f;
     public float health = 100;

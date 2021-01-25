@@ -56,13 +56,13 @@ public class BulletPollBehavior : MonoBehaviour
     public void activateBullet(ParentBehavior shooter)
     {
         //SET BULLET CHARECTARISTICS BASED ON SHOOTER'S CHARS
-        if (shooter.shootingRange > 1)
+        if (shooter.bulletCount > 1)
         {
             Vector3 movementDirection = shooter.getUpdatedTargetLocationVector().normalized;
-            float angleStep = (endAngle - startAngle) / shooter.bulletSize;
+            float angleStep = (endAngle - startAngle) / shooter.magnitude;
             float angle = Mathf.Atan2(movementDirection.y,movementDirection.x) * Mathf.Deg2Rad - 90;
 
-            for (int i = 0; i < shooter.bulletSize; i++)
+            for (int i = 0; i < shooter.magnitude; i++)
             {
                 BulletBehavior bullet = waitingBullets.Pop();
                 
@@ -73,8 +73,8 @@ public class BulletPollBehavior : MonoBehaviour
                 Vector2 dir = (moveVector - transform.position).normalized;
                 bullet.movementDirection = dir;
 
-                bullet.speed = shooter.speed + relativeBulletSpeed;
-                bullet.timeToLive = shooter.shootingRange;
+                bullet.speed = shooter.frequency + relativeBulletSpeed;
+                bullet.timeToLive = shooter.bulletCount;
                 bullet.damage = shooter.power;
                 bullet.transform.position = shooter.transform.position;
                 bullet.transform.SetParent(activePool.transform,true);
@@ -87,11 +87,11 @@ public class BulletPollBehavior : MonoBehaviour
                 angle += angleStep;
             }
         }
-        else if(shooter.speed > 1)
+        else if(shooter.frequency > 1)
         {
             BulletBehavior bullet = waitingBullets.Pop();
-            bullet.speed = shooter.speed + relativeBulletSpeed;
-            bullet.timeToLive = shooter.shootingRange;
+            bullet.speed = shooter.frequency + relativeBulletSpeed;
+            bullet.timeToLive = shooter.bulletCount;
             bullet.damage = shooter.power;
             bullet.movementDirection = shooter.getUpdatedTargetLocationVector().normalized;
             bullet.transform.position = shooter.transform.position;
@@ -104,8 +104,8 @@ public class BulletPollBehavior : MonoBehaviour
         else
         {
             BulletBehavior bullet = waitingBullets.Pop();
-            bullet.speed = shooter.speed + relativeBulletSpeed;
-            bullet.timeToLive = shooter.shootingRange;
+            bullet.speed = shooter.frequency + relativeBulletSpeed;
+            bullet.timeToLive = shooter.bulletCount;
             bullet.damage = shooter.power;
             bullet.movementDirection = shooter.getUpdatedTargetLocationVector().normalized;
             bullet.transform.position = shooter.transform.position;
