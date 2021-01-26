@@ -18,25 +18,25 @@ public class GameManager : MonoBehaviour
     
 
     private int playerPoints = 0;
-    private int playerRangeChange = 2;
+    private int playerBulletCountChange = 2;
     private float playerMagnitudeChange = 0.1f;
     private float playerFrequencyChange = 0.1f;
     private float playerHealth = 10f;
 
     [Header("Player Bars")]
     public Image healthBar;
-    public Image powerBar;
-    public Image speedBar;
-    public Image bulletBar;
+    public Image bulletCountBar;
+    public Image frequencyBar;
+    public Image magnitudeBar;
     private Image[] skillBars;
     public bool godmode = true;
 
 
     [Header("Player Data")] 
     public float playerMaxHealth;
-    public float playerMaxSpeed;
-    public float playerMaxPower;
-    public float playerMaxBullet;
+    public float playerMaxFrequency;
+    public float playerMaxBulletCount;
+    public float playerMaxMagnitude;
     public playerMovement playerMovement;
     public PlayerShooter playerShooter;
     public float powerDecayRate = 0.002f;
@@ -62,12 +62,12 @@ public class GameManager : MonoBehaviour
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET, OnEnemyDeath);
         playerHealth = playerMaxHealth;
         healthBar.fillAmount = 1f;
-        powerBar.fillAmount = 1f / playerMaxPower;
-        speedBar.fillAmount = 1f / playerMaxSpeed;
-        bulletBar.fillAmount = 1f / playerMaxBullet;
+        bulletCountBar.fillAmount = 1f / playerMaxBulletCount;
+        frequencyBar.fillAmount = 1f / playerMaxFrequency;
+        magnitudeBar.fillAmount = 1f / playerMaxMagnitude;
 
-        skillBars = new Image[]{speedBar, powerBar, bulletBar};
-        maxPowers = new float[]{playerMaxSpeed,playerMaxPower,playerMaxBullet};
+        skillBars = new Image[]{frequencyBar, bulletCountBar, magnitudeBar};
+        maxPowers = new float[]{playerMaxFrequency,playerMaxBulletCount,playerMaxMagnitude};
         score = 0;
         initBoundaries();
 
@@ -129,30 +129,30 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game manager: enemy killed");
         if (sl.frequency > 1)
         {
-            if (powers[FREQUENCY_POWER] < playerMaxSpeed)
+            if (powers[FREQUENCY_POWER] < playerMaxFrequency)
             {
                 powers[FREQUENCY_POWER]++;
-                speedBar.fillAmount = powers[FREQUENCY_POWER]/ playerMaxSpeed;
+                frequencyBar.fillAmount = powers[FREQUENCY_POWER]/ playerMaxFrequency;
                 playerShooter.frequency += playerFrequencyChange;
             }
 
         }   
         else if (sl.bulletCount > 1)
         {
-            if (powers[BULLET_COUNT_POWER] < playerMaxPower)
+            if (powers[BULLET_COUNT_POWER] < playerMaxBulletCount)
             {
-                powers[BULLET_COUNT_POWER] = Mathf.Min(playerMaxPower, powers[BULLET_COUNT_POWER] + playerRangeChange);
-                powerBar.fillAmount = powers[BULLET_COUNT_POWER] / playerMaxPower;
-                playerShooter.bulletCount += playerRangeChange;
+                powers[BULLET_COUNT_POWER] = Mathf.Min(playerMaxBulletCount, powers[BULLET_COUNT_POWER] + playerBulletCountChange);
+                bulletCountBar.fillAmount = powers[BULLET_COUNT_POWER] / playerMaxBulletCount;
+                playerShooter.bulletCount += playerBulletCountChange;
 
             }
         }
         else
         {
-            if (powers[MAGNITUDE] < playerMaxBullet)
+            if (powers[MAGNITUDE] < playerMaxMagnitude)
             {
-                powers[MAGNITUDE]++;
-                bulletBar.fillAmount = powers[MAGNITUDE]/playerMaxBullet;
+                powers[MAGNITUDE] = Mathf.Min(playerMaxMagnitude, powers[MAGNITUDE] + playerMagnitudeChange);
+                magnitudeBar.fillAmount = powers[MAGNITUDE]/playerMaxMagnitude;
                 playerShooter.magnitude += playerMagnitudeChange;
             }
         }
