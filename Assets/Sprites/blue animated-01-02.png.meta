@@ -1,0 +1,1464 @@
+fileFormatVersion: 2
+guid: e0a125c3e0dffd444b8d746bbe031d21
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5643943960555487042
+    second: blue animated-01-02_5
+  - first:
+      213: -1068005966843023538
+    second: blue animated-01-02_6
+  - first:
+      213: 8805278517846508738
+    second: blue animated-01-02_7
+  - first:
+      213: 5442934748017051673
+    second: blue animated-01-02_8
+  - first:
+      213: 7823168278628616297
+    second: blue animated-01-02_9
+  - first:
+      213: -1165212856556324538
+    second: blue animated-01-02_10
+  - first:
+      213: 6685857191425816273
+    second: blue animated-01-02_11
+  - first:
+      213: 8626015226305259902
+    second: blue animated-01-02_12
+  - first:
+      213: 257973827588892355
+    second: blue animated-01-02_19
+  - first:
+      213: -2656988229319710363
+    second: blue animated-01-02_20
+  - first:
+      213: -2974253752891462998
+    second: blue animated-01-02_21
+  - first:
+      213: -4494556859344908429
+    second: blue animated-01-02_22
+  - first:
+      213: 5134922000704810798
+    second: blue animated-01-02_23
+  - first:
+      213: 4604575237969360068
+    second: blue animated-01-02_24
+  - first:
+      213: 868197572377411336
+    second: blue animated-01-02_25
+  - first:
+      213: -4636695519961177227
+    second: blue animated-01-02_26
+  - first:
+      213: 2566637790741883838
+    second: blue animated-01-02_27
+  - first:
+      213: 1473393602244405481
+    second: blue animated-01-02_28
+  - first:
+      213: 2419615918977696800
+    second: blue animated-01-02_29
+  - first:
+      213: 4677393301110273326
+    second: blue animated-01-02_30
+  - first:
+      213: 4846118795090938718
+    second: blue animated-01-02_31
+  - first:
+      213: -5781957654631498748
+    second: blue animated-01-02_32
+  - first:
+      213: -1635930580323598700
+    second: blue animated-01-02_33
+  - first:
+      213: -6101488858088341666
+    second: blue animated-01-02_34
+  - first:
+      213: 4819123299024767674
+    second: blue animated-01-02_35
+  - first:
+      213: -7517012462606357745
+    second: blue animated-01-02_37
+  - first:
+      213: 3040913170070003476
+    second: blue animated-01-02_40
+  - first:
+      213: 2840345008165615040
+    second: blue animated-01-02_41
+  - first:
+      213: -7891310699349182223
+    second: blue animated-01-02_42
+  - first:
+      213: -3628581146180776197
+    second: blue animated-01-02_43
+  - first:
+      213: -4575713461041700286
+    second: blue animated-01-02_44
+  - first:
+      213: 5147359669559872175
+    second: blue animated-01-02_45
+  - first:
+      213: 4657316637041767423
+    second: blue animated-01-02_46
+  - first:
+      213: -4647078421561294183
+    second: blue animated-01-02_47
+  - first:
+      213: 4589835440144632343
+    second: blue animated-01-02_48
+  - first:
+      213: 1953615429636223279
+    second: blue animated-01-02_49
+  - first:
+      213: -7885715545329330107
+    second: blue animated-01-02_50
+  - first:
+      213: 3368504550853016552
+    second: blue animated-01-02_51
+  - first:
+      213: 9217487989599791920
+    second: blue animated-01-02_52
+  - first:
+      213: -5032738941340257218
+    second: blue animated-01-02_53
+  - first:
+      213: 8916735109277354419
+    second: blue animated-01-02_54
+  - first:
+      213: 8088440803364207233
+    second: blue animated-01-02_55
+  - first:
+      213: 550206403689599057
+    second: blue animated-01-02_61
+  - first:
+      213: -8467583138966592252
+    second: blue animated-01-02_62
+  - first:
+      213: 8614970857672265888
+    second: blue animated-01-02_63
+  - first:
+      213: -3099143910567364223
+    second: blue animated-01-02_64
+  - first:
+      213: 1076628684720779957
+    second: blue animated-01-02_65
+  - first:
+      213: 4442730345145548781
+    second: blue animated-01-02_66
+  - first:
+      213: -2104794696577195626
+    second: blue animated-01-02_67
+  - first:
+      213: 2073598653231961725
+    second: blue animated-01-02_68
+  - first:
+      213: 4690903512957215744
+    second: blue animated-01-02_69
+  - first:
+      213: -5806638717710754962
+    second: blue animated-01-02_70
+  - first:
+      213: 5962424541398315131
+    second: blue animated-01-02_71
+  - first:
+      213: 695448274951872982
+    second: blue animated-01-02_72
+  - first:
+      213: 6218425234053728098
+    second: blue animated-01-02_73
+  - first:
+      213: -3784426027395017159
+    second: blue animated-01-02_74
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blue animated-01-02_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 590
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb001eaeedeaca1b0800000000000000
+      internalID: -5643943960555487042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_6
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 594
+        width: 86
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4fe2505b3ead21f0800000000000000
+      internalID: -1068005966843023538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_7
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 600
+        width: 71
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c48e9cd822a23a70800000000000000
+      internalID: 8805278517846508738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_8
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 606
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918cf2fb050398b40800000000000000
+      internalID: 5442934748017051673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_9
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 612
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96843c9b91a719c60800000000000000
+      internalID: 7823168278628616297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_10
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 618
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649fd3d941554dfe0800000000000000
+      internalID: -1165212856556324538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_11
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 623
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d63de141bfe8cc50800000000000000
+      internalID: 6685857191425816273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_12
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 628
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79290f4523c5b770800000000000000
+      internalID: 8626015226305259902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_19
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 394
+        width: 141
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6a8c254d1849300800000000000000
+      internalID: 257973827588892355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_20
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 395
+        width: 140
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5692103684b702bd0800000000000000
+      internalID: -2656988229319710363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_21
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 396
+        width: 137
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa280358f359b6d0800000000000000
+      internalID: -2974253752891462998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_22
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 398
+        width: 133
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f83ff795020a1c0800000000000000
+      internalID: -4494556859344908429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_23
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 401
+        width: 127
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f29598a58e24740800000000000000
+      internalID: 5134922000704810798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_24
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 404
+        width: 121
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c439b868ccb6ef30800000000000000
+      internalID: 4604575237969360068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_25
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 408
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f796897157c0c00800000000000000
+      internalID: 868197572377411336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_26
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 412
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573a119adf527afb0800000000000000
+      internalID: -4636695519961177227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_27
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 416
+        width: 97
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb6348d8778e9320800000000000000
+      internalID: 2566637790741883838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_28
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 421
+        width: 87
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e86c14ccab827410800000000000000
+      internalID: 1473393602244405481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_29
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 426
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024cb8fcbd3349120800000000000000
+      internalID: 2419615918977696800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_30
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 431
+        width: 67
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25387bec6079e040800000000000000
+      internalID: 4677393301110273326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_31
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 436
+        width: 57
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b4db84e5fd04340800000000000000
+      internalID: 4846118795090938718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_32
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 441
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40cb651b52c52cfa0800000000000000
+      internalID: -5781957654631498748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_33
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 446
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49efc920ec10c49e0800000000000000
+      internalID: -1635930580323598700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_34
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 452
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ff3ace538235ba0800000000000000
+      internalID: -6101488858088341666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_35
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 451
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba0e2f8b17f0e240800000000000000
+      internalID: 4819123299024767674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_37
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 366
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0be92afdf43ea790800000000000000
+      internalID: -7517012462606357745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_40
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 185
+        width: 169
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f54deaa6e733a20800000000000000
+      internalID: 3040913170070003476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_41
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 186
+        width: 166
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5f3437cbeea6720800000000000000
+      internalID: 2840345008165615040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_42
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 188
+        width: 163
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f87d099abe6c7290800000000000000
+      internalID: -7891310699349182223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_43
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 190
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe073f2ca0b4adc0800000000000000
+      internalID: -3628581146180776197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_44
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 193
+        width: 152
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 242e2a0b9dccf70c0800000000000000
+      internalID: -4575713461041700286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_45
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 197
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faac94bf8581f6740800000000000000
+      internalID: 5147359669559872175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_46
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 201
+        width: 137
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3346d4ecc12a040800000000000000
+      internalID: 4657316637041767423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_47
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 205
+        width: 127
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992c47ffbc2428fb0800000000000000
+      internalID: -4647078421561294183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_48
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 211
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ac15bc30f52bf30800000000000000
+      internalID: 4589835440144632343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_49
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 217
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21703fe1e2ac1b10800000000000000
+      internalID: 1953615429636223279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_50
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 223
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5489ed8ed7f409290800000000000000
+      internalID: -7885715545329330107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_51
+      rect:
+        serializedVersion: 2
+        x: 1701
+        y: 230
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb71e9ba055fbe20800000000000000
+      internalID: 3368504550853016552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_52
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 238
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b668d7d781bef70800000000000000
+      internalID: 9217487989599791920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_53
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 245
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e347322f89e182ab0800000000000000
+      internalID: -5032738941340257218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_54
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 253
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b90bb8c65b9ebb70800000000000000
+      internalID: 8916735109277354419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_55
+      rect:
+        serializedVersion: 2
+        x: 1961
+        y: 261
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a7c476e0aef3070800000000000000
+      internalID: 8088440803364207233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_61
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150501d1fc9b2a700800000000000000
+      internalID: 550206403689599057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_62
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4052fcf8ff91d7a80800000000000000
+      internalID: -8467583138966592252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_63
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0d5e9d9568e8770800000000000000
+      internalID: 8614970857672265888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_64
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18931d68801adf4d0800000000000000
+      internalID: -3099143910567364223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_65
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b237c3a514f0fe00800000000000000
+      internalID: 1076628684720779957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_66
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: defbf37d5bfb7ad30800000000000000
+      internalID: 4442730345145548781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_67
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691e36900644ac2e0800000000000000
+      internalID: -2104794696577195626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_68
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d769e9c1df6e6cc10800000000000000
+      internalID: 2073598653231961725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_69
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004627d34ef691140800000000000000
+      internalID: 4690903512957215744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_70
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b12d3e9dcaa6fa0800000000000000
+      internalID: -5806638717710754962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_71
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b703e16b789ceb250800000000000000
+      internalID: 5962424541398315131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_72
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d12a2c758ab6a900800000000000000
+      internalID: 695448274951872982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_73
+      rect:
+        serializedVersion: 2
+        x: 1786
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2670912cdc84c4650800000000000000
+      internalID: 6218425234053728098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue animated-01-02_74
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 50
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936906e24940b7bc0800000000000000
+      internalID: -3784426027395017159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
