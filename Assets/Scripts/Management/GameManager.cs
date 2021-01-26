@@ -49,7 +49,9 @@ public class GameManager : MonoBehaviour
     //public int scoreGainFromKill = 1; do we want to have this?
     public int scoreGainFromSoul = 3;
     public TextMeshProUGUI _scoreText;
-    
+
+    [Header("Sounds Manager")]
+    private SoundsManager sounds;
 
     private float playerRangeDecayCounter = 0f;
 
@@ -70,7 +72,7 @@ public class GameManager : MonoBehaviour
         maxPowers = new float[]{playerMaxFrequency,playerMaxBulletCount,playerMaxMagnitude};
         score = 0;
         initBoundaries();
-
+        sounds = gameObject.GetComponent<SoundsManager>();
 
 
         //EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH,OnEnemyDeath);
@@ -156,6 +158,8 @@ public class GameManager : MonoBehaviour
                 playerShooter.magnitude += playerMagnitudeChange;
             }
         }
+        //play destory sound
+        sounds.playTakeSoul();
         Destroy(soul);
 
     }

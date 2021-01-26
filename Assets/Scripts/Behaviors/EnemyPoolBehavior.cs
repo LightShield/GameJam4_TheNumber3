@@ -33,6 +33,8 @@ public class EnemyPoolBehavior : MonoBehaviour
     public Vector2 upBound;
     public Vector2 downBound;
 
+    private SoundsManager sounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,7 @@ public class EnemyPoolBehavior : MonoBehaviour
         waitingPool = transform.Find("WaitingPool").gameObject;
         activeEnemies = new Stack<EnemyBehavior>(); //change from stack to something else? is this stack needed
         waitingEnemies = new Stack<EnemyBehavior>();
-
+        sounds = GameObject.Find("GameManager").GetComponent<SoundsManager>();
         //pooling init
         instantiateEmptyEnemies();
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH, returnToPool);
@@ -149,6 +151,7 @@ public class EnemyPoolBehavior : MonoBehaviour
         waitingEnemies.Push(go.GetComponent<EnemyBehavior>());
         --amountOfActiveEnemies;
         --countToEnemy;
+        sounds.playSoulCreation();
     }
 
     void generateRandomEnemy()
