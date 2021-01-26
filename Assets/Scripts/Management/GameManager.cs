@@ -8,13 +8,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private float[] powers = {0, 1, 0};
+    private float[] powers = {1, 1, 1};
     private float[] maxPowers;
     private const int FREQUENCY_POWER = 0;
     private const int BULLET_COUNT_POWER = 1;
     private const int MAGNITUDE = 2;
 
-    private int[] MIN_POWER_VALUES = {0, 1, 0};
+    private int[] MIN_POWER_VALUES = {1, 1, 1};
     
 
     private int playerPoints = 0;
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
         {
             if (powers[MAGNITUDE] < playerMaxMagnitude)
             {
-                powers[MAGNITUDE] ++;
+                powers[MAGNITUDE] = Mathf.Min(playerMaxMagnitude, powers[MAGNITUDE] + playerMagnitudeChange);
                 magnitudeBar.fillAmount = powers[MAGNITUDE]/playerMaxMagnitude;
                 playerShooter.magnitude += playerMagnitudeChange;
             }
@@ -167,12 +167,27 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         powersDecay();
+
         //temp score UI update
         _scoreText.text = "Score " + (int) score;
+
         if (Input.GetKey(KeyCode.G))
         {
             godmode = !godmode;
         }
+        //pause
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     Debug.Log("Paused");
+        //     if (Time.timeScale == 1)
+        //     {
+        //         Time.timeScale = 0;
+        //     }
+        //     else
+        //     {
+        //         Time.timeScale = 1;
+        //     }
+        // }
         score += Time.deltaTime;
     }
 
