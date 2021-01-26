@@ -62,6 +62,7 @@
             <e p="PauseMenu.cs" t="Include" />
             <e p="ScreenResolution.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
+            <e p="SoundsManager.cs" t="Include" />
             <e p="testScript.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
           </e>

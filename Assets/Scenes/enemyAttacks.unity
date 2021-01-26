@@ -5064,14 +5064,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2048443642}
-  bulletCountBar: {fileID: 0}
-  frequencyBar: {fileID: 0}
-  magnitudeBar: {fileID: 0}
+  bulletCountBar: {fileID: 1341113121}
+  frequencyBar: {fileID: 1624298656}
+  magnitudeBar: {fileID: 36337620}
   godmode: 0
   playerMaxHealth: 50
-  playerMaxFrequency: 0
-  playerMaxBulletCount: 0
-  playerMaxMagnitude: 0
+  playerMaxFrequency: 3
+  playerMaxBulletCount: 10
+  playerMaxMagnitude: 3
   playerMovement: {fileID: 121228672}
   playerShooter: {fileID: 121228669}
   powerDecayRate: 0.01
