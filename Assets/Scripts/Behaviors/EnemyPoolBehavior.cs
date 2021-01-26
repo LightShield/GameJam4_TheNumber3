@@ -44,6 +44,16 @@ public class EnemyPoolBehavior : MonoBehaviour
         activeEnemies = new Stack<EnemyBehavior>(); //change from stack to something else? is this stack needed
         waitingEnemies = new Stack<EnemyBehavior>();
         sounds = GameObject.Find("GameManager").GetComponent<SoundsManager>();
+
+        Vector3 left = Camera.main.ViewportToWorldPoint(new Vector2(0.0f, 0.5f));
+        Vector3 right = Camera.main.ViewportToWorldPoint(new Vector2(1.0f, 0.5f));
+        Vector3 up = Camera.main.ViewportToWorldPoint(new Vector2(0.5f, 1f));
+        Vector3 down = Camera.main.ViewportToWorldPoint(new Vector2(0.5f, 0.0f));
+        bounds[0].x = left.x - 1;
+        bounds[1].x = right.x + 1;
+        bounds[2].y = up.y + 1;
+        bounds[3].y = down.y - 1;
+
         //pooling init
         instantiateEmptyEnemies();
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH, returnToPool);
@@ -113,11 +123,11 @@ public class EnemyPoolBehavior : MonoBehaviour
         Vector2 newLocation = bounds[boundIndex];
         if (boundIndex < 2)
         {
-            newLocation.y = Mathf.RoundToInt(Random.Range(-6, 6));
+            newLocation.y = Mathf.RoundToInt(Random.Range(bounds[2].y, bounds[3].y));
         }
         else
         {
-            newLocation.x = Mathf.RoundToInt(Random.Range(-10, 10));
+            newLocation.x = Mathf.RoundToInt(Random.Range(bounds[0].x, bounds[1].x));
         }
 
         newEnemy.transform.position = newLocation;
