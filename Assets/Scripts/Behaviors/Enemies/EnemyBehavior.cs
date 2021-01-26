@@ -17,9 +17,9 @@ public class EnemyBehavior : ParentBehavior
 
 
     [Header("Power Colors")]
-    public Color speedColor;
-    public Color RangeColor;
-    public Color DamageColor;
+    public Color frequencyColor;
+    public Color bulletCountColor;
+    public Color magnitudeColor;
 
     [Header("powerSprite")]
     private SpriteRenderer _sr;
@@ -62,17 +62,17 @@ public class EnemyBehavior : ParentBehavior
 
         if (base.frequency > 1)
         {
-            _sr.color = speedColor;
+            _sr.color = frequencyColor;
             _sr.sprite = speedSprites[lives-1];
         }            
         else if (base.bulletCount > 1)
         {
-            _sr.color = RangeColor;
+            _sr.color = bulletCountColor;
             _sr.sprite = rangeSprites[lives-1];
         }
         else
         {
-            _sr.color = DamageColor;
+            _sr.color = magnitudeColor;
             _sr.sprite = damageSprites[lives-1];
         }
     }
@@ -157,7 +157,7 @@ public class EnemyBehavior : ParentBehavior
         SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
         sr.color =_sr.color;
         Debug.Log(sr.color + " " + _sr.color);
-        sr.sprite = layers[0].sprite;
+            //sr.sprite = layers[0].sprite;
         sr.enabled = true;
     }
 

@@ -3052,6 +3052,42 @@ PrefabInstance:
       propertyPath: magnitude
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8844322021735625527, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.b
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021735625527, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.g
+      value: 0.36078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021735625527, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.r
+      value: 0.65882355
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021735625527, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.b
+      value: 0.27450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021735625527, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.g
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021735625527, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.r
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021735625527, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.b
+      value: 0.5803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021735625527, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.g
+      value: 0.5411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021735625527, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.r
+      value: 0.37254903
+      objectReference: {fileID: 0}
     - target: {fileID: 8844322021765798159, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3080,6 +3116,42 @@ PrefabInstance:
       propertyPath: bulletCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8844322021871513938, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.b
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021871513938, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.g
+      value: 0.3647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021871513938, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.r
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021871513938, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.b
+      value: 0.27450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021871513938, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.g
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021871513938, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.r
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021871513938, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.b
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021871513938, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021871513938, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.r
+      value: 0.38431376
+      objectReference: {fileID: 0}
     - target: {fileID: 8844322021988496619, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3096,6 +3168,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 121228667}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: RangeColor.b
       value: 0.7372549
@@ -3132,6 +3208,54 @@ PrefabInstance:
       propertyPath: DamageColor.r
       value: 0.74509805
       objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.b
+      value: 0.24705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.g
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.r
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.b
+      value: 0.2901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.g
+      value: 0.5411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.r
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.b
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.g
+      value: 0.5529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322021992268504, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.r
+      value: 0.3803922
+      objectReference: {fileID: 0}
     - target: {fileID: 8844322021992268506, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3155,6 +3279,42 @@ PrefabInstance:
     - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: bulletCount
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.b
+      value: 0.24705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.g
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.r
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.b
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.g
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.r
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.b
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022056195328, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.r
+      value: 0.38431376
       objectReference: {fileID: 0}
     - target: {fileID: 8844322022056195331, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3191,6 +3351,42 @@ PrefabInstance:
     - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: bulletCount
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.b
+      value: 0.24705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.g
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.r
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.b
+      value: 0.2901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.g
+      value: 0.5372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.r
+      value: 0.72156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.b
+      value: 0.5803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.g
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022360142793, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.r
+      value: 0.38431376
       objectReference: {fileID: 0}
     - target: {fileID: 8844322022360142795, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3236,10 +3432,50 @@ PrefabInstance:
       propertyPath: frequency
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8844322022447567345, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.b
+      value: 0.24705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022447567345, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.g
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022447567345, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.r
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022447567345, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.b
+      value: 0.27450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022447567345, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.g
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022447567345, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.r
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022447567345, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.b
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022447567345, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022447567345, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.r
+      value: 0.38431376
+      objectReference: {fileID: 0}
     - target: {fileID: 8844322022447567347, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 8844322022447567350, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: m_Name
+      value: enemy_frequency
+      objectReference: {fileID: 0}
     - target: {fileID: 8844322022447567350, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3327,6 +3563,42 @@ PrefabInstance:
     - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: magnitude
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.b
+      value: 0.24705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.g
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: frequencyColor.r
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.b
+      value: 0.27450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.g
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: magnitudeColor.r
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.b
+      value: 0.5803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.g
+      value: 0.5411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844322022730332762, guid: b71ba90e170de2f429e177c363c61884, type: 3}
+      propertyPath: bulletCountColor.r
+      value: 0.3803922
       objectReference: {fileID: 0}
     - target: {fileID: 8844322022730332766, guid: b71ba90e170de2f429e177c363c61884, type: 3}
       propertyPath: m_IsActive
@@ -4415,7 +4687,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 0.4528302, g: 0.30544677, b: 0.3914204, a: 1}
+  m_Color: {r: 0.14509805, g: 0.09019608, b: 0.12941177, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
