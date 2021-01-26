@@ -204,7 +204,9 @@ public class EnemyBehavior : ParentBehavior
             {
                 BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
                 //layers = SpriteRenderer[], z = scale change
-                collider.size = layers[layerCounter - 1].sprite.bounds.size * layers[layerCounter - 1].sprite.bounds.size.z; 
+                Debug.Log("going to index - " + (layerCounter - 1));
+                Debug.Log("which brings size = " + layers[layerCounter - 1].sprite.bounds.size * 0.7f);
+                collider.size = layers[layerCounter - 1].sprite.bounds.size * 0.7f; 
             }
         }
     }

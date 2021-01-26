@@ -103,7 +103,8 @@ public class EnemyPoolBehavior : MonoBehaviour
         }
 
         BoxCollider2D bc = newEnemy.gameObject.GetComponent<BoxCollider2D>();
-        bc.size = newEnemy.layers[newEnemy.layerCounter - 1].sprite.bounds.size * newEnemy.layers[newEnemy.layerCounter - 1].sprite.bounds.size.z;
+        bc.size = behaviorTemplate.layers[3].sprite.bounds.size * 0.7f;
+        Debug.Log("size copies is" + behaviorTemplate.layers[3].sprite.bounds.size);// * newEnemy.layers[newEnemy.layerCounter - 1].sprite.bounds.size.z;
         //  collider.size = layers[layerCounter - 1].sprite.bounds.size * layers[layerCounter - 1].sprite.bounds.size.z; 
 
 
