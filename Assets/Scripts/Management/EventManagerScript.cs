@@ -20,6 +20,8 @@ public class EventManagerScript : Singleton<EventManagerScript>
 	public const string EVENT_PLAYER_HIT_BY_BULLET = "event_playerHitByBullet";
 	public const string EVENT_ENEMY_HIT_BY_BULLET = "event_enemyHitByBullet";
 	public const string EVENT_PLAYER_CRASH_ENEMY = "event_playerCrashEnemy";
+	public const string EVENT_START_ZEN_MODE = "event_startZenMode";
+	public const string EVENT_STOP_ZEN_MODE = "event_stopZenMode";
 
 	private Dictionary <string, FloatEvent> eventDictionary;
 	

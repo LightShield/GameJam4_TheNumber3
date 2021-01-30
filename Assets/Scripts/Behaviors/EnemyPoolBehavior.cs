@@ -34,6 +34,8 @@ public class EnemyPoolBehavior : MonoBehaviour
     public Vector2 downBound;
 
     private SoundsManager sounds;
+    private bool isZenMode = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +60,8 @@ public class EnemyPoolBehavior : MonoBehaviour
         instantiateEmptyEnemies();
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH, returnToPool);
         StartCoroutine("tutorial"); //TODO RETURN
+        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_START_ZEN_MODE,startZenMode);
+        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_STOP_ZEN_MODE,stopZenMode);
     }
 
     // Update is called once per frame
@@ -72,6 +76,17 @@ public class EnemyPoolBehavior : MonoBehaviour
         }
     }
 
+
+    private void startZenMode(object obj)
+    {
+        isZenMode = true;
+    }
+
+    private void stopZenMode(object obj)
+    {
+        isZenMode = false;
+    }
+    
     void instantiateEmptyEnemies()
     {
         for (int i = 0; i < poolSize; ++i)
@@ -105,7 +120,7 @@ public class EnemyPoolBehavior : MonoBehaviour
         newEnemy.transform.SetParent(activePool.transform, true);
         newEnemy.waitingPool = waitingPool.transform;
         newEnemy.layerCounter = behaviorTemplate.layerCounter;
-       
+        newEnemy.isZenMode = isZenMode;
 
         for (int i = 0; i < newEnemy.layerCounter; ++i)
         {

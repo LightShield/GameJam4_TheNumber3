@@ -14,6 +14,7 @@ public class EnemyBehavior : ParentBehavior
     public GameObject soul;
     public float debugTimer; //remove in final game
     public int lives = 3;
+    public bool isZenMode = false;
 
 
     [Header("Power Colors")]
@@ -32,7 +33,7 @@ public class EnemyBehavior : ParentBehavior
     public SpriteRenderer[] layers;
     private string[] spriteNames = { "L_Sprite", "M_Sprite", "S_Sprite", "X_Sprite" };
 
-
+      
     protected override void Start()
     {
         base.Start();
@@ -42,11 +43,23 @@ public class EnemyBehavior : ParentBehavior
         SetSprite();
         _sr.enabled = false;
 
+        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_START_ZEN_MODE,startZenMode);
+        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_STOP_ZEN_MODE,stopZenMode);
+
         //init layers 
         layers = new SpriteRenderer[layerCounter];
         for(int i = layerCounter - 1; i >= 0; --i) {
             layers[i] = transform.Find("Sprites").Find(spriteNames[i]).GetComponent<SpriteRenderer>();
         }
+    }
+
+    private void startZenMode(object obj)
+    {
+        isZenMode = true;
+    }
+    private void stopZenMode(object obj)
+    {
+        isZenMode = false;
     }
 
     private void OnEnable()
@@ -82,9 +95,9 @@ public class EnemyBehavior : ParentBehavior
     protected override void Update()
     {
         base.Update();
-        
+
         //move towards target
-        move(getUpdatedTargetLocationVector().normalized);
+        move(getUpdatedTargetLocationVector().normalized,isZenMode);
 
         //shoot if needed
         if(distanceFromTarget() < bulletCount + shootingTolerance)
@@ -220,4 +233,13 @@ public class EnemyBehavior : ParentBehavior
         }
     }
 
+    private void OnDisable()
+    {
+//        EventManagerScript.Instance.StopListening(EventManagerScript.EVENT_START_ZEN_MODE,stopZen);
+    }
+      
+    private void stopZen(object obj)
+    {
+        isZenMode = false;
+    }
 }

@@ -20,7 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fab6758-2e12-4314-a990-efe5b496fd56" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/ParentBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/ParentBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Management/EventManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Management/EventManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,16 +41,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../Bubbles/Assets/Scripts/EnemyHandlerScript.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2348FB5E-CC9E-4E68-9F37-F7D7FADAEA9A/67/29e5aae4/ShortcutExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/fc/d2d224c8/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/9e/ad5abd2f/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Bubbles/Assets/Scripts/rotateScript.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Management/MenuController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Bubbles/Assets/Scripts/Menu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/97/004cf699/Time.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerLogic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Bubbles/Assets/Scripts/shapeLogic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/31/e5f02608/Color.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/bc/83b5daea/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/dd/d77bfe5d/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/31/6f705c74/HeaderAttribute.cs" root0="SKIP_HIGHLIGHTING" />
@@ -49,12 +60,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/ba/d8be2422/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/16/4c6426cd/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Bubbles/Assets/Scripts/EnemyScript.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/cameraZen.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/backgroundScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/platformsSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlatformsSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/scLeftPlatformTrigger.cs" />
@@ -81,29 +91,31 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpecialBullets/RandomBulletMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/BigBulletEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Management/EventManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/BoundaryLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/PlayerBulletMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Platform/PlatformLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletPollBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpecialBullets/SingleBulletMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyShooter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpecialBullets/SpiralBulletMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/testScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/ParentBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SoulLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpecialBullets/SpecialBulletPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/PauseMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/PowerUpMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/ParentBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Management/EventManagerScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/cameraZen.cs" />
       </list>
     </option>
   </component>
@@ -170,6 +182,7 @@
       <workItem from="1611316520681" duration="9380000" />
       <workItem from="1611481093016" duration="10925000" />
       <workItem from="1611591449617" duration="7073000" />
+      <workItem from="1611914500604" duration="13153000" />
     </task>
     <servers />
   </component>
@@ -356,10 +369,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.202.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1610698560887" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1611594234837">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="411" y="157" key="run.anything.popup" timestamp="1611930821520">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="616" y="240" key="run.anything.popup/-1920.123.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1611594234837" />
+    <state x="411" y="157" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1611930821520" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1610287270716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -372,27 +386,13 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs</url>
           <line>54</line>
-          <properties documentPath="C:\Users\shani\Desktop\GameJam4_TheNumber3\Assets\Scripts\Player\PlayerShooter.cs" initialLine="53">
-            <startOffsets>
-              <option value="1386" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1401" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\shani\Desktop\GameJam4_TheNumber3\Assets\Scripts\Player\PlayerShooter.cs" initialLine="53" />
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs</url>
           <line>41</line>
-          <properties documentPath="C:\Users\shani\Desktop\GameJam4_TheNumber3\Assets\Scripts\Player\PlayerShooter.cs" initialLine="41">
-            <startOffsets>
-              <option value="856" />
-            </startOffsets>
-            <endOffsets>
-              <option value="876" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\shani\Desktop\GameJam4_TheNumber3\Assets\Scripts\Player\PlayerShooter.cs" initialLine="41" />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>

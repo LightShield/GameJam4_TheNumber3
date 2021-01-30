@@ -115,6 +115,12 @@ public class playerMovement : MonoBehaviour
             collision.GetComponent<Collider2D>().enabled = false;
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_ENEMY_HIT_BY_BULLET,collision.gameObject);
 
+        }   
+        else if (collision.transform.CompareTag("powerup"))
+        {
+            StartCoroutine(runZenMode());
+            collision.GetComponent<SpriteRenderer>().enabled = false;
+            collision.GetComponent<Collider2D>().enabled = false;
         }
         else if (!collision.gameObject.CompareTag("boundary") && !collision.gameObject.CompareTag("bullet") )
         {
@@ -125,14 +131,13 @@ public class playerMovement : MonoBehaviour
             else
                 EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__REG_BULLET_INACTIVE,collision.gameObject);
         }     //TODO need to cancel this bullet
-        
-
     }
 
 
-    private void die()
+    IEnumerator runZenMode()
     {
-        Debug.Log("Death");
-        SceneManager.LoadScene(2);//move to game-over scene
+        EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_START_ZEN_MODE,null);
+        yield return new WaitForSeconds(20f);
+        EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_STOP_ZEN_MODE,null);
     }
 }

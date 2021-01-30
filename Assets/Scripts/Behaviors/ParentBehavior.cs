@@ -13,7 +13,7 @@ public class ParentBehavior : MonoBehaviour
     public float coolDown = 3f;
     public float power = 1f;
     public float health = 100;
-        
+
     [Header("General Settings")]
     public Rigidbody2D rb;
     public bool active = false;
@@ -42,17 +42,25 @@ public class ParentBehavior : MonoBehaviour
         }        
     }
 
-    protected void move(Vector2 direction)
+    protected void move(Vector2 direction,bool isZenMode=false)
     {
-        Vector2 scaledDirection = direction *  Time.deltaTime;
-        Vector2 newVelocity = rb.velocity + scaledDirection;
-        if (newVelocity.magnitude < 1 || newVelocity.magnitude < rb.velocity.magnitude) {
-            // not over the speed limit
-            //option 1 behavior:
-            rb.velocity = newVelocity;
-            //option 2 behavior: 
-            //rb.AddForce(scaledDirection);
+        if (isZenMode)
+        {
+            rb.velocity = Vector2.zero;
         }
+        else
+        {
+            Vector2 scaledDirection = direction *  Time.deltaTime;
+            Vector2 newVelocity = rb.velocity + scaledDirection;
+            if (newVelocity.magnitude < 1 || newVelocity.magnitude < rb.velocity.magnitude) {
+                // not over the speed limit
+                //option 1 behavior:
+                rb.velocity = newVelocity;
+                //option 2 behavior: 
+                //rb.AddForce(scaledDirection);
+            }
+        }
+
     }
 
     public float distanceFromTarget()
