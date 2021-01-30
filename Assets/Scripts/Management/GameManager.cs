@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
 
     private float playerRangeDecayCounter = 0f;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -86,6 +85,10 @@ public class GameManager : MonoBehaviour
             if (playerHealth <= 0)
             {
                 Debug.Log("final score: " + score);
+                PlayerPrefs.SetFloat("score", (int) score); //save score to display on end game
+                PlayerPrefs.Save();
+                Debug.Log("from PlayerPrefs - " + PlayerPrefs.GetFloat("score"));
+                Debug.Log("post player pref ");
                 SceneManager.LoadScene(2);
             }
         }
