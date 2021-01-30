@@ -74,7 +74,6 @@ public class GameManager : MonoBehaviour
         initBoundaries();
         sounds = gameObject.GetComponent<SoundsManager>();
 
-
         //EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH,OnEnemyDeath);
     }
 
