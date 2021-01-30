@@ -103,21 +103,7 @@ public class EnemyBehavior : ParentBehavior
         if(distanceFromTarget() < bulletCount + shootingTolerance)
         {
             shoot();
-            //gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-
         }
-        else
-        {
-            //gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-        }
-
-        //DEBUG CODE - TO REMOVE IN FINAL VERSION
-        /*debugTimer -= Time.deltaTime;
-        if(debugTimer < 0)
-        {
-            debugTimer = 10f;
-            die();
-        }*/
     }
 
 
@@ -135,7 +121,7 @@ public class EnemyBehavior : ParentBehavior
             }
             else
             {
-                updateSprites(1);//make sprite of soul disappear from parent\enemy
+                updateSprites(1); //make sprite of soul disappear from parent\enemy
                 createSoul();
                 die();
             }

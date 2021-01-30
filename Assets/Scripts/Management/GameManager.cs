@@ -71,7 +71,12 @@ public class GameManager : MonoBehaviour
         maxPowers = new float[]{playerMaxFrequency,playerMaxBulletCount,playerMaxMagnitude};
         score = 0;
         initBoundaries();
+
         sounds = gameObject.GetComponent<SoundsManager>();
+        if (PlayerPrefs.HasKey("volume"))
+        {
+            sounds.masterVolumeSlider.value = PlayerPrefs.GetFloat("volume");
+        }
 
         //EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH,OnEnemyDeath);
     }
@@ -173,7 +178,7 @@ public class GameManager : MonoBehaviour
         //temp score UI update
         _scoreText.text = "Score " + (int) score;
 
-        if (Input.GetKey(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             godmode = !godmode;
         }
