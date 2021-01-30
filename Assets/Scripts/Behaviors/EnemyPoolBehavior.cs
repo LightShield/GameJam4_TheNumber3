@@ -80,11 +80,13 @@ public class EnemyPoolBehavior : MonoBehaviour
     private void startZenMode(object obj)
     {
         isZenMode = true;
+        sounds.enterGodModeMusic();
     }
 
     private void stopZenMode(object obj)
     {
         isZenMode = false;
+        sounds.exitGodModeMusic();
     }
     
     void instantiateEmptyEnemies()
@@ -177,7 +179,10 @@ public class EnemyPoolBehavior : MonoBehaviour
         waitingEnemies.Push(go.GetComponent<EnemyBehavior>());
         --amountOfActiveEnemies;
         --countToEnemy;
-        sounds.playSoulCreation();
+        if (!isZenMode)
+        {
+            sounds.playSoulCreation();
+        }
     }
 
     void generateRandomEnemy()

@@ -30,7 +30,7 @@ public class SoundsManager : MonoBehaviour
     }
 
     //used reference from here https://forum.unity.com/threads/fade-out-audio-source.335031/
-    public IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    public IEnumerator FadeOut(AudioSource audioSource, float FadeTime, bool stop)
     {
         float startVolume = audioSource.volume;
 
@@ -41,7 +41,14 @@ public class SoundsManager : MonoBehaviour
             yield return null;
         }
 
-        audioSource.Stop();
+        if (stop)
+        {
+            audioSource.Stop();
+        }
+        else
+        {
+            audioSource.Pause();
+        }
         audioSource.volume = startVolume;
     }
 
@@ -59,18 +66,18 @@ public class SoundsManager : MonoBehaviour
         }
     }
 
-    public void transition(AudioSource audioIn, AudioSource audioOut, float fadeTime)
+    public void transition(AudioSource audioIn, AudioSource audioOut, float fadeTime, bool stop)
     {
         StartCoroutine(FadeIn(audioIn, fadeTime));
-        StartCoroutine(FadeOut(audioOut, fadeTime));
+        StartCoroutine(FadeOut(audioOut, fadeTime, stop));
     }
     
     public void enterGodModeMusic()
     {
-        transition(godmodeMusic, bgm, transitionTime);
+        transition(godmodeMusic, bgm, transitionTime / 2, false);
     }
     public void exitGodModeMusic()
     {
-        transition(bgm, godmodeMusic, transitionTime);
+        transition(bgm, godmodeMusic, transitionTime, true);
     }
 }
