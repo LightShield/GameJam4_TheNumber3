@@ -14,18 +14,13 @@ public class playerMovement : MonoBehaviour
     private int angle = 0;
 
 
-    [Header("Key Bindings")]
-    public KeyCode state0 = KeyCode.Q;
-    public KeyCode state1 = KeyCode.W;
-    public KeyCode state2 = KeyCode.E;
-
-
     [Header("Player Data")]
     public int state = 0;
     public int rotationSpeed = 4;
     public float mPlayerSpeed = 1f;
     public float maxSpeed = 4f;
     public float minSpeed = 4f;
+    public Animator powerUpAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -137,6 +132,7 @@ public class playerMovement : MonoBehaviour
     IEnumerator runZenMode()
     {
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_START_ZEN_MODE,null);
+        powerUpAnim.Play("powerupBGAnim");
         yield return new WaitForSeconds(20f);
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_STOP_ZEN_MODE,null);
     }

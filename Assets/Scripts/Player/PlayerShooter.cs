@@ -19,6 +19,12 @@ public class PlayerShooter : MonoBehaviour
     public float bulletCount = 1f;
     public float magnitude = 1f;
 
+    [Header("bullet colors")] 
+    public Color[] colors;
+    private Color currentColor;
+    private Color targetColor;
+    private float time = 0f;
+
 
     // Update is called once per frame
 
@@ -32,13 +38,33 @@ public class PlayerShooter : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && canShoot)
         {
             canShoot = false;
+            time += Time.deltaTime * 50f;
+            Debug.Log("shani queen: "+time);
             Invoke("Shoot", 0.05f);
         }
-
     }
 
     private void Shoot()
     {
+        Color toColor;
+        if (time < 2f )
+        {
+            toColor = Color.Lerp(colors[0], colors[1], time / 2f);
+        }   
+        else if (time < 4f)
+        {
+            toColor = Color.Lerp(colors[1], colors[2], (float) time / 4f);
+        }
+        else if(time < 6f)
+        {
+            toColor = Color.Lerp(colors[2], colors[0], (float) time / 6f);
+        }
+        else
+        {
+            time = 0;
+            toColor = colors[0];
+        }
+
         if (bulletCount > 1)
         {
 
@@ -52,7 +78,7 @@ public class PlayerShooter : MonoBehaviour
 
                 Vector3 moveVector = new Vector3(x, y, 0f);
                 Vector2 dir = (moveVector - transform.position).normalized;
-                shootOnce(dir);
+                shootOnce(dir,toColor);
                 angle += angleStep;  
             }
 
@@ -63,13 +89,13 @@ public class PlayerShooter : MonoBehaviour
         else
         {
             //pb.shoot();
-            shootOnce(Vector2.up,true);
+            shootOnce(Vector2.up,toColor,true);
             Invoke("enableShooting", .05f);
             transform.DORewind();
             transform.DOPunchScale(new Vector3(.2f, .2f, .2f), .25f);
         }
     }
-    private void shootOnce(Vector2 moveDir, bool isSingleShot=false)
+    private void shootOnce(Vector2 moveDir, Color toColor, bool isSingleShot=false)
     {
         GameObject bullet1 = BulletPool.GetBullet();
         if (bullet1 != null)
@@ -80,6 +106,7 @@ public class PlayerShooter : MonoBehaviour
             bullet1.GetComponent<PlayerBulletMovement>().frequency = frequency;
             bullet1.GetComponent<PlayerBulletMovement>().isClockWise = true;
             bullet1.GetComponent<PlayerBulletMovement>().enabled = true;
+            bullet1.GetComponent<SpriteRenderer>().color = toColor;
             bullet1.transform.position = shootingPoint.position;
         }
 
@@ -94,6 +121,7 @@ public class PlayerShooter : MonoBehaviour
                 bullet2.GetComponent<PlayerBulletMovement>().frequency = frequency;
                 bullet2.GetComponent<PlayerBulletMovement>().isClockWise = false;
                 bullet2.GetComponent<PlayerBulletMovement>().enabled = true;
+                bullet2.GetComponent<SpriteRenderer>().color = toColor;
                 bullet2.transform.position = shootingPoint.position;
             }
         }

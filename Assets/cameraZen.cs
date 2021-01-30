@@ -20,12 +20,12 @@ public class cameraZen : MonoBehaviour
 
     private void startZenMode(object obj)
     {
-        cam.backgroundColor = zenColor;
+        ///cam.backgroundColor = zenColor;
     }
 
     private void stopZenMode(object obj)
     {
-        cam.backgroundColor = regularColor;
+        //cam.backgroundColor = regularColor;
     }
 
     

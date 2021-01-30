@@ -50,7 +50,6 @@ public class PlayerBulletMovement : MonoBehaviour
 
             }
             transform.Translate(moveDirection * ( 5f * Time.deltaTime));
-            _sr.color = Color.Lerp(Color.black, Color.white, currentLife / lifeTime);
         }
 
 
