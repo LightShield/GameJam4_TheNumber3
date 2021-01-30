@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerShooter : MonoBehaviour
 {
     public PlayerBulletPool BulletPool;
-
+    private playerMovement _movement;
     private ParentBehavior pb;
     public Transform shootingPoint;
     private bool canShoot = true;
@@ -31,6 +31,7 @@ public class PlayerShooter : MonoBehaviour
     private void Start()
     {
         pb = gameObject.GetComponent<ParentBehavior>();
+        _movement = GetComponent<playerMovement>();
     }
 
     void Update()
@@ -38,13 +39,11 @@ public class PlayerShooter : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && canShoot)
         {
             canShoot = false;
-            time += Time.deltaTime * 50f;
-            Debug.Log("shani queen: "+time);
             Invoke("Shoot", 0.05f);
         }
     }
 
-    private void Shoot()
+    private Color getColor()
     {
         Color toColor;
         if (time < 2f )
@@ -63,6 +62,17 @@ public class PlayerShooter : MonoBehaviour
         {
             time = 0;
             toColor = colors[0];
+        }
+        time += Time.deltaTime * 50f;
+        return toColor;
+    }
+
+    private void Shoot()
+    {
+        Color toColor = Color.white;
+        if (_movement.isZenMode)
+        {
+            toColor = getColor();
         }
 
         if (bulletCount > 1)

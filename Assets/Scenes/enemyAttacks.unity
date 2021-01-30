@@ -9187,6 +9187,58 @@ PrefabInstance:
       propertyPath: shootingPoint
       value: 
       objectReference: {fileID: 1068593560}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[0].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[0].b
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[0].g
+      value: 0.10980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[0].r
+      value: 0.3254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[1].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[1].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[1].g
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[1].r
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[2].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[2].b
+      value: 0.454902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[2].g
+      value: 0.42352945
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
+      propertyPath: colors.Array.data[2].r
+      value: 0.19607845
+      objectReference: {fileID: 0}
     - target: {fileID: 4414814770377810500, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: m_Sprite
       value: 

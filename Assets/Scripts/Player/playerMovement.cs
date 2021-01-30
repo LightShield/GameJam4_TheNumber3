@@ -12,6 +12,7 @@ public class playerMovement : MonoBehaviour
     public float _horizontalMove = 0f;
     public float _verticalMove;
     private int angle = 0;
+    public bool isZenMode = false;
 
 
     [Header("Player Data")]
@@ -132,8 +133,10 @@ public class playerMovement : MonoBehaviour
     IEnumerator runZenMode()
     {
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_START_ZEN_MODE,null);
+        isZenMode = true;
         powerUpAnim.Play("powerupBGAnim");
         yield return new WaitForSeconds(20f);
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_STOP_ZEN_MODE,null);
+        isZenMode = false;
     }
 }
