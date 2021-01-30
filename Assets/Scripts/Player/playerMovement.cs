@@ -134,7 +134,7 @@ public class playerMovement : MonoBehaviour
     {
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_START_ZEN_MODE,null);
         isZenMode = true;
-        powerUpAnim.Play("powerupBGAnim");
+        powerUpAnim.Play("powerupBGAnim",0,0);
         yield return new WaitForSeconds(20f);
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_STOP_ZEN_MODE,null);
         isZenMode = false;

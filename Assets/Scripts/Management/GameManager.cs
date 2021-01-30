@@ -8,13 +8,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private float[] powers = {1, 1, 1};
+    private float[] powers = {0f, 1f, 0f};
     private float[] maxPowers;
     private const int FREQUENCY_POWER = 0;
     private const int BULLET_COUNT_POWER = 1;
     private const int MAGNITUDE = 2;
 
-    private int[] MIN_POWER_VALUES = {1, 1, 1};
+    private int[] MIN_POWER_VALUES = {0, 1, 0};
     
 
     private int playerPoints = 0;
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     public float playerMaxMagnitude;
     public playerMovement playerMovement;
     public PlayerShooter playerShooter;
-    public float powerDecayRate = 0.002f;
+    public float powerDecayRate = 0.1f;
     public GameObject playerUI;
     
     [Header("Player Score")]
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
     {
         if (!godmode)
         {
-            playerHealth/=2f;
+            playerHealth -= 5f;
             healthBar.fillAmount = playerHealth / playerMaxHealth;
             StartCoroutine(throwPlayer(obj));
             if (playerHealth <= 0.5f)
@@ -133,9 +133,9 @@ public class GameManager : MonoBehaviour
         {
             if (powers[FREQUENCY_POWER] < playerMaxFrequency)
             {
-                powers[FREQUENCY_POWER]++;
+                powers[FREQUENCY_POWER] = Mathf.Min(playerMaxFrequency, powers[FREQUENCY_POWER] + playerFrequencyChange);
                 frequencyBar.fillAmount = powers[FREQUENCY_POWER]/ playerMaxFrequency;
-                playerShooter.frequency += playerFrequencyChange;
+                playerShooter.frequency = playerFrequencyChange;
             }
 
         }   
@@ -175,19 +175,6 @@ public class GameManager : MonoBehaviour
         {
             godmode = !godmode;
         }
-        //pause
-        // if (Input.GetKeyDown(KeyCode.Escape))
-        // {
-        //     Debug.Log("Paused");
-        //     if (Time.timeScale == 1)
-        //     {
-        //         Time.timeScale = 0;
-        //     }
-        //     else
-        //     {
-        //         Time.timeScale = 1;
-        //     }
-        // }
         score += Time.deltaTime;
     }
 
@@ -195,8 +182,6 @@ public class GameManager : MonoBehaviour
     {
         for(int i = 0; i < 3; ++i)
         {
-            powers[i] = Mathf.Max(MIN_POWER_VALUES[i], powers[i] - Time.deltaTime * powerDecayRate);
-            skillBars[i].fillAmount = powers[i] / maxPowers[i];
             updatespecificPowerDecay(i);
         }
     }
@@ -206,20 +191,20 @@ public class GameManager : MonoBehaviour
         switch (index)
         {
         case BULLET_COUNT_POWER : 
-                playerShooter.bulletCount =  Mathf.RoundToInt(powers[BULLET_COUNT_POWER]);
-                break;
+            powers[index] = Mathf.Max(MIN_POWER_VALUES[index], powers[index] - Time.deltaTime * 10f * powerDecayRate);
+            skillBars[index].fillAmount = powers[index] / maxPowers[index];
+            playerShooter.bulletCount =  Mathf.RoundToInt(powers[BULLET_COUNT_POWER]);
+            break;
         case FREQUENCY_POWER :
-                /*playerRangeDecayCounter += powerDecayRate * Time.deltaTime;
-                if(playerRangeDecayCounter >= 1 / playerRangeChange){
-                    playerRangeDecayCounter = 0;
-                    playerShooter.bulletRange = Mathf.Max(playerShooter.bulletRange - 1, MIN_POWER_VALUES[RANGE_POWER]);
-                }*/
-                //playerShooter.bulletRange = Mathf.RoundToInt(powers[RANGE_POWER]);
-                //playerShooter.magnitude = Mathf.RoundToInt(powers[MAGNITUDE]);
-                break;
+            powers[index] = Mathf.Max(MIN_POWER_VALUES[index], powers[index] - Time.deltaTime * powerDecayRate);
+            skillBars[index].fillAmount = powers[index] / maxPowers[index];
+            playerShooter.frequency = powers[FREQUENCY_POWER];
+            break;
         case MAGNITUDE :
-                //playerShooter.frequency = Mathf.RoundToInt(powers[FREQUENCY_POWER]);
-                break;
+            powers[index] = Mathf.Max(MIN_POWER_VALUES[index], powers[index] - Time.deltaTime * powerDecayRate);
+            skillBars[index].fillAmount = powers[index] / maxPowers[index];
+            playerShooter.magnitude = powers[MAGNITUDE];
+            break;
         }
     }
     private void initBoundaries()
