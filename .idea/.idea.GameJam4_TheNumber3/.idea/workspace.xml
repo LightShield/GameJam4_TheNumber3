@@ -21,34 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6fab6758-2e12-4314-a990-efe5b496fd56" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/damageX_idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damageX_idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_L.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_L.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_M 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_M 1.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_M.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_M.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_M.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_M.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_S.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_S.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_x.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_x.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/main character039.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/main character039.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/speedX-idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speedX-idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_L.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_L.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_L.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_L.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_M.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_M.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_M.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_M.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_S.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_S.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_S.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_S.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_X.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_X.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/spreadX_idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spreadX_idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_L.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_L.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_L.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_L.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_M.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_M.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_M.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_M.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_S.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_S.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_S.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_S.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_x.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_x.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/endScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/endScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/openScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/openScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyShooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyShooter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Management/endScoreDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Management/endScoreDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlatformsSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/scLeftPlatformTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/csRightPlatformTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Platform/PlatformsSpawner.cs" />
@@ -117,7 +98,6 @@
         <option value="$PROJECT_DIR$/Assets/PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpecialBullets/SingleBulletMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyShooter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpecialBullets/SpiralBulletMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/testScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SoulLogic.cs" />
@@ -129,13 +109,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/ParentBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/EventManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/cameraZen.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/endScoreDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyShooter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Management/endScoreDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" />
       </list>
     </option>
   </component>
@@ -395,9 +377,10 @@
     <state x="616" y="240" key="run.anything.popup/-1920.123.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1611594234837" />
     <state x="411" y="157" key="run.anything.popup/0.0.1280.680/1920.0.1280.680@0.0.1280.680" timestamp="1612004891943" />
     <state x="411" y="157" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1611930821520" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1610287270716">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1612098492965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.123.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1612098492965" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.508.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1610287270716" />
     <state x="623" y="225" key="search.everywhere.popup/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1609494150338" />
   </component>

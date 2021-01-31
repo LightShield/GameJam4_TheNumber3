@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ public class EnemyShooter : MonoBehaviour
     public bool isGroupShooter = false;
     private float startAngle = 90f, endAngle = 270f;
     private Vector2 bulletMoveDirection;
+
 
     // Start is called before the first frame update
     void Update()

@@ -76,17 +76,17 @@ public class EnemyBehavior : ParentBehavior
         if (base.frequency > 1)
         {
             _sr.color = frequencyColor;
-            _sr.sprite = speedSprites[lives-1];
+            //_sr.sprite = speedSprites[lives-1];
         }            
         else if (base.bulletCount > 1)
         {
             _sr.color = bulletCountColor;
-            _sr.sprite = rangeSprites[lives-1];
+            //_sr.sprite = rangeSprites[lives-1];
         }
         else
         {
             _sr.color = magnitudeColor;
-            _sr.sprite = damageSprites[lives-1];
+            //_sr.sprite = damageSprites[lives-1];
         }
     }
 
@@ -111,21 +111,7 @@ public class EnemyBehavior : ParentBehavior
     {
         if (other.transform.CompareTag("bullet"))
         {
-            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
-            updateSprites(1);
-            if (lives-1>0)
-            {
-                lives--;
-                SetSprite();
-                StartCoroutine(flickerEnemy());
-            }
-            else
-            {
-                updateSprites(1); //make sprite of soul disappear from parent\enemy
-                createSoul();
-                Debug.Log("enemy: hit by bullets and die");
-                die();
-            }
+
         }   
         else if (other.transform.CompareTag("Player"))
         {
@@ -141,7 +127,7 @@ public class EnemyBehavior : ParentBehavior
         GetComponent<Collider2D>().enabled = false;
         Color color = _sr.color;
         Color noColor = new Color(0,0,0,0);
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 5; i++)
         {
             _sr.color = noColor;
             yield return new WaitForSeconds(0.2f);
@@ -152,7 +138,7 @@ public class EnemyBehavior : ParentBehavior
     }
 
 
-    private void createSoul()
+    public void createSoul()
     {
         SetSprite();
         GameObject go = Instantiate(soul, transform.position, transform.rotation);

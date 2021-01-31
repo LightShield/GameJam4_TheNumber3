@@ -19,7 +19,7 @@ public class endScoreDisplay : MonoBehaviour
             score = (int)PlayerPrefs.GetFloat("score");
         }
         TimeSpan ts = TimeSpan.FromSeconds(score);
-        scoreText.text = "Time of survival:\n"+ts.Hours+":"+ts.Minutes+":"+ts.Seconds;
+        scoreText.text = ts.Hours+":"+ts.Minutes+":"+ts.Seconds;
         
     }
 

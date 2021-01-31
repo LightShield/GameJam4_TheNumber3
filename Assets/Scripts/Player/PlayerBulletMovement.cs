@@ -77,6 +77,25 @@ public class PlayerBulletMovement : MonoBehaviour
             else
                 EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__REG_BULLET_INACTIVE,other.gameObject);
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,gameObject);
+        } 
+        else if (other.gameObject.CompareTag("block_state_0"))
+        {
+            EnemyBehavior eb = other.GetComponent<EnemyBehavior>();
+            EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,gameObject);
+            eb.updateSprites(1);
+            if (eb.lives-1>0)
+            {
+                eb.lives--;
+                //SetSprite();
+                //StartCoroutine(eb.flickerEnemy());
+            }
+            else
+            {
+                eb.updateSprites(1); //make sprite of soul disappear from parent\enemy
+                eb.createSoul();
+                Debug.Log("enemy: hit by bullets and die");
+                eb.die();
+            }
         }
     }
 

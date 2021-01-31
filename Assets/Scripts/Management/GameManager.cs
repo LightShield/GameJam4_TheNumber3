@@ -113,11 +113,11 @@ public class GameManager : MonoBehaviour
                 Debug.Log("final score: " + score);
                 SceneManager.LoadScene(2);
             }
-            else
-            {
-                GameObject enemy = (GameObject) obj;
-                enemy.GetComponent<EnemyBehavior>().die();
-            }
+            // else
+            // {
+            //     GameObject enemy = (GameObject) obj;
+            //     enemy.GetComponent<EnemyBehavior>().die();
+            // }
 
         }
     }
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
             playerUI.SetActive(true);
             yield return new WaitForSeconds(0.1f);
         }
-//        go.GetComponent<Collider2D>().enabled = true;
+        //go.GetComponent<Collider2D>().enabled = true;
     }
 
     private void OnEnemyDeath(object obj)
@@ -144,6 +144,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game manager: enemy killed");
         if (sl.frequency > 1)
         {
+            Debug.Log("soul frequency collected");
             if (powers[FREQUENCY_POWER] < playerMaxFrequency)
             {
                 powers[FREQUENCY_POWER] = Mathf.Min(playerMaxFrequency, powers[FREQUENCY_POWER] + playerFrequencyChange);
@@ -154,6 +155,7 @@ public class GameManager : MonoBehaviour
         }   
         else if (sl.bulletCount > 1)
         {
+            Debug.Log("soul bullet count collected");
             if (powers[BULLET_COUNT_POWER] < playerMaxBulletCount)
             {
                 powers[BULLET_COUNT_POWER] = Mathf.Min(playerMaxBulletCount, powers[BULLET_COUNT_POWER] + playerBulletCountChange);
@@ -164,6 +166,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("soul magnitude collected");
             if (powers[MAGNITUDE] < playerMaxMagnitude)
             {
                 powers[MAGNITUDE] = Mathf.Min(playerMaxMagnitude, powers[MAGNITUDE] + playerMagnitudeChange);

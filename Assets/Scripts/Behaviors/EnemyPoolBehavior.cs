@@ -29,10 +29,6 @@ public class EnemyPoolBehavior : MonoBehaviour
     public float enemyCounterStartValue = 3f;
     public bool intro = true;
     public Vector2[] bounds;
-    public Vector2 rightBound;
-    public Vector2 upBound;
-    public Vector2 downBound;
-
     private SoundsManager sounds;
     private bool isZenMode = false;
 
