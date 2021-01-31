@@ -1063,6 +1063,10 @@ MonoBehaviour:
   color1: {r: 0.8156863, g: 0.2784314, b: 0.41568628, a: 1}
   color2: {r: 0.42352942, g: 0.6117647, b: 0.9882353, a: 1}
   color3: {r: 0.42745098, g: 0.8352941, b: 0.8862745, a: 1}
+  collected: 0
+  tolerance: 1
+  ttl: 10
+  fadeInTime: 5
 --- !u!212 &226575046
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1122,7 +1126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226575044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.1, y: 9.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 573073593}
@@ -8347,6 +8351,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2093872066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7204485608385919663, guid: d847281c899e2da4dbebab8f797207bc, type: 3}
+  m_PrefabInstance: {fileID: 203875602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2093872067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093872066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0626aa78185a114daf64802135f3981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &615249075168800449
 GameObject:
   m_ObjectHideFlags: 0
@@ -11911,9 +11932,7 @@ MonoBehaviour:
   - {x: 10, y: 0}
   - {x: 0, y: 6}
   - {x: 0, y: -6}
-  rightBound: {x: 10, y: 0}
-  upBound: {x: 0, y: 6}
-  downBound: {x: 0, y: -6}
+  isZenMode: 0
 --- !u!1 &8844322023729502031
 GameObject:
   m_ObjectHideFlags: 0

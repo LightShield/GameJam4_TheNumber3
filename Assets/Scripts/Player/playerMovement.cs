@@ -93,6 +93,7 @@ public class playerMovement : MonoBehaviour
             StartCoroutine(runZenMode());
             collision.GetComponent<SpriteRenderer>().enabled = false;
             collision.GetComponent<Collider2D>().enabled = false;
+            collision.GetComponent<PowerUpMovement>().collected = true;
         }
         else if (!collision.gameObject.CompareTag("boundary") && !collision.gameObject.CompareTag("bullet") )
         {
@@ -110,6 +111,7 @@ public class playerMovement : MonoBehaviour
     {
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_START_ZEN_MODE,null);
         isZenMode = true;
+        //powerUpAnim.transform.localScale *= 20;
         powerUpAnim.Play("powerupBGAnim",0,0);
         yield return new WaitForSeconds(20f);
         EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT_STOP_ZEN_MODE,null);

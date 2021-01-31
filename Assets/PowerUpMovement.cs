@@ -11,6 +11,7 @@ public class PowerUpMovement : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
 
+
     [Header("PowerUp data")]
     public float maxSpeed = 2f;
     public Vector2 initialPos;
@@ -20,16 +21,29 @@ public class PowerUpMovement : MonoBehaviour
     public Color color1;
     public Color color2;
     public Color color3;
+    public bool collected;
+
+    [Header("Fade Settings")]
+    public float tolerance = 1f;
+    public float ttl = 10f;
+    public float fadeInTime = 5;
+    private Vector3 originalScale;
+    private bool alreadyExists = false;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = maxSpeed;
-        transform.position = initialPos * -1f;
-        pos = transform.position;
+        //speed = maxSpeed;
+        //transform.position = initialPos * -1f;
+        //pos = transform.position;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
-        StartCoroutine(flicker());
+        originalScale = transform.localScale;
+        collected = false;
+        //StartCoroutine(fadeOut());
+        StartCoroutine(exist());
+
     }
 
     // Update is called once per frame
@@ -38,25 +52,28 @@ public class PowerUpMovement : MonoBehaviour
         if (coolDown > 0)
         {
             coolDown -= Time.deltaTime;
-            speed -= speedDecayFactor;
-            pos += transform.right * Time.deltaTime * speed;
-            transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+            //speed -= speedDecayFactor;
+            //pos += transform.right * Time.deltaTime * speed;
+            //transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
         }
         else
         {
+            if (!alreadyExists)
+            {
+                StartCoroutine(exist());
+            }
             coolDown = 50f;
-            speed = maxSpeed;
-            transform.position = initialPos;
+            //speed = maxSpeed;
+            //transform.position = initialPos;
             pos = transform.position;
-            _spriteRenderer.enabled = true;
-            _collider.enabled = true;
+
         }
     }
 
     IEnumerator flicker()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        while (gameObject.activeInHierarchy)
+        while (!collected)
         {
             spriteRenderer.color = color1;
             yield return new WaitForSeconds(0.2f);
@@ -66,5 +83,51 @@ public class PowerUpMovement : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
 
         }
+    }
+
+    IEnumerator fadeIn()
+    {
+        transform.localScale = Vector3.zero;
+        _spriteRenderer.enabled = true;
+        _collider.enabled = true;
+        while ((transform.localScale.x < originalScale.x)&& !collected)
+        {
+            transform.localScale += originalScale * Time.deltaTime / fadeInTime;
+            yield return null;
+        }
+        transform.localScale = originalScale;
+        Debug.Log("Finished FadeIn");
+    }
+
+    IEnumerator fadeOut()
+    {
+        float countdown = ttl + tolerance;   
+ 
+        while ((countdown > tolerance) && !collected)
+        {
+            transform.localScale = originalScale * countdown / (ttl + tolerance);
+            countdown -= Time.deltaTime;
+            yield return null;
+        }
+
+        _spriteRenderer.enabled = false;
+        _collider.enabled = false;
+        transform.localScale = originalScale;
+        Debug.Log("Finished FadeOut");
+    }
+
+    public IEnumerator exist()
+    {
+        alreadyExists = true;
+        StartCoroutine(fadeIn());
+        StartCoroutine(flicker());
+        yield return new WaitForSeconds(fadeInTime);
+        if (!collected)
+        {
+            StartCoroutine(fadeOut());
+        }
+        collected = false;
+        alreadyExists = false;
+        yield return null;
     }
 }
