@@ -31,6 +31,7 @@ public class EnemyBehavior : ParentBehavior
     [Header("Layer Sprites")]
     public int layerCounter = 4;
     public SpriteRenderer[] layers;
+    public Animator[] layersAnim;
     private string[] spriteNames = { "L_Sprite", "M_Sprite", "S_Sprite", "X_Sprite" };
 
       
@@ -113,6 +114,7 @@ public class EnemyBehavior : ParentBehavior
         {
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
             updateSprites(1);
+            layersAnim[lives].enabled = true;
             if (lives-1>0)
             {
                 lives--;
@@ -213,6 +215,7 @@ public class EnemyBehavior : ParentBehavior
     public void initSprites()
     {
         layers = new SpriteRenderer[layerCounter];
+        layersAnim = new Animator[layerCounter];
         for (int i = layerCounter - 1; i >= 0; --i)
         {
             layers[i] = transform.Find("Sprites").Find(spriteNames[i]).GetComponent<SpriteRenderer>();
