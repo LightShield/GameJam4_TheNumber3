@@ -30,7 +30,7 @@ public class EnemyPoolBehavior : MonoBehaviour
     public bool intro = true;
     public Vector2[] bounds;
     private SoundsManager sounds;
-    private bool isZenMode = false;
+    public bool isZenMode = false;
 
 
     // Start is called before the first frame update

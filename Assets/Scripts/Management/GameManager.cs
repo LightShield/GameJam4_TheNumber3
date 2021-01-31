@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private const int BULLET_COUNT_POWER = 1;
     private const int MAGNITUDE = 2;
 
-    private int[] MIN_POWER_VALUES = {0, 1, 0};
+    private float[] MIN_POWER_VALUES = {0.1f, 1, 0.1f};
     
 
     private int playerPoints = 0;
@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     private float playerMagnitudeChange = 0.1f;
     private float playerFrequencyChange = 0.1f;
     private float playerHealth = 10f;
+
+    //used for power decay
+    private bool isZenMode; 
 
     [Header("Player Bars")]
     public Image healthBar;
@@ -79,6 +82,8 @@ public class GameManager : MonoBehaviour
             sounds.masterVolumeSlider.value = PlayerPrefs.GetFloat("volume");
         }
 
+        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_START_ZEN_MODE, startZenMode);
+        EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_STOP_ZEN_MODE, stopZenMode);
         //EventManagerScript.Instance.StartListening(EventManagerScript.EVENT__ENEMY_DEATH,OnEnemyDeath);
     }
 
@@ -91,12 +96,7 @@ public class GameManager : MonoBehaviour
             healthBar.fillAmount = playerHealth / playerMaxHealth;
             if (playerHealth <= 0)
             {
-                Debug.Log("final score: " + score);
-                PlayerPrefs.SetFloat("score", (int) score); //save score to display on end game
-                PlayerPrefs.Save();
-                Debug.Log("from PlayerPrefs - " + PlayerPrefs.GetFloat("score"));
-                Debug.Log("post player pref ");
-                SceneManager.LoadScene(2);
+                endGame();
             }
         }
     }
@@ -110,15 +110,8 @@ public class GameManager : MonoBehaviour
             StartCoroutine(throwPlayer(playerUI));
             if (playerHealth <= 0.5f)
             {
-                Debug.Log("final score: " + score);
-                SceneManager.LoadScene(2);
+                endGame();
             }
-            // else
-            // {
-            //     GameObject enemy = (GameObject) obj;
-            //     enemy.GetComponent<EnemyBehavior>().die();
-            // }
-
         }
     }
 
@@ -197,9 +190,12 @@ public class GameManager : MonoBehaviour
 
     void powersDecay()
     {
-        for(int i = 0; i < 3; ++i)
+        if (!isZenMode)
         {
-            updatespecificPowerDecay(i);
+            for (int i = 0; i < 3; ++i)
+            {
+                updatespecificPowerDecay(i);
+            }
         }
     }
 
@@ -288,4 +284,23 @@ public class GameManager : MonoBehaviour
         boundaryDown.transform.position = down_boundary_location;
 
     }
+
+    void endGame()
+    {
+        Debug.Log("final score: " + score);
+        PlayerPrefs.SetInt("score", (int)score); //save score to display on end game
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(2);
+    }
+
+    private void startZenMode(object obj)
+    {
+        isZenMode = true;
+    }
+
+    private void stopZenMode(object obj)
+    {
+        isZenMode = false;
+    }
+
 }

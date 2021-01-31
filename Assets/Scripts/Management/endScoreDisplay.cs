@@ -16,16 +16,10 @@ public class endScoreDisplay : MonoBehaviour
         if (PlayerPrefs.HasKey("score"))
         {
             Debug.Log("has key score");
-            score = (int)PlayerPrefs.GetFloat("score");
+            score = PlayerPrefs.GetInt("score");
         }
         TimeSpan ts = TimeSpan.FromSeconds(score);
         scoreText.text = ts.Hours+":"+ts.Minutes+":"+ts.Seconds;
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }
