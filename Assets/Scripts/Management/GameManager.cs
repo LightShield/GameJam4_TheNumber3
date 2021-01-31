@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -85,6 +86,7 @@ public class GameManager : MonoBehaviour
     {
         if (!godmode)
         {
+            StartCoroutine(throwPlayer(obj));
             playerHealth--;
             healthBar.fillAmount = playerHealth / playerMaxHealth;
             if (playerHealth <= 0)
@@ -117,8 +119,6 @@ public class GameManager : MonoBehaviour
     IEnumerator throwPlayer(object obj)
     {
         GameObject go = (GameObject) obj;
-        SpriteRenderer _sr = go.GetComponent<SpriteRenderer>();
-        go.transform.DOJump(go.transform.forward * -2f, 1, 1, 1f);
 
         go.GetComponent<Collider2D>().enabled = false;
         for (int i = 0; i < 5; i++)
@@ -176,7 +176,8 @@ public class GameManager : MonoBehaviour
         powersDecay();
 
         //temp score UI update
-        _scoreText.text = "Score " + (int) score;
+        TimeSpan ts = TimeSpan.FromSeconds(score);
+        _scoreText.text = "Time of survival:\n"+ts.Hours+":"+ts.Minutes+":"+ts.Seconds;
 
         if (Input.GetKeyDown(KeyCode.G))
         {

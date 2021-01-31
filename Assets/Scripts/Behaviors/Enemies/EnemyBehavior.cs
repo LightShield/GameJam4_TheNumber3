@@ -31,7 +31,6 @@ public class EnemyBehavior : ParentBehavior
     [Header("Layer Sprites")]
     public int layerCounter = 4;
     public SpriteRenderer[] layers;
-    public Animator[] layersAnim;
     private string[] spriteNames = { "L_Sprite", "M_Sprite", "S_Sprite", "X_Sprite" };
 
       
@@ -127,6 +126,11 @@ public class EnemyBehavior : ParentBehavior
                 createSoul();
                 die();
             }
+        }   
+        else if (other.transform.CompareTag("Player"))
+        {
+            createSoul();
+            die();
         }
     }
 
@@ -215,7 +219,6 @@ public class EnemyBehavior : ParentBehavior
     public void initSprites()
     {
         layers = new SpriteRenderer[layerCounter];
-        layersAnim = new Animator[layerCounter];
         for (int i = layerCounter - 1; i >= 0; --i)
         {
             layers[i] = transform.Find("Sprites").Find(spriteNames[i]).GetComponent<SpriteRenderer>();

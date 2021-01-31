@@ -30,31 +30,7 @@ public class playerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
-
-    private void Update()
-    {
-        //change states (temp code - unscaleable. make it into an array later
-        // if (Input.GetKeyDown(state0))
-        // {
-        //     state = 0;
-        //     GetComponent<SpriteRenderer>().material.color = Color.red;
-        // }
-        // if (Input.GetKeyDown(state1))
-        // {
-        //     state = 1;
-        //     GetComponent<SpriteRenderer>().material.color = Color.blue;
-        //
-        // }
-        // if (Input.GetKeyDown(state2))
-        // {
-        //     state = 2;
-        //     GetComponent<SpriteRenderer>().material.color = Color.green;
-        //
-        // }
-
-    }
-
-
+    
 
     // Update is called once per frame
     void FixedUpdate()

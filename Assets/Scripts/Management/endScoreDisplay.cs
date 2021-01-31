@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,8 @@ public class endScoreDisplay : MonoBehaviour
             Debug.Log("has key score");
             score = (int)PlayerPrefs.GetFloat("score");
         }
-        scoreText.text += "\n" + score;
+        TimeSpan ts = TimeSpan.FromSeconds(score);
+        scoreText.text = "Time of survival:\n"+ts.Hours+":"+ts.Minutes+":"+ts.Seconds;
         
     }
 

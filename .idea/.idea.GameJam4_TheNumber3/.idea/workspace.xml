@@ -25,6 +25,12 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/endScoreDisplay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/endScoreDisplay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +66,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/platformsSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlatformsSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/scLeftPlatformTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/csRightPlatformTrigger.cs" />
@@ -107,9 +112,10 @@
         <option value="$PROJECT_DIR$/Assets/cameraZen.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/endScoreDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" />
       </list>
     </option>

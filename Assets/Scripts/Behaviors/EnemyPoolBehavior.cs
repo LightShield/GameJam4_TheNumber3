@@ -127,7 +127,6 @@ public class EnemyPoolBehavior : MonoBehaviour
         for (int i = 0; i < newEnemy.layerCounter; ++i)
         {
             newEnemy.layers[i].sprite = behaviorTemplate.layers[i].sprite;
-            //newEnemy.layersAnim[i] = behaviorTemplate.layersAnim[i];
         }
 
         BoxCollider2D bc = newEnemy.gameObject.GetComponent<BoxCollider2D>();

@@ -55,9 +55,9 @@
             <e p="BulletBehavior.cs" t="Include" />
             <e p="BulletPollBehavior.cs" t="Include" />
           </e>
-          <e p="endScoreDisplay.cs" t="Include" />
           <e p="Management" t="Include">
             <e p="BoundaryLogic.cs" t="Include" />
+            <e p="endScoreDisplay.cs" t="Include" />
             <e p="EventManagerScript.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
