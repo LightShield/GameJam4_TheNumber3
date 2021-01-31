@@ -86,42 +86,32 @@ public class PowerUpMovement : MonoBehaviour
         Debug.Log("Finished Flicker");
     }
 
-    IEnumerator fadeIn()
+    public IEnumerator exist()
     {
+        //FADE IN
+        alreadyExists = true;
         transform.localScale = Vector3.zero;
+        StartCoroutine(flicker());
         _spriteRenderer.enabled = true;
         _collider.enabled = true;
-        while ((transform.localScale.x < originalScale.x)&& !collected)
+        while ((transform.localScale.x < originalScale.x) && !collected)
         {
             transform.localScale += originalScale * Time.deltaTime / fadeInTime;
             yield return null;
         }
         transform.localScale = originalScale;
         Debug.Log("Finished FadeIn");
-    }
 
-    IEnumerator fadeOut()
-    {
-        float countdown = ttl + tolerance;   
- 
+        //FADE OUT
+        float countdown = ttl + tolerance;
+
         while ((countdown > tolerance) && !collected)
         {
             transform.localScale = originalScale * countdown / (ttl + tolerance);
             countdown -= Time.deltaTime;
             yield return null;
         }
-
-
         Debug.Log("Finished FadeOut");
-    }
-
-    public IEnumerator exist()
-    {
-        alreadyExists = true;
-        StartCoroutine(fadeIn());
-        StartCoroutine(flicker());
-        yield return new WaitForSeconds(fadeInTime);
-        StartCoroutine(fadeOut());
 
         //reset power up
         _spriteRenderer.enabled = false;
