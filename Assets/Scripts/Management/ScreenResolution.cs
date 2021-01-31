@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScreenResolution : MonoBehaviour
 {
+    public float cameraScaler = 1.2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +20,6 @@ public class ScreenResolution : MonoBehaviour
         {
             Camera.main.orthographicSize = (1080f / 200f);
         }
+        Camera.main.orthographicSize *= cameraScaler; //zoom out camera
     }
 }

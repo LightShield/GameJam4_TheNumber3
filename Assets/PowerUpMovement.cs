@@ -42,7 +42,7 @@ public class PowerUpMovement : MonoBehaviour
         _collider = GetComponent<Collider2D>();
         originalScale = transform.localScale;
         collected = false;
-        StartCoroutine(exist());
+        alreadyExists = false;
 
     }
 

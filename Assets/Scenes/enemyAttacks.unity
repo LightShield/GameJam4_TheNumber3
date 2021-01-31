@@ -1055,6 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2f6dc6ef4e5ca4b9540340f4ad362d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coolDown: 50
   maxSpeed: 0.5
   initialPos: {x: -10, y: 0}
   speedDecayFactor: 0
@@ -1064,6 +1065,7 @@ MonoBehaviour:
   color2: {r: 0.42352942, g: 0.6117647, b: 0.9882353, a: 1}
   color3: {r: 0.42745098, g: 0.8352941, b: 0.8862745, a: 1}
   collected: 0
+  cycleLength: 50
   tolerance: 1
   ttl: 10
   fadeInTime: 5
@@ -2593,7 +2595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 153.5, y: -53.199707}
+  m_AnchoredPosition: {x: 153.5, y: -53.203125}
   m_SizeDelta: {x: 470.8646, y: 445.3849}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573968601
@@ -7992,7 +7994,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -17.6799, y: -83.4203}
+  m_AnchoredPosition: {x: -17.6799, y: -83.41992}
   m_SizeDelta: {x: 3037.6216, y: 304.9268}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973927264
