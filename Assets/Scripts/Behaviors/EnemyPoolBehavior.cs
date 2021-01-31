@@ -126,12 +126,13 @@ public class EnemyPoolBehavior : MonoBehaviour
 
         for (int i = 0; i < newEnemy.layerCounter; ++i)
         {
-            newEnemy.layers[i].sprite = behaviorTemplate.layers[i].sprite;
+            newEnemy.layers[i].GetComponent<SpriteRenderer>().sprite = behaviorTemplate.layers[i].GetComponent<SpriteRenderer>().sprite;
+            newEnemy.layers[i].GetComponent<Animator>().runtimeAnimatorController = behaviorTemplate.layers[i].GetComponent<Animator>().runtimeAnimatorController;
         }
 
         BoxCollider2D bc = newEnemy.gameObject.GetComponent<BoxCollider2D>();
-        bc.size = behaviorTemplate.layers[3].sprite.bounds.size * 0.7f;
-        Debug.Log("size copies is" + behaviorTemplate.layers[3].sprite.bounds.size);// * newEnemy.layers[newEnemy.layerCounter - 1].sprite.bounds.size.z;
+        bc.size = behaviorTemplate.layers[3].GetComponent<SpriteRenderer>().sprite.bounds.size * 0.7f;
+        Debug.Log("size copies is" + behaviorTemplate.layers[3].GetComponent<SpriteRenderer>().sprite.bounds.size);// * newEnemy.layers[newEnemy.layerCounter - 1].sprite.bounds.size.z;
         //  collider.size = layers[layerCounter - 1].sprite.bounds.size * layers[layerCounter - 1].sprite.bounds.size.z; 
 
 
@@ -163,7 +164,7 @@ public class EnemyPoolBehavior : MonoBehaviour
 
         for (int i = 0; i < newEnemy.layerCounter; ++i)
         {
-            newEnemy.layers[newEnemy.layerCounter - 1 - i].enabled = true;
+            newEnemy.layers[newEnemy.layerCounter - 1 - i].GetComponent<SpriteRenderer>().enabled = true;
         }
 
         newEnemy.gameObject.SetActive(true);

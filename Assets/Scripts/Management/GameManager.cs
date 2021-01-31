@@ -107,12 +107,18 @@ public class GameManager : MonoBehaviour
         {
             playerHealth -= 5f;
             healthBar.fillAmount = playerHealth / playerMaxHealth;
-            StartCoroutine(throwPlayer(obj));
+            StartCoroutine(throwPlayer(playerUI));
             if (playerHealth <= 0.5f)
             {
                 Debug.Log("final score: " + score);
                 SceneManager.LoadScene(2);
             }
+            else
+            {
+                GameObject enemy = (GameObject) obj;
+                enemy.GetComponent<EnemyBehavior>().die();
+            }
+
         }
     }
 
@@ -120,7 +126,7 @@ public class GameManager : MonoBehaviour
     {
         GameObject go = (GameObject) obj;
 
-        go.GetComponent<Collider2D>().enabled = false;
+        //go.GetComponent<Collider2D>().enabled = false;
         for (int i = 0; i < 5; i++)
         {
             playerUI.SetActive(false);
@@ -128,7 +134,7 @@ public class GameManager : MonoBehaviour
             playerUI.SetActive(true);
             yield return new WaitForSeconds(0.1f);
         }
-        go.GetComponent<Collider2D>().enabled = true;
+//        go.GetComponent<Collider2D>().enabled = true;
     }
 
     private void OnEnemyDeath(object obj)

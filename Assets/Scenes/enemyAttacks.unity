@@ -9887,6 +9887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8844322021853957568}
   - component: {fileID: 8844322021853957571}
+  - component: {fileID: 8844322021853957570}
   m_Layer: 0
   m_Name: X_Sprite
   m_TagString: Untagged
@@ -9894,6 +9895,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &8844322021853957570
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844322021853957569}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61f62d7c6b68a58438906522a34c898f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &8844322021853957571
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9969,6 +9989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8844322021920481538}
   - component: {fileID: 8844322021920481541}
+  - component: {fileID: 8844322021920481540}
   m_Layer: 0
   m_Name: M_Sprite
   m_TagString: Untagged
@@ -9976,6 +9997,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &8844322021920481540
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844322021920481539}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61f62d7c6b68a58438906522a34c898f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &8844322021920481541
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11081,6 +11121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8844322023408338006}
   - component: {fileID: 8844322023408337993}
+  - component: {fileID: 8844322023408338008}
   m_Layer: 0
   m_Name: S_Sprite
   m_TagString: Untagged
@@ -11088,6 +11129,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &8844322023408338008
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844322023408338007}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61f62d7c6b68a58438906522a34c898f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &8844322023423016514
 Transform:
   m_ObjectHideFlags: 0
@@ -11943,6 +12003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8844322023851882920}
   - component: {fileID: 8844322023851882923}
+  - component: {fileID: 8844322023851882922}
   m_Layer: 0
   m_Name: L_Sprite
   m_TagString: Untagged
@@ -11950,6 +12011,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &8844322023851882922
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844322023851882921}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61f62d7c6b68a58438906522a34c898f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &8844322023851882923
 SpriteRenderer:
   m_ObjectHideFlags: 0

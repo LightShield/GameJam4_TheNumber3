@@ -30,7 +30,7 @@ public class EnemyBehavior : ParentBehavior
 
     [Header("Layer Sprites")]
     public int layerCounter = 4;
-    public SpriteRenderer[] layers;
+    public Transform[] layers;
     private string[] spriteNames = { "L_Sprite", "M_Sprite", "S_Sprite", "X_Sprite" };
 
       
@@ -47,9 +47,9 @@ public class EnemyBehavior : ParentBehavior
         EventManagerScript.Instance.StartListening(EventManagerScript.EVENT_STOP_ZEN_MODE,stopZenMode);
 
         //init layers 
-        layers = new SpriteRenderer[layerCounter];
+        layers = new Transform[layerCounter];
         for(int i = layerCounter - 1; i >= 0; --i) {
-            layers[i] = transform.Find("Sprites").Find(spriteNames[i]).GetComponent<SpriteRenderer>();
+            layers[i] = transform.Find("Sprites").Find(spriteNames[i]);
         }
     }
 
@@ -113,7 +113,6 @@ public class EnemyBehavior : ParentBehavior
         {
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
             updateSprites(1);
-//            layersAnim[lives].enabled = true;
             if (lives-1>0)
             {
                 lives--;
@@ -124,13 +123,15 @@ public class EnemyBehavior : ParentBehavior
             {
                 updateSprites(1); //make sprite of soul disappear from parent\enemy
                 createSoul();
+                Debug.Log("enemy: hit by bullets and die");
                 die();
             }
         }   
         else if (other.transform.CompareTag("Player"))
         {
-            createSoul();
-            die();
+            // createSoul();
+            // Debug.Log("enemy: crush with player and die");
+            // die();
         }
     }
 
@@ -175,7 +176,10 @@ public class EnemyBehavior : ParentBehavior
 
         //save sprites (for hirarichical movevement later)
         Transform sprites = transform.Find("Sprites");
-
+        foreach(Transform layer in layers)
+        {
+            layer.GetComponent<Animator>().enabled = false;
+        }
         //move all bullets to the game hirarchy 
         for (int i=transform.childCount-1; i >= 0; --i) {
             Transform child = transform.GetChild(i);
@@ -204,24 +208,26 @@ public class EnemyBehavior : ParentBehavior
         {
             --damage;
             --layerCounter;
-            layers[layerCounter].enabled = false;
+            layers[layerCounter].GetComponent<Animator>().enabled = true;
+            layers[layerCounter].GetComponent<Animator>().Play("die",0,0);
+            //layers[layerCounter].GetComponent<SpriteRenderer>().enabled = false;
             if (layerCounter > 0)
             {
                 BoxCollider2D collider = gameObject.GetComponent<BoxCollider2D>();
                 //layers = SpriteRenderer[], z = scale change
                 Debug.Log("going to index - " + (layerCounter - 1));
-                Debug.Log("which brings size = " + layers[layerCounter - 1].sprite.bounds.size * 0.7f);
-                collider.size = layers[layerCounter - 1].sprite.bounds.size * 0.7f; 
+                Debug.Log("which brings size = " + layers[layerCounter - 1].GetComponent<SpriteRenderer>().sprite.bounds.size * 0.7f);
+                collider.size = layers[layerCounter - 1].GetComponent<SpriteRenderer>().sprite.bounds.size * 0.7f; 
             }
         }
     }
 
     public void initSprites()
     {
-        layers = new SpriteRenderer[layerCounter];
+        layers = new  Transform[layerCounter];
         for (int i = layerCounter - 1; i >= 0; --i)
         {
-            layers[i] = transform.Find("Sprites").Find(spriteNames[i]).GetComponent<SpriteRenderer>();
+            layers[i] = transform.Find("Sprites").Find(spriteNames[i]);
         }
     }
 

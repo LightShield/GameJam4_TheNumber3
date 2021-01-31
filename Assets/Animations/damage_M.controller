@@ -11,7 +11,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -1900603544110838973}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 270, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2110295216825875260}
     m_Position: {x: 235, y: 65, z: 0}
@@ -58,7 +58,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: damage_M
+  m_Name: die
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

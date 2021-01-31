@@ -20,17 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fab6758-2e12-4314-a990-efe5b496fd56" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/damageX_idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damageX_idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_L.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_L.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_M 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_M 1.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_M.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_M.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_M.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_M.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_S.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_S.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/damage_x.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/damage_x.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/main character039.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/main character039.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/speedX-idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speedX-idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_L.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_L.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_L.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_L.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_M.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_M.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_M.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_M.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_S.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_S.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_S.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_S.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/speed_X.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/speed_X.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/spreadX_idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spreadX_idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_L.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_L.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_L.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_L.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_M.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_M.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_M.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_M.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_S.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_S.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_S.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_S.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/spread_x.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/spread_x.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/endScoreDisplay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/endScoreDisplay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +61,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../Bubbles/Assets/Scripts/EnemyHandlerScript.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2348FB5E-CC9E-4E68-9F37-F7D7FADAEA9A/67/29e5aae4/ShortcutExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/704A31FB-4ABF-4739-87CC-8081702D3BF6/2a/99b97b46/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/fc/d2d224c8/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/9e/ad5abd2f/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -112,11 +131,11 @@
         <option value="$PROJECT_DIR$/Assets/cameraZen.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/endScoreDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" />
       </list>
     </option>
   </component>
