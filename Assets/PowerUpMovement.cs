@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PowerUpMovement : MonoBehaviour
 {
-    private float coolDown = 50f;
+    public float coolDown = 50f;
     private float speed;
     private Vector3 pos;
     private SpriteRenderer _spriteRenderer;
@@ -24,6 +24,7 @@ public class PowerUpMovement : MonoBehaviour
     public bool collected;
 
     [Header("Fade Settings")]
+    public float cycleLength = 50f;
     public float tolerance = 1f;
     public float ttl = 10f;
     public float fadeInTime = 5;
@@ -41,7 +42,6 @@ public class PowerUpMovement : MonoBehaviour
         _collider = GetComponent<Collider2D>();
         originalScale = transform.localScale;
         collected = false;
-        //StartCoroutine(fadeOut());
         StartCoroutine(exist());
 
     }
@@ -62,7 +62,6 @@ public class PowerUpMovement : MonoBehaviour
             {
                 StartCoroutine(exist());
             }
-            coolDown = 50f;
             //speed = maxSpeed;
             //transform.position = initialPos;
             pos = transform.position;
@@ -73,6 +72,7 @@ public class PowerUpMovement : MonoBehaviour
     IEnumerator flicker()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        Debug.Log("Started Flicker, collect = " + collected);
         while (!collected)
         {
             spriteRenderer.color = color1;
@@ -83,6 +83,7 @@ public class PowerUpMovement : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
 
         }
+        Debug.Log("Finished Flicker");
     }
 
     IEnumerator fadeIn()
@@ -110,9 +111,7 @@ public class PowerUpMovement : MonoBehaviour
             yield return null;
         }
 
-        _spriteRenderer.enabled = false;
-        _collider.enabled = false;
-        transform.localScale = originalScale;
+
         Debug.Log("Finished FadeOut");
     }
 
@@ -122,12 +121,15 @@ public class PowerUpMovement : MonoBehaviour
         StartCoroutine(fadeIn());
         StartCoroutine(flicker());
         yield return new WaitForSeconds(fadeInTime);
-        if (!collected)
-        {
-            StartCoroutine(fadeOut());
-        }
+        StartCoroutine(fadeOut());
+
+        //reset power up
+        _spriteRenderer.enabled = false;
+        _collider.enabled = false;
+        transform.localScale = originalScale;
         collected = false;
         alreadyExists = false;
+        coolDown = cycleLength;
         yield return null;
     }
 }
