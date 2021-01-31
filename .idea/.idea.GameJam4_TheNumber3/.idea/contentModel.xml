@@ -55,6 +55,7 @@
             <e p="BulletBehavior.cs" t="Include" />
             <e p="BulletPollBehavior.cs" t="Include" />
           </e>
+          <e p="endScoreDisplay.cs" t="Include" />
           <e p="Management" t="Include">
             <e p="BoundaryLogic.cs" t="Include" />
             <e p="EventManagerScript.cs" t="Include" />
@@ -64,7 +65,9 @@
             <e p="PauseMenu.cs" t="Include" />
             <e p="ScreenResolution.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
-            <e p="SoundsManager.cs" t="Include" />
+            <e p="Sounds" t="Include">
+              <e p="SoundsManager.cs" t="Include" />
+            </e>
             <e p="testScript.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
           </e>

@@ -114,7 +114,7 @@ public class EnemyBehavior : ParentBehavior
         {
             EventManagerScript.Instance.TriggerEvent(EventManagerScript.EVENT__PLAYER_BULLET_INACTIVE,other.gameObject);
             updateSprites(1);
-            layersAnim[lives].enabled = true;
+//            layersAnim[lives].enabled = true;
             if (lives-1>0)
             {
                 lives--;
