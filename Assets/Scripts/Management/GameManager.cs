@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public PlayerShooter playerShooter;
     public float powerDecayRate = 0.1f;
     public GameObject playerUI;
+    public Animator playerAnim;
     
     [Header("Player Score")]
     public float score;
@@ -287,6 +288,7 @@ public class GameManager : MonoBehaviour
 
     void endGame()
     {
+        playerAnim.Play("death",0,0);
         Debug.Log("final score: " + score);
         PlayerPrefs.SetInt("score", (int)score); //save score to display on end game
         PlayerPrefs.Save();

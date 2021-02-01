@@ -12,6 +12,7 @@ public class PlayerShooter : MonoBehaviour
     private bool canShoot = true;
     public GameManager mGameManager;
     private float startAngle = 90f, endAngle = 270f;
+    public Animator playerAnim;
 
 
     [Header("bullet powers")] 
@@ -39,6 +40,7 @@ public class PlayerShooter : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && canShoot)
         {
             canShoot = false;
+            playerAnim.Play("shoot",0,0);
             Invoke("Shoot", 0.05f);
         }
     }
@@ -92,8 +94,8 @@ public class PlayerShooter : MonoBehaviour
                 angle += angleStep;  
             }
 
-            transform.DORewind();
-            transform.DOPunchScale(new Vector3(.2f, .2f, .2f), .25f);
+            // transform.DORewind();
+            // transform.DOPunchScale(new Vector3(.2f, .2f, .2f), .25f);
             Invoke("enableShooting", .05f);
         }
         else
@@ -101,8 +103,8 @@ public class PlayerShooter : MonoBehaviour
             //pb.shoot();
             shootOnce(Vector2.up,toColor,true);
             Invoke("enableShooting", .05f);
-            transform.DORewind();
-            transform.DOPunchScale(new Vector3(.2f, .2f, .2f), .25f);
+            // transform.DORewind();
+            // transform.DOPunchScale(new Vector3(.2f, .2f, .2f), .25f);
         }
     }
     private void shootOnce(Vector2 moveDir, Color toColor, bool isSingleShot=false)

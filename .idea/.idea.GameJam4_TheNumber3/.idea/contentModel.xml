@@ -63,6 +63,7 @@
             <e p="HealthBar.cs" t="Include" />
             <e p="MenuController.cs" t="Include" />
             <e p="PauseMenu.cs" t="Include" />
+            <e p="scaleAnimation.cs" t="Include" />
             <e p="ScreenResolution.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
             <e p="Sounds" t="Include">

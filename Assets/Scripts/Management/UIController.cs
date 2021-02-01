@@ -16,6 +16,8 @@ public class UIController : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(startButton);
     }
 
+
+
     public void onStartClicked()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
