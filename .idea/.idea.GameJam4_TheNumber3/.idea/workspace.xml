@@ -20,20 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fab6758-2e12-4314-a990-efe5b496fd56" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/animated character sprites_9.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/animated character sprites_9.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/main character039.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/main character039.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Player/main character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Player/main character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Player/playerBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Player/playerBullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/endScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/endScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/openScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/openScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/yuval.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/yuval.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Management/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Management/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +96,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/BulletBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/PauseMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/PowerUpMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/ParentBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/EventManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/cameraZen.cs" />
@@ -123,6 +109,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/UIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/PowerUpMovement.cs" />
       </list>
     </option>
   </component>
@@ -190,7 +177,7 @@
       <workItem from="1611481093016" duration="10925000" />
       <workItem from="1611591449617" duration="7073000" />
       <workItem from="1611914500604" duration="24783000" />
-      <workItem from="1612183792638" duration="4401000" />
+      <workItem from="1612183792638" duration="5020000" />
     </task>
     <servers />
   </component>
