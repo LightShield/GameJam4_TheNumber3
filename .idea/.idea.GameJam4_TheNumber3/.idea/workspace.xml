@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6fab6758-2e12-4314-a990-efe5b496fd56" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/shoot.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/shoot.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,16 +103,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/EventManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/cameraZen.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/endScoreDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBulletMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyShooter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/Enemies/EnemyBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/endScoreDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviors/EnemyPoolBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/PowerUpMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" />
       </list>
     </option>
   </component>

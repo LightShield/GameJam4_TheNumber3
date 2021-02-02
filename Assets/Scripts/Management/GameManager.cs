@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     public PlayerShooter playerShooter;
     public float powerDecayRate = 0.1f;
     public GameObject playerUI;
-    public Animator playerAnim;
+    public GameObject playerAnim;
     
     [Header("Player Score")]
     public float score;
@@ -124,8 +124,10 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             playerUI.SetActive(false);
+            playerAnim.SetActive(false);
             yield return new WaitForSeconds(0.1f);
             playerUI.SetActive(true);
+            playerAnim.SetActive(true);
             yield return new WaitForSeconds(0.1f);
         }
         //go.GetComponent<Collider2D>().enabled = true;
@@ -297,7 +299,7 @@ public class GameManager : MonoBehaviour
 
     void endGame()
     {
-        //playerAnim.Play("death",0,0);
+        playerAnim.GetComponent<Animator>().Play("death",0,0);
         //add wait for X seconds so next scene won't load before end of animation
         Debug.Log("final score: " + score);
         PlayerPrefs.SetInt("score", (int)score); //save score to display on end game
