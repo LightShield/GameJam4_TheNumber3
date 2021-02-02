@@ -187,6 +187,15 @@ public class GameManager : MonoBehaviour
             godmode = !godmode;
         }
         score += Time.deltaTime;
+
+        //code to slow down - test preformance
+        /*for(int i = 0; i < 100; ++i)
+        {
+            for(int j = 0; j < 20; ++j)
+            {
+                Debug.Log(i + "," + j);
+            }
+        }*/
     }
 
     void powersDecay()
