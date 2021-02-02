@@ -72,7 +72,7 @@ public class PowerUpMovement : MonoBehaviour
     IEnumerator flicker()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        Debug.Log("Started Flicker, collect = " + collected);
+        Debug.Log("Started powerup Flicker, collect = " + collected);
         while (!collected)
         {
             spriteRenderer.color = color1;
@@ -83,7 +83,7 @@ public class PowerUpMovement : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
 
         }
-        Debug.Log("Finished Flicker");
+        Debug.Log("Finished powerup Flicker");
     }
 
     public IEnumerator exist()
@@ -100,7 +100,7 @@ public class PowerUpMovement : MonoBehaviour
             yield return null;
         }
         transform.localScale = originalScale;
-        Debug.Log("Finished FadeIn");
+        Debug.Log("Finished powerup FadeIn");
 
         //FADE OUT
         float countdown = ttl + tolerance;
@@ -111,7 +111,7 @@ public class PowerUpMovement : MonoBehaviour
             countdown -= Time.deltaTime;
             yield return null;
         }
-        Debug.Log("Finished FadeOut");
+        Debug.Log("Finished powerup FadeOut");
 
         //reset power up
         _spriteRenderer.enabled = false;
