@@ -289,6 +289,7 @@ public class GameManager : MonoBehaviour
     void endGame()
     {
         //playerAnim.Play("death",0,0);
+        //add wait for X seconds so next scene won't load before end of animation
         Debug.Log("final score: " + score);
         PlayerPrefs.SetInt("score", (int)score); //save score to display on end game
         PlayerPrefs.Save();
