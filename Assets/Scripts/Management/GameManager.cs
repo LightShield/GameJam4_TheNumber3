@@ -288,7 +288,7 @@ public class GameManager : MonoBehaviour
 
     void endGame()
     {
-        playerAnim.Play("death",0,0);
+        //playerAnim.Play("death",0,0);
         Debug.Log("final score: " + score);
         PlayerPrefs.SetInt("score", (int)score); //save score to display on end game
         PlayerPrefs.Save();

@@ -6361,7 +6361,7 @@ MonoBehaviour:
   playerShooter: {fileID: 121228669}
   powerDecayRate: 0.01
   playerUI: {fileID: 1041601429}
-  playerAnim: {fileID: 1944555975}
+  playerAnim: {fileID: 0}
   score: 0
   scoreLossFromCrash: 5
   scoreLossFromHit: 1
