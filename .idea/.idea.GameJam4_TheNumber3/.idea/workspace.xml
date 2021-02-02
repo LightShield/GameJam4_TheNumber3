@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fab6758-2e12-4314-a990-efe5b496fd56" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/endScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/endScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam4_TheNumber3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/death.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/death.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/main character039.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/main character039.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/enemyAttacks.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,9 +360,10 @@
     <state x="461" y="165" key="SettingsEditor/-1920.123.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1611594299882" />
     <state x="461" y="165" key="SettingsEditor/-1920.508.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1610185815708" />
     <state x="461" y="165" key="SettingsEditor/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1609486331191" />
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1609504265013">
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1612278586389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/-1920.123.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1612278586389" />
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1609504265013" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1610698560887">
       <screen x="0" y="0" width="1920" height="1040" />

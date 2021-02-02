@@ -299,11 +299,20 @@ public class GameManager : MonoBehaviour
 
     void endGame()
     {
+        if(!godmode)
+            StartCoroutine(endWithDelay());
+    }
+
+    IEnumerator endWithDelay()
+    {
+        godmode = true;
         playerAnim.GetComponent<Animator>().Play("death",0,0);
         //add wait for X seconds so next scene won't load before end of animation
         Debug.Log("final score: " + score);
         PlayerPrefs.SetInt("score", (int)score); //save score to display on end game
         PlayerPrefs.Save();
+        //yield return new WaitForSeconds(5f);
+        yield return null;
         SceneManager.LoadScene(2);
     }
 
