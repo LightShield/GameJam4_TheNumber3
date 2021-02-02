@@ -4854,7 +4854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8328329741704581377, guid: c82bcb7d2174a9141929d1f098692d24, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 8328329741704581377, guid: c82bcb7d2174a9141929d1f098692d24, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4888,13 +4888,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8328329741704581630, guid: c82bcb7d2174a9141929d1f098692d24, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8328329741704581631, guid: c82bcb7d2174a9141929d1f098692d24, type: 3}
       propertyPath: m_Name
       value: playerAnim
       objectReference: {fileID: 0}
     - target: {fileID: 8328329741704581631, guid: c82bcb7d2174a9141929d1f098692d24, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c82bcb7d2174a9141929d1f098692d24, type: 3}
@@ -6361,7 +6365,7 @@ MonoBehaviour:
   playerShooter: {fileID: 121228669}
   powerDecayRate: 0.01
   playerUI: {fileID: 1041601429}
-  playerAnim: {fileID: 0}
+  playerAnim: {fileID: 1503640938}
   score: 0
   scoreLossFromCrash: 5
   scoreLossFromHit: 1
@@ -6402,6 +6406,11 @@ MonoBehaviour:
   godmodeMusic: {fileID: 107295629}
   masterVolumeSlider: {fileID: 1875247034}
   transitionTime: 5
+--- !u!1 &1503640938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8328329741704581631, guid: c82bcb7d2174a9141929d1f098692d24, type: 3}
+  m_PrefabInstance: {fileID: 1075820847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1544670781 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8394593206424418494, guid: 1eccc19ac7d0eb045905abc19d55dd41, type: 3}
@@ -8312,7 +8321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1944555972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8901,6 +8910,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0626aa78185a114daf64802135f3981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2139496692 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 487932704472503554, guid: c82bcb7d2174a9141929d1f098692d24, type: 3}
+  m_PrefabInstance: {fileID: 1075820847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &615249075168800449
 GameObject:
   m_ObjectHideFlags: 0
@@ -10201,7 +10215,7 @@ PrefabInstance:
     - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: playerAnim
       value: 
-      objectReference: {fileID: 892417335}
+      objectReference: {fileID: 2139496692}
     - target: {fileID: 4414814770377810497, guid: 2d96a7ee01582974594752c432dd3f36, type: 3}
       propertyPath: bulletRange
       value: 1
