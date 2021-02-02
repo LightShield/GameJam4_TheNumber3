@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8654231157170237701, guid: 0e8b7ec539e282a4cbedd480e50ec521, type: 3}
+      propertyPath: m_Size.x
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654231157170237701, guid: 0e8b7ec539e282a4cbedd480e50ec521, type: 3}
+      propertyPath: m_Size.y
+      value: 2.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654231157170237701, guid: 0e8b7ec539e282a4cbedd480e50ec521, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654231157170237946, guid: 0e8b7ec539e282a4cbedd480e50ec521, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95
+      objectReference: {fileID: 0}
     - target: {fileID: 8654231157229845306, guid: 0e8b7ec539e282a4cbedd480e50ec521, type: 3}
       propertyPath: m_Name
       value: main character
