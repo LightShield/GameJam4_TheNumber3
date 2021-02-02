@@ -52,7 +52,6 @@ public class playerMovement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            Debug.LogError("Ahoy");
             angle = (angle + rotationSpeed) % 361;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }

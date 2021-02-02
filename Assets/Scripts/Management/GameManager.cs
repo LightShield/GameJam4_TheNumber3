@@ -191,7 +191,7 @@ public class GameManager : MonoBehaviour
         //code to slow down - test preformance
         /*for(int i = 0; i < 100; ++i)
         {
-            for(int j = 0; j < 20; ++j)
+            for(int j = 0; j < 10; ++j)
             {
                 Debug.Log(i + "," + j);
             }
